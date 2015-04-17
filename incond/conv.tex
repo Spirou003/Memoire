@@ -1,0 +1,52 @@
+\chapter{Bases de Schauder inconditionnelles}
+
+Dans ce chapitre, nous allons étudier un type très particulier de base de Schauder, mais toutefois très puissant. Avant ceci, on va rappeler plusieurs notions indispensables, ainsi que certaines de leurs caractéristiques.
+
+\section{Convergence absolue, inconditionnelle}
+
+\begin{Def}\label{convabs}
+Soient $E$ un espace vectoriel normé, et $(x_n)_{n\in\mathbb{N}}$ une suite de $E$. On dit que la série $\sum\limits_{n\in\mathbb{N}}x_n$ converge absolument si la suite $\left(\sum\limits_{k=0}^n \norme{x_k}\right)_{n\in\mathbb{N}}$ est convergente.
+\end{Def}
+
+\begin{Thm}\label{banachserie}
+Un espace vectoriel normé est un espace de Banach si et seulement si toutes ses séries absolument convergentes sont convergentes.
+\end{Thm}
+
+\begin{Exe}
+On prend l'espace $c_{00}$, et on note $(e_n)_{n\in\mathbb{N}}$ sa base canonique. La série
+\[
+\sum_{n\in\mathbb{N}}\frac{e_n}{2^n}
+\]
+est absolument convergente. Pourtant, la série ne converge pas puisque sa limite, si elle en avait une, est à support infini.
+\end{Exe}
+
+\begin{Def}\label{convincond}
+Soit $(x_n)_{n\in\mathbb{N}}$ une suite de $E$. Alors, on dit que la série $\sum\limits_{n\in\mathbb{N}}x_n$ converge inconditionnellement si quelque soit $\sigma$ une permutation de $\mathbb{N}$, la série $\sum\limits_{n\in\mathbb{N}}x_{\sigma(n)}$ est convergente.
+\end{Def}
+
+\begin{Rem}
+Bien que la définition n'exige pas que la limite soit indépendante de la permutation choisie, il s'avère que c'est toujours le cas.
+\end{Rem}
+
+Telle que définie ci-dessus, la convergence inconditionnelle d'une suite n'est pas toujours évidente à établir. Il existe néanmoins un critère fort utile qui permet de l'obtenir.
+
+\begin{Prop}\label{absimpliqueincond}
+Toute série absolument convergente est inconditionnellement convergente. La réciproque est vraie si l'espace est de dimension finie.
+\end{Prop}
+
+Maintenant, citons une propriété qui nous permettra d'utiliser la convergence inconditionnelle sous des formes très diverses.
+
+\begin{Prop}\label{convincondequiv}
+Soit une suite $(x_n)_{n\in\mathbb{N}}$ de $E$. Les assertions suivantes sont équivalentes:
+
+\begin{enumerate}[(1)]
+\item $\sum\limits_{n\in\mathbb{N}} x_n$ converge inconditionnellement
+\item il existe $x\in E$ vérifiant $\forall\varepsilon>0,\exists F_0\subset\mathbb{N}$ fini tel que $\forall F_0\subseteq F\subset\mathbb{N}$ fini, $\norme{x-\sum\limits_{n\in F}x_n}<\varepsilon$
+\item $\forall\varepsilon>0,\exists n_0>0$ tel que $\forall F\subset\mathbb{N}$ fini, $\min(F)>n_0\Rightarrow \norme{\sum\limits_{n\in F}x_n}<\varepsilon$
+\item $\sum\limits_{n\in\mathbb{N}}y_n$ converge pour toute sous-suite $(y_n)_{n\in\mathbb{N}}$ de $(x_n)_{n\in\mathbb{N}}$
+\item $\sum\limits_{n\in\mathbb{N}}\varepsilon_n x_n$ converge pour toute suite $(\varepsilon_n)_{n\in\mathbb{N}}$ à valeur dans $\{-1,1\}$
+\item $\sum\limits_{n\in\mathbb{N}}\lambda_n x_n$ converge pour toute suite bornée de scalaires $(\lambda_n)_{n\in\mathbb{N}}$
+\item $\lim\limits_{n\rightarrow +\infty}\sup\limits_{x\dual\in B(E\dual)}\sum\limits_{k\geqslant n}\abs{x\dual(x_k)} = 0$
+\end{enumerate}
+\end{Prop}
+

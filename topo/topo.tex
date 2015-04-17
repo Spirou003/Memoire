@@ -1,0 +1,109 @@
+\section{Propriétés de ces topologies}
+
+Ces deux nouvelles topologies n'ont aucun intérêt dans le cas d'un espace vectoriel de dimension finie, car elles coïncident avec la topologie de la norme. En revanche, nous verrons que dans le cas d'un espace vectoriel de dimension infinie, il peut y avoir de nombreuses différences entre ces trois topologies.
+
+\begin{Rem}
+Sur $E\dual$, la topologie $\pweak{E}$ est plus faible que la topologie $\weak{E\dual}$. En effet, tous les voisinages utilisés pour définir la topologie $\pweak{E}$ sont de la forme
+\begin{align*}
+V_{\varepsilon, x_1,...,x_n}(x_0\dual)
+&= \{x\dual\in E\dual~|~\forall k\in\{1,...,n\}, \abs{(x\dual-x_0\dual)(x_k)}<\varepsilon\} \\
+&= \{x\dual\in E\dual~|~\forall k\in\{1,...,n\}, \abs{ev_{x_k}(x\dual-x_0\dual)}<\varepsilon\} \\
+&= V_{\varepsilon, ev_{x_1},...,ev_{x_n}}(x_0\dual)
+\end{align*}
+qui sont tous des voisinages pour $\weak{E\dual}$.
+\end{Rem}
+
+\begin{Prop}\label{contiforteimpliquefaible}
+Soient $E$, $F$ deux espaces vectoriels normés et $T:E\maps F$ une application linéaire continue. Alors $T:(E,\weak{E}\maps(F,\weak{F})$ est continue.
+\end{Prop}
+\begin{proof}
+Soient $x_0\in E$ et un ouvert faible contenant $T(x_0)$ de la forme $V_{\varepsilon, x_1\dual,...,x_n\dual}(T(x_0))$. Puisque $T$ est fortement continue, les applications $x\dual\circ T:E\maps\mathbb{K}$ sont fortement continues. Par conséquent
+\[
+\inv{T}(V_{\varepsilon, x_1\dual,...,x_n\dual}(T(x_0))) =
+\{x\in E~|~\forall k\in\{1,...,n\}, \abs{x_k\dual(T(x)-T(x_0))}<\varepsilon\} =
+V_{\varepsilon, x_1\dual\circ T,...,x_n\dual\circ T}(x_0)
+\]
+est bien un ouvert faible de $E$.
+\end{proof}
+
+\begin{Prop}\label{topowsepare}
+Les topologies $\weak{E}$ et $\pweak{E}$ sont séparées.
+\end{Prop}
+\begin{proof}
+On commence par $\weak{E}$. Soient $x\neq y\in E$. Par le théorème de Hahn-Banach (\ref{HBF}), on a $x\dual\in E\dual$ tel que $x\dual(x-y)=\norme{x-y}>0$. Alors les voisinages de $x$ et de $y$ sont ceux définis par $\varepsilon=\frac{\norme{x-y}}{3}$, $n=1$ et $x_1\dual = x\dual$.
+On finit par $\pweak{E}$. Soient $x\dual\neq y\dual\in E\dual$. Puisque $x\dual\neq y\dual$, il existe $x\in E$ tel que $(x\dual-y\dual)(x)>0$. On conclut en prenant $\varepsilon=\frac{(x\dual-y\dual)(x)}{3}>0$, $n=1$, $x_1=x$ pour définir les voisinages de $x\dual$ et de $y\dual$.\\
+\end{proof}
+
+\begin{Prop}\label{topownonborne}
+Si $E$ est un espace vectoriel normé de dimension infinie, alors aucun voisinage des topologies $\weak{E}$ et $\pweak{E}$ n'est borné pour la topologie de la norme.
+\end{Prop}
+\begin{proof}
+Soient $\varepsilon>0,n\in\mathbb{N}_0$ et $x_1\dual,...,x_n\dual\in E\dual$. On a que $\codim(\ker(x_k\dual))\leqslant 1, \forall k\in\{1,...,n\}$. Par conséquent, $\dim\left(\bigcap\limits_{k=1}^n \ker(x_k\dual)\right)=+\infty$, on peut donc trouver, quelque soit $\alpha>0$, $x\in E$ tel que $\norme{x}=\alpha$ et $x_k\dual(x)=0$ pour tout $k\in\{1,...,n\}$, c'est-à-dire que $x\in V_{\varepsilon, x_1\dual,...,x_n\dual}(0)$. Par un raisonnement identique, on obtient le même résultat pour la topologie préfaible.
+\end{proof}
+
+\begin{Corol}\label{spheredenseboulevide}
+Pour les topologies faible et préfaible en dimension infinie, les sphères sont denses dans les boules, et les boules sont d'intérieur vide.
+\end{Corol}
+\begin{proof}
+On le démontre pour des boules et des sphères centrées en 0 et de rayon 1.
+
+Soient $x\in B(E)$ et $V_x$ un voisinage faible de $x$. Ce voisinage n'est pas borné pour la norme, donc il contient nécessairement un point $y\in E$ tel que $\norme{y}=1$, d'où $V_x\cap S(E)\neq\emptyset$. Ceci implique que $\adh{S(E)}\supseteq B(E)$.
+
+Soient $x\in E$ et $V_x$ un voisinage faible de $x$. Le voisinage n'étant pas borné pour la norme, il n'est pas inclu dans $B(E)$, et donc $x$ n'est pas dans l'intérieur de $B(E)$.
+
+Pour la topologie préfaible, tous ces arguments sont valables.
+\end{proof}
+
+\begin{Rem}
+En fait, c'est un peu plus fort. On peut appliquer le même raisonnement à tout sous-ensemble de $B(E)$, on en déduit que tout ensemble borné pour la norme est d'intérieur vide pour les topologies faible et préfaible. De plus pour la topologie faible, toutes les adhérences de sphères sont des boules fermées pour la norme. Ceci résulte du théorème suivant:
+\end{Rem}
+
+\begin{Thm}[Mazur]\label{mazur}
+Soit $C\subseteq E$ un convexe. Alors
+\[C\text{ est fermé pour }\norme{.}\ssi C\text{ est fermé pour }\weak{E}\]
+\end{Thm}
+
+\begin{Rem}Le fait de considérer un convexe est indispensable pour garantir l'équivalence, puisqu'on vient de voir que la sphère unité est dense dans la boule unité (voir la proposition \ref{spheredenseboulevide})). Par conséquent, cette sphère, bien que fermée pour la norme, n'est pas fermée pour la topologie faible.\end{Rem}
+
+\begin{Rem}La même équivalence, où l'on remplace les fermés par des ouverts, n'est vraie qu'en dimension finie. Ceci est une conséquence immédiate du fait qu'un voisinage faible ne peut être borné pour la norme qu'en dimension finie (voir la proposition (\ref{topownonborne})).\end{Rem}
+
+On est en droit de se demander si le théorème de Mazur vaut aussi pour la topologie préfaible, quand celle-ci est définie. Le lemme suivant répond par la négative:
+
+\begin{Lemme}[Goldstine]\label{goldstine}
+Pour $\pweak{E\dual}$, $i(B(E))$ est dense dans $B(E\bidual)$.
+\end{Lemme}
+\begin{Rem}
+Si $E$ est réflexif, la conclusion est évidente, puisque $i(B(E))=B(E\bidual)$. Dans le cas d'un espace non réflexif, ce lemme fournit un bel exemple de fermé convexe fort qui n'est pas fermé préfaible.
+\end{Rem}
+\begin{proof}
+Soient $x\bidual\in B(E\bidual)$ et $V$ un voisinage de $x\bidual$. On peut supposer qu'il est de la forme $V_{\varepsilon, x_1\dual,...,x_n\dual}(x\bidual)$. On pose $\alpha=(\alpha_1,...,\alpha_n)=(x\bidual(x_1\dual),...,x\bidual(x_n\dual))$ et
+\[\varphi:E\maps\mathbb{K}^n:n\mapsto(x_1\dual(x),...,x_n\dual(x))=(ev_x(x_1\dual),...,ev_x(x_n\dual)).\]
+On démontrera deux résultats intermédiaires avant de conclure:
+\begin{itemize}
+\item $\forall\beta_1,...,\beta_n\in\mathbb{K}, \abs{\sum\limits_{k=1}^n \alpha_k\beta_k}\leqslant\norme{\sum\limits_{k=1}^n \beta_k x_k\dual}$
+\item $\alpha\in\conj{\varphi(B(E))}$
+\end{itemize}
+
+Soient $\beta_1,...,\beta_n\in\mathbb{K}$. On a que
+\[
+\abs{\sum_{k=1}^n \alpha_k\beta_k} =
+\abs{\sum_{k=1}^n \beta_k x\bidual(x_k\dual)} =
+\abs{x\bidual\left(\sum_{k=1}^n \beta_k x_k\dual\right)} \leqslant
+\norme{\sum_{k=1}^n \beta_k x_k\dual}
+\]
+
+Maintenant, supposons par l'absurde que $\alpha\notin\conj{\varphi(B(E))}$. Dans ce cas, par le théorème de Hahn-Banach (\ref{HBC}), on peut séparer $\{\alpha\}$ et $\conj{\varphi(B(E))}$. On obtient alors $y\dual\in(\mathbb{K}^n)\dual$ et $\gamma>0$ tel que pour tout $z\in \conj{\varphi(B(E))}$, $\abs{y\dual(z)}<\gamma<\abs{y\dual(\alpha)}$. En particulier, c'est aussi vrai pour les $\varphi(x)$, où $x\in B(E)$. Identifions $y\dual$ avec $(\beta_1,...,\beta_n)\in\mathbb{K}^n$, et prenons $x\in B(E)$. On a
+\[
+\begin{array}{rrrrr}
+\abs{y\dual(\varphi(x))} & < & \gamma & < & \abs{y\dual(\alpha)}\\
+\abs{\displaystyle\sum_{k=1}^n \beta_k x_k\dual(x)} & < & \gamma & < & \abs{\displaystyle\sum_{k=1}^n \alpha_k\beta_k}\\
+\text{par passage au supremum}\\
+\norme{\displaystyle\sum_{k=1}^n \beta_k x_k\dual} & \leqslant & \gamma & < & \abs{\displaystyle\sum_{k=1}^n \alpha_k\beta_k}\\
+\end{array}
+\]
+Or, on vient de démontrer que $\norme{\sum\limits_{k=1}^n \beta_k x_k\dual}<\abs{\sum\limits_{k=1}^n \alpha_k\beta_k}\leqslant\norme{\sum\limits_{k=1}^n \beta_k x_k\dual}$, ce qui est absurde.
+
+On a par conséquent que $\alpha\in\conj{\varphi(B(E))}$. Dans ce cas, il existe une suite $(x_m)_{m\in\mathbb{N}}$ à valeurs dans $B(E)$ telle que $\varphi(x_m)\rightarrow\alpha$, c'est à dire que $\abs{\varphi(x_m)-\alpha}\rightarrow 0$. Puisque les normes sont équivalentes, c'est vrai pour la norme infinie, on obtient donc que $\abs{x_k\dual(x_m)-x\bidual(x_k\dual)}\rightarrow 0$, quelque soit $k\in\{1,...,n\}$. On en déduit alors qu'il existe $N\in\mathbb{N}$ tel que $\abs{ev_{x_N^{ }}(x_k\dual)-x\bidual(x_k\dual)}<\varepsilon$ quelque soit $k\in\{1,...,n\}$, et on a $ev_{x_N^{ }}\in V_{\varepsilon, x_1\dual,...,x_n\dual}(x\bidual)$, c'est-à-dire que $i(B(E))$ est dense dans $B(E\bidual)$ pour $\pweak{E\dual}$.
+\end{proof}
+
+

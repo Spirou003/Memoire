@@ -1,0 +1,44 @@
+\chapter{Nouvelles topologies}
+
+On va s'arrêter un moment afin d'étudier certaines topologies particulières que l'on peut mettre sur un espace vectoriel normé. Ces topologies sont très particulières et leurs propriétés différent plus ou moins fortement de la topologie de la norme. Puisque ces topologies sont indispensables pour l'étude des espaces réflexifs, il est bon d'en apprendre davantage sur celles-ci avant d'aller plus loin.
+
+\section{Topologie faible}
+
+Soit $E$ un espace vectoriel normé. Soient $x_0\in E, \varepsilon>0, n\in\mathbb{N}_0, x_1\dual,...,x_n\dual\in E\dual$. On définit
+\[
+V_{\varepsilon, x_1\dual,...,x_n\dual}(x_0)=
+\{x\in E~|~\forall k\in\{1,...,n\}, \abs{x_k\dual(x-x_0)}<\varepsilon\}
+\]
+Le système fondamental de voisinages que l'on définit pour $x_0$ est
+\[
+\{V_{\varepsilon, x_1\dual,...,x_n\dual}(x_0)~|~\varepsilon>0, n\in\mathbb{N}_0, x_1\dual,...,x_n\dual\in E\dual\}
+\]
+En fait, c'est même un système fondamental de voisinages ouverts. En effet, si $x\in V_{\varepsilon, x_1\dual,...,x_n\dual}(x_0)$, alors avec $\delta=\min\limits_{k=1}^n\left(\varepsilon-\abs{x_k\dual(x-x_0)}\right)$, on a que $x\in V_{\delta, x_1\dual,...,x_n\dual}(x)\subseteq V_{\varepsilon, x_1\dual,...,x_n\dual}(x_0)$.
+
+Cette topologie sur $E$ est appelée topologie faible, et est notée $\weak{E}$ ou $\omega$.
+
+Pour cette topologie, une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $E$ converge vers $x\in E$ si et seulement si pour toute fonctionnelle $x\dual\in E\dual$, on a $x\dual(x_n)\rightarrow x\dual(x)$.
+
+\begin{center}\begin{tabular}{m{6cm}r}
+Voici un exemple de représentation d'un tel voisinage, dans le cas de l'espace $\mathbb{R}^2$ où on choisit trois application linéaires.
+&
+\raisebox{-0.6\height}{\includegraphics[scale=0.4]{topo/voisinagefaible.eps}}
+\end{tabular}\end{center}
+
+\section{Topologie préfaible}
+
+Soit $E$ un espace vectoriel normé. Soient $x_0\dual\in E\dual, \varepsilon>0, n\in\mathbb{N}_0, x_1,...,x_n\in E$. On définit
+\[
+V_{\varepsilon, x_1,...,x_n}(x_0\dual)=
+\{x\dual\in E\dual~|~\forall k\in\{1,...,n\}, \abs{(x\dual-x_0\dual)(x_k)}<\varepsilon\}
+\]
+Le système fondamental de voisinages que l'on définit pour $x_0\dual$ est
+\[
+\{V_{\varepsilon, x_1,...,x_n}(x_0\dual)~|~\varepsilon>0, n\in\mathbb{N}_0, x_1,...,x_n\in E\}
+\]
+En fait, c'est même un système fondamental de voisinages ouverts. On appliquera le même raisonnement que pour la topologie faible.
+
+Cette topologie sur $E\dual$ est appelée topologie préfaible, et est notée $\pweak{E}$ ou $\omega\star$.
+
+Pour cette topologie, une suite $(x_n\dual)_{n\in\mathbb{N}}$ à valeurs dans $E\dual$ converge vers $x\dual\in E\dual$ si et seulement si pour tout $x\in E$, on a $x_n\dual(x)\rightarrow x\dual(x)$.
+

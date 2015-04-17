@@ -1,0 +1,70 @@
+Ceci constitue déjà une grande catégorie d'espaces réflexifs. Il serait intéressant à ce stade de savoir s'il existe une certaine stabilité dans la classe des espace réflexifs, et si oui, de quelle nature. C'est ce à quoi on va s'affairer dans cette section.
+
+\begin{Def}
+Soient $E$ et $F$ deux espaces de Banach, et $T:E\maps F$ une application linéaire continue. L'ajointe de $T$ est notée $\adj{T}$ et définie par
+
+\[
+\begin{array}{lllll}
+\adj{T}&:&F\dual&\maps&E\dual\\
+&:&y\dual&\mapsto&y\dual\circ T
+\end{array}
+\]
+
+De plus, c'est une application linéaire continue et $\norme{\adj{T}}=\norme{T}$.
+\end{Def}
+
+\begin{Prop}\label{isoreflex}
+Soient $E$, $F$ deux espaces vectoriels normés isomorphes via $T:E\maps F$. Alors
+
+\begin{enumerate}[(1)]
+\item L'application $\adj{T}$ est un isomorphisme
+\item Si $E$ est réflexif, alors $F$ aussi
+\end{enumerate}
+\end{Prop}
+\begin{proof}
+~\\
+(1)
+
+Puisque $\adj{T}$ est continue, il suffit de montrer que c'est une bijection et le théorème des isomorphismes de Banach nous donnera la continuité de l'inverse.
+
+$\adj{T}$ est injective:\\
+%
+Soit $y\dual\in F\dual$ tel que $\adj{T}(y\dual)=0$. On a que $y\dual(T(x))=0$ quelque soit $x\in E$. Puisque $T$ est bijective, c'est équivalent à dire que $y\dual(y)=0$ quelque soit $y\in F$, c'est-à-dire que $y\dual=0$.\newline
+
+$\adj{T}$ est surjective:
+
+Soit $x\dual\in E\dual$. On prend $y\dual=x\dual\circ\inv{T}\in F\dual$. Soit $x\in E$, alors
+
+\[
+T\dual(y\dual)(x)
+=
+y\dual(T(x))
+=
+x\dual(\inv{T}(T(x)))
+=
+x\dual(x)
+\]
+
+D'où $x\dual=\adj{T}(y\dual)$.\newline
+
+(2)\\
+%
+Soit $y\bidual\in F\bidual$. Puisque $T$ est un isomorphisme, on sait par (1) que $\biadj{T}$ est également un isomorphisme. De plus, $E$ est réflexif, par conséquent il existe $x\in E$ tel que $\biadj{T}(ev_x) = y\bidual$. Soit $y\dual\in F\dual$. On a
+
+\[
+y\bidual(y\dual)
+=
+ev_x(\adj{T}(y\dual))
+=
+(\adj{T}(y\dual))(x)
+=
+y\dual(T(x))
+=
+ev_{T(x)}(y\dual)
+\]
+
+D'où $y\bidual=ev_{T(x)}$, donc $F$ est réflexif.
+%\raisebox{-0.6\height}{\includegraphics[scale=1]{rappels/diagrammeisodual.eps}}
+\end{proof}
+
+

@@ -1,0 +1,178 @@
+\section{Base contractante, base complète, caractérisations du bidual}
+
+\begin{Def}
+Soit $E$ un espace de Banach contenant une base de Schauder $(e_n)_{n\in\mathbb{N}}$.\\
+On dit que cette base est complète (boundedly-complete) si toute suite de scalaires $(a_n)_{n\in\mathbb{N}}$ telle que $\sup\limits_{N\in\mathbb{N}}\norme{\sum\limits_{n=0}^N a_n e_n}<+\infty$ rend la série $\sum\limits_{n\in\mathbb{N}} a_n e_n$ convergente.\\
+On dit que cette base est contractante (shrinking) si quelque soit $x\dual\in E\dual$,
+\[
+\sup\left\{
+\abs{x\dual(x)}
+\left|
+\norme{x}=1\text{ et }
+x=\sum_{j\geqslant n}x_j e_j,\text{ pour }(a_j)_{j\geqslant n}\in\mathbb{K}^\mathbb{N}
+\right.
+\right\}
+\underset{n\rightarrow+\infty}{\longrightarrow}0.
+\]
+\end{Def}
+\begin{Rem}
+La définition d'une base contractante peut s'écrire de manière plus concise:
+\[
+\forall x\dual\in E\dual,
+\sup\left\{
+\abs{x\dual(x)}
+\text{ tel que }
+\norme{x}=1\text{ et }P_n(x)=0
+\right\}
+\underset{n\rightarrow+\infty}{\longrightarrow}0.
+\]
+\end{Rem}
+
+\subsection*{Exemples}
+\subsubsection*{Base de Schauder contractante, non complète}
+On prend la base canonique dans $c_0$. Elle est contractante, et n'est pas complète. Pour démontrer la première assertion, on procède par l'absurde.
+
+Supposons que la base ne soit pas contractante. Il existe alors $x\dual\in l^1$ et $\varepsilon>0$ tels que pour tout $n\in\mathbb{N}$, il existe $N\geqslant n$ tel que
+\[
+\sup\left\{
+\abs{x\dual(x)}
+\left|
+\norme{x}=1\text{ et }
+x=\sum_{j\geqslant N}x_j e_j,\text{ pour }(a_j)_{j\geqslant n}\in\mathbb{K}^\mathbb{N}
+\right.
+\right\}
+>\varepsilon
+\]
+Puisque $x\dual\in l^1$, $x\dual=(x\dual_n)_{n\in\mathbb{N}}$ et il existe $n_0\in\mathbb{N}$ tel que $\sum\limits_{n\geqslant n_0}\abs{x\dual_n}<\varepsilon$.
+
+Puisque la base n'est pas contractante, il existe $N\geqslant n_0$ et $x\in S(c_0)$ tel que $x=\sum\limits_{n\geqslant N}x_n e_n$ et $\abs{x\dual(x)}>\varepsilon$. Cependant,
+\[
+\abs{x\dual(x)}
+=
+\abs{\sum_{n\geqslant N}x\dual_n x_n}
+\leqslant
+\sum_{n\geqslant N}\abs{x\dual_n}
+\leqslant
+\varepsilon
+\]
+Ce qui est absurde.
+
+Montrons qu'elle n'est pas complète. Prenons comme suite de scalaires la suite constante 1. Alors, pour tout $N\in\mathbb{N}$,
+$\sum\limits_{n=0}^N e_n\in S(c_0)$. Pourtant, la suite $\left(\sum\limits_{n=0}^N e_n\right)_{N\in\mathbb{N}}$ n'est pas de Cauchy, donc la base n'est pas complète.
+
+\subsubsection*{Base de Schauder complète, non contractante}
+On prend la base canonique dans $l^1$.
+
+Soit $(a_n)_{n\in\mathbb{N}}$ une suite de scalaires telle que $\sup\limits_{N\in\mathbb{N}}\norme{\sum\limits_{n=0}^N a_n e_n}<+\infty$. On a que
+\[
+\sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}
+=
+\sup_{N\in\mathbb{N}}\sum_{n=0}^N\abs{a_n}
+=
+\sum_{n\in\mathbb{N}}\abs{a_n}<+\infty
+\]
+Dans ce cas, la suite $(a_n)_{n\in\mathbb{N}}$ est un élément de $l^1$, et la suite des sommes partielles converge bien vers cet élément, puisque la base canonique est une base de Schauder de $l^1$.
+
+Soit $x\dual=(1,...,1,...)\in l^\infty$. Quelque soit $n\in\mathbb{N}_0$, le vecteur $e_n$ est de norme 1 et a une $(n-1)^\text{ième}$ projection qui est nulle. Puisque $x\dual(e_n)=1$, on en déduit que la base n'est pas contractante.
+
+\subsubsection*{Base de Schauder non contractante, non complète}
+Dans l'espace $c_0$, on prend la base $(s_n)_{n\in\mathbb{N}} = \left(\sum\limits_{k=0}^n e_k\right)_{n\in\mathbb{N}}$.
+
+D'une part elle n'est pas contractante car $f(s_n)=1$ quelque soit $n\in\mathbb{N}$, où $f:(c_0\maps\mathbb{K}:x\mapsto x_0)$ est la première fonctionnelle coordonnée associée à la base $(e_n)_{n\in\mathbb{N}}$.
+
+D'autre part elle n'est pas complète car en prenant pour suite de scalaires la suite $((-1)^n)_{n\in\mathbb{N}}$, on construit une suite d'éléments de norme 1, qui n'est pas de Cauchy.\newline
+
+Nous ne donnons pas d'exemple de base de Schauder contractante et complète, car l'existence d'une telle base fera l'objet d'un théorème.
+
+Ceci fait, donnons quelques caractérisations de ces deux nouveaux types de base. On verra, au travers celles-ci, que les nouveaux types de bases considérés sont très puissants.
+
+\begin{Prop}\label{contractantessifonctionnelleschauder}
+Dans un espace de Banach, si une base de Schauder est contractante, alors la suite de fonctionnelles coordonnées associée est une base de Schauder, et inversément.
+\end{Prop}
+\begin{proof}
+Soient $(e_n)_{n\in\mathbb{N}}$ une base de Schauder de $E$, et $(f_n)_{n\in\mathbb{N}}$ les fonctionnelles coordonnées qui lui sont associées. Posons $K$ la constante de base de $(e_n)_{n\in\mathbb{N}}$.
+
+Supposons que $(e_n)_{n\in\mathbb{N}}$ soit contractante. Soient $x\dual\in E\dual$ et $x=\sum\limits_{n\in\mathbb{N}}x_n e_n\in E$. On a
+\[
+x\dual(x)
+=
+x\dual\left(\sum_{n\in\mathbb{N}}x_n e_n\right)
+=
+\sum_{n\in\mathbb{N}}x_n x\dual(e_n)
+=
+\sum_{n\in\mathbb{N}}f_n(x) x\dual(e_n)
+\]
+Une décomposition raisonnable pour $x\dual$ est alors $\sum\limits_{n\in\mathbb{N}}x\dual(e_n)f_n$. Montrons que cette série est convergente (et donc converge bien vers $x\dual$).
+
+Soit $\varepsilon>0$. La base $(e_n)_{n\in\mathbb{N}}$ étant contractante, il existe $n_0\in\mathbb{N}$ tel que pour tout $n\geqslant n_0$, on a
+\[
+\sup\left\{
+\abs{x\dual(x)}
+\text{ tel que }
+\norme{x}=1\text{ et }P_n(x)=0
+\right\}<\varepsilon
+\]
+Soient $n>m\geqslant n_0$, et $\norme{x}=1$. Si $\sum\limits_{k=m+1}^n x\dual(e_k)f_k(x)=0$, alors $\abs{x\dual(x)}<\varepsilon$. Si à l'inverse $\sum\limits_{k=m+1}^n x\dual(e_k)f_k(x)\neq 0$, on a que
+\[
+\begin{array}{l}
+\displaystyle
+\abs{\sum_{k=m+1}^n x\dual(e_k)f_k(x)}
+=
+\abs{x\dual\left(\sum_{k=m+1}^n x_k e_k\right)}
+=
+\abs{x\dual\left(P_n(x)-P_m(x)\right)}
+\\ \displaystyle
+=
+\abs{x\dual\left(\frac{P_n(x)-P_m(x)}{\norme{P_n(x)-P_m(x)}}\right)}\norme{P_n(x)-P_m(x)}
+\leqslant
+2K\abs{x\dual\left(\frac{P_n(x)-P_m(x)}{\norme{P_n(x)-P_m(x)}}\right)}
+\leqslant
+2K\varepsilon
+\end{array}
+\]
+Par passage au supremum sur $x$, on obtient que $\norme{\sum\limits_{k=m+1}^n x\dual(e_k)f_k}<2K\varepsilon$, la série est donc convergente. Montrons qu'il n'y a pas d'autre décomposition que celle que l'on vient d'écrire. Soit une deuxième décomposition $\sum\limits_{n\in\mathbb{N}}y_n f_n$ de $x\dual$. Soit $n\in\mathbb{N}$, on a
+\[
+0=\left(\sum_{k\in\mathbb{N}}(y_k-x\dual(e_k))f_k\right)(e_n)=y_n-x\dual(e_n)
+\]
+
+Maintenant, supposons que la suite de fonctionnelles coordonnées soit une base de Schauder. Soient $x\dual\in E\dual$ et $\varepsilon>0$. Alors, $\sum\limits_{n\in\mathbb{N}}x\dual(e_n)f_n=x\dual$, il existe $n_0\in\mathbb{N}_0$ tel que pour tout $n\geqslant n_0$, $\norme{\sum\limits_{j\geqslant n}x\dual(e_j)f_j}<\varepsilon$. Soient $n\geqslant n_0$ et $x\in E$ tel que $\norme{x}=1$ et $P_n(x)=0$, on a que
+\[
+\abs{x\dual(x)}
+=
+\abs{x\dual\left(\sum_{j\in\mathbb{N}}x_j e_j\right)}
+=
+\abs{\sum_{j\in\mathbb{N}}x\dual(e_j)f_j(x)}
+=
+\abs{\sum_{j\geqslant n}x\dual(e_j)f_j(x)}
+\leqslant
+\norme{\sum_{j\geqslant n}x\dual(e_j)f_j}
+<
+\varepsilon
+\]
+Par passage au supremum sur $x$, on déduit que la base $(e_n)_{n\in\mathbb{N}}$ est contractante.
+\end{proof}
+\begin{Rem}
+Dans la démonstration, on a pu voir que si la suite de fonctionnelles coordonnées $(f_n)_{n\in\mathbb{N}}$ est une base de Schauder, alors toute fonctionnelle $x\dual$ s'écrit
+\[
+x\dual=\sum_{n\in\mathbb{N}}x\dual(e_n)f_n
+\]
+\end{Rem}
+
+\begin{Rem}
+On garde les notations de la propriété, et on suppose que $(e_n)_{n\in\mathbb{N}}$ est contractante. Soient $n\in\mathbb{N}$, $x\in E$ et $x\dual\in E\dual$. On a
+\[
+\adj{P_n}(x\dual)(x)
+=
+x\dual(P_n(x))
+=
+x\dual\left(\sum_{k=0}^n x_k e_k\right)
+=
+\sum_{k=0}^n x_k x\dual(e_k)
+=
+\sum_{k=0}^n f_k(x) x\dual(e_k)
+\]
+Si on note $P_n\dual$ la $n^\text{ième}$ projection associée à $(f_n)_{n\in\mathbb{N}}$, alors on a que $\adj{P_n}=P_n\dual$. On en déduit, puisque $\norme{\adj{P_n}}=\norme{P_n}$, que les bases $(e_n)_{n\in\mathbb{N}}$ et $(f_n)_{n\in\mathbb{N}}$ ont la même constante de base.
+\end{Rem}
+
+\begin{Rem}\end{Rem}
+Toujours sous les mêmes hypothèses, on vérifie aisément que les fonctionnelles coordonnées associées à $(f_n)_{n\in\mathbb{N}}$ sont égales à $(ev_{e_n})_{n\in\mathbb{N}}$. De plus, si la base $(f_n)_{n\in\mathbb{N}}$ est contractante, alors l'espace est réflexif.

@@ -1,0 +1,77 @@
+\begin{Prop}\label{equivreflexif}
+Les assertions suivantes sont équivalentes:
+\begin{enumerate}[(1)]
+\item $E$ est réflexif
+\item $E\dual$ est réflexif
+\item tout sous-espace vectoriel fermé de $E$ est réflexif
+\end{enumerate}
+\end{Prop}
+\begin{proof}
+(1) $\Rightarrow$ (2)\\
+Notons $i$ l'injection canonique de $E$, et $j$ l'injection canonique de $E\dual$. On veut montrer que $j$ est surjectif. Puisqu'on a l'injectivité, cela revient à démontrer que $j$ est bijective, et donc de manière équivalente qu'il admet un inverse. Pour ce faire, on va montrer que $\adj{i}$ est l'inverse de $j$. Pour cela, il suffira de vérifier que \hbox{$j\circ\adj{i}=Id_{E\tridual}$}.
+
+Soient $x\tridual\in E\tridual$ et $x\bidual\in E\bidual$. Puisque $E$ est réflexif, il existe $x\in E$ tel que $i(x)=x\bidual$. On calcule
+\[
+j(\adj{i}(x\tridual))(x\bidual)=
+x\bidual(\adj{i}(x\tridual))=
+ev_x(\adj{i}(x\tridual))=
+\adj{i}(x\tridual)(x)=
+x\tridual(i(x))=
+x\tridual(x\bidual)
+\]
+Qui se traduit par
+\[
+\begin{array}{l}
+\forall x\tridual\in E\tridual, \forall x\bidual\in E\bidual, j(\adj{i}(x\tridual))(x\bidual)=x\tridual(x\bidual)\\
+\Rightarrow \forall x\tridual\in E\tridual, j(\adj{i}(x\tridual))=x\tridual\\
+\phantom{\Rightarrow} \Rightarrow j\circ\adj{i}=Id_{E\tridual}\\
+\end{array}
+\]
+
+Par conséquent, $\adj{i}$ est bien l'inverse de $j$, donc $j$ est surjectif et $E\dual$ réflexif.\newline
+
+(1) $\Rightarrow$ (3)\\
+Puisque $F$ est fermé, l'application linéaire
+\[
+\begin{array}{lllll}
+\pi&:&E\dual&\maps&F\dual\\
+&:&x\dual&\mapsto&\restrictions{x\dual}{F}
+\end{array}
+\]
+est bien définie et continue. Le théorème de Hahn-Banach (\ref{HBA}) dit exactement que cette application est surjective:
+
+Soit $y\bidual\in F\bidual$. Alors $y\bidual\circ\pi\in E\bidual$. Comme $E$ est réflexif, il existe $x\in E$ tel que $ev_x=y\bidual\circ\pi$. Pour montrer que $x\in F$, on procède par l'absurde. Dans ce cas, le théorème de Hahn-Banach (\ref{HBA}) affirme qu'il existe une fonctionnelle continue $x\dual\in E\dual$ qui s'annule sur $F$ mais pas en $x$. Alors, on a que
+\[
+ev_x(x\dual)
+=
+y\bidual(\pi(x\dual))
+=
+0
+\]
+Ce qui est absurde. Par conséquent, $x\in F$. Alors quelque soit $x\dual\in E\dual$, on a
+\[
+y\bidual(\pi(x\dual))
+=
+(y\bidual\circ\pi)(x\dual)
+=
+x\dual(x)
+=
+(\pi(x\dual))(x)
+\]
+
+Puisque $\pi$ est surjective, cela revient à dire que $y\bidual(y\dual)=y\dual(x)$, et ce quelque soit $y\dual\in F\dual$. Donc, $ev_x=y\bidual$.\newline
+
+(2) $\Rightarrow$ (1)\newline
+
+On sait que $E\dual$ est réflexif, donc $E\bidual$ aussi, donc tout sous-espace fermé de $E\bidual$ aussi. En particulier, c'est valable pour $i(E)$ qui est isomorphe à $E$, donc $E$ est réflexif.
+
+(3) $\Rightarrow$ (1) est évident.
+\end{proof}
+
+\begin{Prop}
+Soient $E$ un espace réflexif et $F$ un sous-espace vectoriel fermé de $E$. Alors, l'espace quotient $E/F$ est réflexif.
+\end{Prop}
+\begin{proof}
+Par la proposition (\ref{equivreflexif}), tout sous-espace fermé de $E\dual$ est réflexif, en particulier $F^\perp$ (voir (\ref{espaceortho})). Par la proposition (\ref{ForthoisoEsurF}), le dual de $E/F$ est isométrique à $F^\perp$, et est réflexif par (\ref{isoreflex}). On conclut avec (\ref{equivreflexif}).
+\end{proof}
+

@@ -1,0 +1,227 @@
+\begin{Thm}\label{incondcompleteco}
+Soit un espace de Banach $E$ contenant une suite basique inconditionnelle. Les assertions suivantes sont équivalentes:
+\begin{enumerate}[(1)]
+\item il existe une suite basique inconditionnelle non complète dans $E$
+\item $E$ contient un sous-espace isomorphe à $c_0$
+\end{enumerate}
+\end{Thm}
+
+\begin{proof}
+(1) $\Rightarrow$ (2)\\
+Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non complète de $E$. On pose $E_0=\SpanAdh((e_n)_{n\in\mathbb{N}})$. On équipe $E_0$ de la norme équivalente $\triplenorme{.}$ décrite par le lemme (\ref{constantebaseincondnorme}). Puisque $(e_n)_{n\in\mathbb{N}}$ n'est pas complète, il existe une suite de scalaires $(a_n)_{n\in\mathbb{N}}$ pour laquelle
+
+\[
+\sup_{n\in\mathbb{N}}\triplenorme{\sum_{k=0}^n a_k e_k}\leqslant 1
+~~~~ \text{et} ~~~~
+\left(\sum_{k=0}^n a_k e_k\right)_{n\in\mathbb{N}} \text{ ne converge pas}
+\]
+
+Par le (2) du lemme (\ref{constantebaseincondnorme}), on a également que
+
+\begin{equation}
+\forall\emptyset\neq A\subseteq\mathbb{N} \text{ fini}, \triplenorme{\sum_{n\in A} a_n e_n}\leqslant 1\tag{*}
+\end{equation}
+
+Puisque la série n'est pas convergente, il existe $\theta>0$ tel que pour tout $n\in\mathbb{N}$, on trouve $N\geqslant M\geqslant n$ tels que
+
+\[
+\triplenorme{\sum_{k=M}^N a_k e_k}\geqslant\theta
+\]
+
+Prenons $n=0$, on obtient $n_0\geqslant m_0\geqslant 0$ tels que
+
+\[
+\triplenorme{\sum_{k=m_0}^{n_0} a_k e_k}\geqslant\theta
+\]
+
+On prend $n=n_0+1$, on obtient $n_1\geqslant m_1\geqslant n_0+1$ qui vérifient une même propriété. En reproduisant ce procédé, on construit deux suites de naturels $(n_k)_{k\in\mathbb{N}}$ et $(m_k)_{k\in\mathbb{N}}$ telles que
+
+\[
+m_0\leqslant n_0<m_1\leqslant n_1<...m_k\leqslant n_k<m_{k+1}...
+~~~~ \text{et} ~~~~
+1\geqslant\triplenorme{\sum_{l=m_k}^{n_k}a_l e_l}\geqslant\theta ~~\text{pour tout }k\in\mathbb{N}
+\]
+
+Posons $f_k=\sum\limits_{l=m_k}^{n_k}a_l e_l$, pour $k\in\mathbb{N}$. Soient $A\subseteq\mathbb{N}$ fini non vide et $(b_n)_{n\in\mathbb{N}}$ une suite de scalaires. Alors d'une part par (*) et le (3) du lemme (\ref{constantebaseincondnorme}) on a que
+
+\[
+\triplenorme{\sum_{n\in A}b_n f_n}
+=
+\triplenorme{\sum_{n\in A}\abs{b_n}f_n}
+\leqslant
+\max_{n\in A}\abs{b_n}\triplenorme{\sum_{n\in A}f_n}
+\leqslant
+\max_{n\in A}\abs{b_n}
+\]
+
+D'autre part, par définition de $\triplenorme{.}$ et des $(f_n)_{n\in\mathbb{N}}$, on a également
+
+\[
+\triplenorme{\sum_{n\in A}b_n f_n}
+\geqslant
+\max_{n\in A}\triplenorme{b_n f_n}
+\geqslant
+\theta\max_{n\in A}\triplenorme{b_n}
+\]
+
+On en déduit alors que pour toute série convergente $\sum\limits_{n\in\mathbb{N}}b_n f_n$, on a
+
+\[
+\theta\sup_{n\in\mathbb{N}}\abs{b_n}
+\leqslant
+\triplenorme{\sum_{n\in\mathbb{N}}b_n f_n}
+\leqslant
+\sup_{n\in\mathbb{N}}\abs{b_n}
+\]
+
+Posons $F=\SpanAdh((f_n)_{n\in\mathbb{N}})$. Soit $f\in F$, supposons que la série $\sum\limits_{n\in\mathbb{N}}b_n f_n$ converge vers $f$. On va montrer que $b_n\rightarrow 0$. Soit $\varepsilon>0$. Puisque la série converge, avec $\varepsilon\theta$ on obtient $n_0$ tel que pour tout $n\geqslant m\geqslant n_0$, on a
+
+\[
+\triplenorme{\sum_{k=m}^n b_k f_k}
+<
+\varepsilon\theta
+\]
+
+Alors, on a également pour tout $m\leqslant k\leqslant n$ que
+
+\[
+\abs{b_k}
+\leqslant
+\max_{k=m}^n\abs{b_k}
+\leqslant
+\frac{1}{\theta}\triplenorme{\sum_{k=m}^n b_k f_k}
+<
+\varepsilon
+\]
+
+Donc $(b_n)_{n\in\mathbb{N}}\in c_0$. Alors, la correspondance $\sum\limits_{n\in\mathbb{N}}b_n f_n\longleftrightarrow(b_n)_{n\in\mathbb{N}}$ décrit un isomorphisme de $F$ vers $c_0$.
+
+(2) $\Rightarrow$ (1)\\
+Notons $F$ le sous-espace de $E$ qui est isomorphe à $c_0$, et notons $T:c_0\maps F$ l'isomorphisme. La base canonique de l'espace $c_0$ étant une base de Schauder inconditionnelle non complète, la suite $(T(e_n))_{n\in\mathbb{N}}$ est une base de Schauder inconditionnelle non complète de $F$, et donc est une suite basique inconditionnelle non complète de $E$.
+\end{proof}
+
+\begin{Thm}\label{incondcontractantelun}
+Soit un espace de Banach contenant une suite basique inconditionnelle. Les assertions suivantes sont équivalentes:
+\begin{enumerate}[(1)]
+\item il existe une suite basique inconditionnelle non contractante dans $E$
+\item $E$ contient un sous-espace isomorphe à $l^1$
+\end{enumerate}
+\end{Thm}
+
+\begin{proof}
+(1) $\Rightarrow$ (2)\newline
+
+Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non contractante de $E$. On pose $E_0=\SpanAdh((e_n)_{n\in\mathbb{N}})$. On équipe $E_0$ de la norme équivalente $\triplenorme{.}$ décrite par le lemme (\ref{constantebaseincondnorme}). Puisque la suite $(e_n)_{n\in\mathbb{N}}$ n'est pas contractante, il existe $x\dual\in S(E\dual)$ et $\theta>0$ tels que pour tout $n\in\mathbb{N}$, on trouve $N\geqslant n$ vérifiant
+
+\[
+\sup
+\left\{
+\abs{x\dual(x)}
+\left|
+\triplenorme{x}=1,x=\sum_{k\geqslant N}x_k e_k\text{ et }(x_k)_{k\in\mathbb{N}}\in\mathbb{K}^\mathbb{N}
+\right.
+\right\}
+>
+\theta
+\]
+
+En prenant $n=0$, on obtient $n_0\geqslant 0$ et on peut trouver $x\in S(E)$ tel que
+
+\[
+\abs{x\dual(x)}>\theta
+~~~~\text{et}~~~~
+x=\sum_{k\geqslant n_0}x_k e_k 
+~~~ \text{ avec }
+(x_k)_{k\in\mathbb{N}}\text{ une suite de scalaires}
+\]
+
+Puisque la série est convergente, il existe $N\geqslant n_0$ tel que
+
+\[
+\frac{1}{2}\theta
+\leqslant
+\abs{x\dual\left(\sum_{k=n_0}^N x_k e_k\right)}
+\leqslant
+\frac{3}{2}\theta
+~~~~\text{et}~~~~
+\frac{1}{2}
+\leqslant
+\triplenorme{\sum_{k=n_0}^N x_k e_k}
+\leqslant
+\frac{3}{2}
+\]
+
+Il existe alors un scalaire par lequel on peut multiplier cette somme partielle afin d'obtenir des scalaires $y_{n_0},...,y_N$ tels que
+
+\[
+\frac{1}{3}\theta
+\leqslant
+x\dual\left(\sum_{k=n_0}^N y_k e_k\right)
+\leqslant
+3\theta
+~~~~\text{et}~~~~
+\triplenorme{\sum_{k=n_0}^N y_k e_k} = 1
+\]
+
+On note $f_0$ cette nouvelle somme partielle. On reproduit le processus en prenant $n=N+1$, on obtient $f_1\in E_0$, $M>N+1$ et des scalaires $y_{N+1},...,y_M$ qui satisfont aux propriétés
+
+\[
+\frac{1}{3}\theta
+\leqslant
+x\dual\left(\sum_{k=N+1}^M y_k e_k\right)
+\leqslant
+3\theta
+~~~~~~~~
+\triplenorme{\sum_{k=N+1}^M y_k e_k} = 1
+~~~~\text{et}~~~~
+f_1=\sum_{k=N+1}^M y_k e_k
+\]
+
+En itérant ce processus, on obtient une suite $(f_n)_{n\in\mathbb{N}}$ de vecteurs de norme 1 et d'image par $x\dual$ supérieure à $\frac{\theta}{3}$. Alors, quelque soient un ensemble fini non vide $A\subseteq\mathbb{N}$ et une suite de scalaires $(a_n)_{n\in\mathbb{N}}$, on a d'une part
+
+\[
+\triplenorme{\sum_{n\in A}a_n f_n}
+\leqslant
+\sum_{n\in A}\triplenorme{a_n f_n}
+=
+\sum_{n\in A}\abs{a_n}
+\]
+
+et d'autre part par le (3) du lemme (\ref{constantebaseincondnorme})
+
+\[
+\triplenorme{\sum_{n\in A}a_n f_n}
+=
+\triplenorme{\sum_{n\in A}\abs{a_n} f_n}
+\geqslant
+\abs{x\dual\left(\sum_{n\in A}\abs{a_n} f_n\right)}
+=
+x\dual\left(\sum_{n\in A}\abs{a_n} f_n\right)
+\geqslant
+\frac{\theta}{3}\sum_{n\in A}\abs{a_n}
+\]
+
+Par conséquent, si la série $\sum\limits_{n\in\mathbb{N}}a_n f_n$ converge, alors $(a_n)_{n\in\mathbb{N}}\in l^1$. Dans ce cas, la correspondance $\sum\limits_{n\in\mathbb{N}}a_n f_n\longleftrightarrow(a_n)_{n\in\mathbb{N}}\in l^1$ décrit un isomorphisme de $\SpanAdh((f_n)_{n\in\mathbb{N}})$ vers $l^1$.
+
+(2) $\Rightarrow$ (1)\\
+Notons $F$ le sous-espace de $E$ qui est isomorphe à $l^1$, et notons $T:l^1\maps F$ l'isomorphisme. La base canonique de l'espace $l^1$ étant une base de Schauder inconditionnelle non contractante, la suite $(T(e_n))_{n\in\mathbb{N}}$ est une base de Schauder inconditionnelle non contractante de $F$, et donc est une suite basique inconditionnelle non contractante de $E$.
+\end{proof}
+
+De ces deux théorèmes ainsi que du théorème de James (\ref{JamesSchauder}), on en déduit le théorème suivant:
+
+\begin{Thm}[James]\label{incondjames}
+Soit un espace de Banach contenant une base de Schauder inconditionnelle $(e_n)_{n\in\mathbb{N}}$. Les assertions suivantes sont équivalentes:
+\begin{enumerate}[(1)]
+\item $E$ est réflexif
+\item $E$ ne contient aucun sous-espace isomorphe à $c_0$ ou à $l^1$
+\end{enumerate}
+\end{Thm}
+
+\begin{proof}
+(1) $\Rightarrow$ (2)\\
+Puisque $E$ est réflexif, par la proposition (\ref{equivreflexif}) tout sous-espace de $E$ l'est aussi. Puisque ni $c_0$ ni $l^1$ n'est réflexif, aucun des deux ne peut être isomorphe à un sous-espace de $E$.
+
+(2) $\Rightarrow$ (1)\\
+Puisque $E$ ne contient aucun espace isomorphe à $c_0$, toutes ses bases de Schauder inconditionnelle sont complètes. De plus, $E$ ne contient aucun sous-espace isomorphe à $l^1$, ce qui implique que toutes ses bases de Schauder inconditionnelle soient contractantes. Par hypothèse, $E$ contient une base de Schauder inconditionnelle, elle est alors complète et contractante. On conclut avec le théorème (\ref{JamesSchauder}).
+\end{proof}
+

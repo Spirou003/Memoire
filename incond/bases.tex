@@ -1,0 +1,152 @@
+\section{Base de Schauder inconditionnelle}
+
+\begin{Def}
+Soit $(e_n)_{n\in\mathbb{N}}$ une suite de $E$. On dit que $(e_n)_{n\in\mathbb{N}}$ est une suite basique inconditionnelle si c'est une suite basique pour laquelle chaque série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$ est inconditionnellement convergente. Si de plus, $\SpanAdh((e_n)_{n\in\mathbb{N}})=E$, alors on dit que c'est une base de Schauder inconditionnelle.
+\end{Def}
+
+Comme conséquence immédiate de la proposition (\ref{convincondequiv}), on a le résultat suivant:
+
+\begin{Prop}\label{schauderincondequiv}
+Soit une suite basique $(e_n)_{n\in\mathbb{N}}$ de $E$. Alors, les assertions suivantes sont équivalentes:
+
+\begin{enumerate}[(1)]
+\item $(e_n)_{n\in\mathbb{N}}$ est une suite basique inconditionnelle
+%
+\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n=a$, et quelque soit $\varepsilon>0$, il existe $F_0\subset\mathbb{N}$ fini tel que pour tout ensemble fini $F_0\subseteq F\subset\mathbb{N}$, $\norme{a-\sum\limits_{n\in F}a_n e_n}<\varepsilon$
+%
+\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, on a $\forall\varepsilon>0,\exists n_0>0$ tel que $\forall F\subset\mathbb{N}$ fini, $\min(F)>n_0\Rightarrow\norme{\sum\limits_{n\in F}a_n e_n}<\varepsilon$
+%
+\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}y_n$ converge pour toute sous-suite $(y_n)_{n\in\mathbb{N}}$ de $(a_n e_n)_{n\in\mathbb{N}}$
+%
+\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}\varepsilon_n a_n e_n$ converge pour toute suite $(\varepsilon_n)_{n\in\mathbb{N}}$ à valeurs dans $\{-1,1\}$
+%
+\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}\lambda_n a_n e_n$ converge pour toute suite bornée de scalaires $(\lambda_n)_{n\in\mathbb{N}}$
+%
+\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}b_n e_n$ converge pour toute suite de scalaires $(b_n)_{n\in\mathbb{N}}$ majorée par $(a_n)_{n\in\mathbb{N}}$
+%
+\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, on a $\lim\limits_{n\rightarrow+\infty}\sup\limits_{x\dual\in B(E\dual)}\sum\limits_{k\geqslant n}\abs{x\dual(x_k)}=0$
+\end{enumerate}
+\end{Prop}
+
+\begin{Rem}
+La propriété (7) n'est qu'une réécriture de la propriété (6), dans le cas particulier d'une suite de scalaires bornée par 1.
+\end{Rem}
+
+\begin{Corol}
+La base canonique des espaces $c_0$ et $l^p$, pour $p\in[1,+\infty[$ est une base de Schauder inconditionnelle.
+\end{Corol}
+\begin{proof}En utilisant la propriété (5), c'est immédiat.\end{proof}
+
+\begin{Def}\label{constanteincond}
+Soit une suite $(e_n)_{n\in\mathbb{N}}$ de vecteurs de $E$. On dit que cette suite admet une constante de base inconditionnelle s'il existe $K>0$ tel que pour toute paire d'ensembles finis non vides $A\subseteq B\subseteq\mathbb{N}$ et pour toute suite de scalaires $(a_n)_{n\in\mathbb{N}}$, on a
+\[
+\norme{\sum_{n\in A}a_n e_n}\leqslant K\norme{\sum_{n\in B}a_n e_n}
+\]
+Si $K>0$ est la plus petite valeur vérifiant cette propriété, elle est appelée la constante de base inconditionnelle de $(e_n)_{n\in\mathbb{N}}$.
+\end{Def}
+
+\begin{Rem}
+La définition d'une constante de base inconditionnelle implique d'une part que la suite est une suite basique (proposition (\ref{schauderbasique})), et d'autre part est équivalente à dire que quelque soient deux ensembles $A\subseteq B\subseteq\mathbb{N}$ finis non vides, les projections
+\[
+P_{B,A}:\Span((e_n)_{n\in B})\maps\Span((e_n)_{n\in A})
+\]
+sont continues et de norme inférieure à $K$.
+
+On en déduit par ailleurs que quelque soient $A\subseteq B\subseteq\mathbb{N}$ non vides quelconques, les projections
+\[
+P_{B,A}:\SpanAdh((e_n)_{n\in B})\maps\SpanAdh((e_n)_{n\in A})
+\]
+sont également continues et de norme inférieure à $K$.
+\end{Rem}
+
+\begin{Prop}
+Soit une suite $(e_n)_{n\in\mathbb{N}}$ de $E$. Les assertions suivantes sont équivalentes:
+\begin{enumerate}[(1)]
+\item $(e_n)_{n\in\mathbb{N}}$ est une suite basique inconditionnelle
+\item pour toute permutation $\sigma$ de $\mathbb{N}$, $(e_{\sigma(n)})_{n\in\mathbb{N}}$ est une suite basique inconditionnelle
+\item $(e_n)_{n\in\mathbb{N}}$ admet une constante de base inconditionnelle
+\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+(1) $\Rightarrow$ (2)\\
+Soient $\sigma$ une permutation de $\mathbb{N}$ et $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$. Par (1), il existe une suite de scalaires $(x_n)_{n\in\mathbb{N}}$ telle que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ converge inconditionnellement. Cela revient à dire que la série $\sum\limits_{n\in\mathbb{N}}x_{\sigma(n)} e_{\sigma(n)}$ converge inconditionnellement. Donc $(e_{\sigma(n)})_{n\in\mathbb{N}}$ est une suite basique inconditionnelle.
+
+(2) $\Rightarrow$ (1) est évident.\newline
+
+(1) $\Rightarrow$ (3)\\
+Puisque $(e_n)_{n\in\mathbb{N}}$ est une suite basique, la projection $P_{B,A}$ est continue, quelque soient $A$ et $B$ deux ensembles finis non-vides tels que $A\subseteq B\subseteq\mathbb{N}$. On remarque que, si on trouve $K>0$ tel que pour toute suite de scalaires $(a_n)_{n\in\mathbb{N}}$, on ait
+
+\begin{equation}
+\norme{\sum_{n\in A}a_n e_n}
+<
+K \norme{\sum_{n\in \mathbb{N}}a_n e_n}
+\tag{*}
+\end{equation}
+
+alors on a également que 
+
+\[
+\norme{\sum_{n\in A}a_n e_n}
+<
+K \norme{\sum_{n\in B}a_n e_n}
+\]
+
+Par le théorème de Banach-Steinhaus, demander (*) pour toute paire d'ensembles finis $A\subseteq B\subseteq\mathbb{N}$ non vides est équivalent à demander que pour tout $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, 
+
+\[
+\sup\{\norme{P_{\mathbb{N},A}(x)}\text{ avec }\emptyset\neq A\subseteq\mathbb{N}\text{ fini}\}<+\infty
+\]
+
+Soit $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$. On utilise (3) dans la proposition (\ref{schauderincondequiv}). En y prenant $\varepsilon=1$, on obtient $n_0\in\mathbb{N}$ tel que pour tout ensemble fini $F\subseteq\mathbb{N}$ qui vérifie $\min(F)>n_0$, on a
+
+\[
+\norme{\sum\limits_{n\in F}x_n e_n}<\varepsilon
+\]
+
+Soit $A\subseteq\mathbb{N}$ fini non vide. Si $\max(A)\leqslant n_0$, alors
+
+\[
+\norme{P_{\mathbb{N},A}(x)}
+=
+\norme{\sum_{n\in A}x_n e_n}
+\leqslant
+\sum_{n=0}^{n_0}\norme{x_n e_n}
+\]
+
+Si $\max(A)>n_0$, en notant $A^{>n_0}=A~\cap~]n_0,+\infty[$, on a
+
+\[
+\norme{P_{\mathbb{N},A}(x)}
+=
+\norme{\sum_{n\in A}x_n e_n}
+\leqslant
+\norme{\sum_{n=0}^{n_0}x_n e_n} + \norme{\sum_{n\in A^{>n_0}}x_n e_n}
+\leqslant
+\sum_{n=0}^{n_0}\norme{x_n e_n} + \varepsilon
+\]
+
+Dans tous les cas, le dernier membre ne dépend pas de $A$, ce que l'on cherchait à démontrer.
+
+(3) $\Rightarrow$ (1)\\
+On démontre (4) dans la proposition (\ref{schauderincondequiv}). Soient $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$ et une suite strictement croissante de naturels $(n_k)_{k\in\mathbb{N}}$. Soit $\varepsilon>0$. Puisque $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, il existe une suite de scalaires $(x_n)_{n\in\mathbb{N}}$ telle que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ converge vers $x$, et en prenant $\frac{\varepsilon}{K}$ on obtient $m_0$ tel que pour tout $n\geqslant m\geqslant m_0$,
+
+\[
+\norme{\sum_{k=m}^n x_k e_k}
+<
+\frac{\varepsilon}{K}
+\]
+
+Soient $n\geqslant m$ deux naturels tels que $m_0\leqslant n_m$. Alors on a
+
+\[
+\norme{\sum_{k=m}^n x_{n_k}e_{n_k}}
+\leqslant
+K\norme{\sum_{k=n_m}^{n_n}x_k e_k}
+\leqslant
+\varepsilon
+\]
+
+Ce qui indique que la suite $\left(\sum\limits_{k=0}^n x_{n_k}e_{n_k}\right)_{n\in\mathbb{N}}$ est de Cauchy, et donc convergente.
+\end{proof}
+

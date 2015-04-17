@@ -1,0 +1,74 @@
+\usepackage{silence}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{layout}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+%\usepackage{tikz}
+
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{titlesec}
+\usepackage{enumerate}
+
+\usepackage{frcursive} % --------------- écriture manuscrite
+\usepackage{marvosym} % --------------- \Capricorn - espace topologique
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage[dvips]{epsfig,psfrag}
+
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\calligraphic}[1]{\raisebox{-.4ex}{\cursive{\textcal #1}}}
+\newcommand{\Tau}{\text{\Capricorn}}
+\newcommand{\maps}{\rightarrow}
+\newcommand{\ssi}{\Leftrightarrow}
+\newcommand{\inv}[1]{{#1}^{-1}}
+\newcommand{\adj}[1]{{#1}^{t}}
+\newcommand{\biadj}[1]{{#1}^{tt}}
+\newcommand{\ortho}{^\perp}
+\newcommand{\dual}{^\star}
+\newcommand{\bidual}{^{\star\star}}
+\newcommand{\tridual}{^{\star\star\star}}
+\newcommand{\abs}[1]{\left\vert{#1}\right\vert}
+\newcommand{\norme}[1]{\left\Vert{#1}\right\Vert}
+\newcommand{\triplenorme}[1]{\abs{\abs{\abs{#1}}}}
+\newcommand{\scal}[2]{\left\langle {#1} \middle| {#2} \right\rangle}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\adh}[1]{\overline{#1}}
+\newcommand{\weak}[1]{\sigma({#1}, {#1}\dual)}
+\newcommand{\pweak}[1]{\sigma({#1}\dual, {#1})}
+\newcommand{\restrictions}[2]{{#1}_{|_{#2}}}
+\newcommand{\James}[1]{\mathcal{J}_{#1}}
+\newcommand{\normeJames}[2]{\norme{#2}_{\James{p}}}
+\newcommand{\normeJamesB}[2]{\norme{#2}_{\James{p}\bidual}}
+
+\newtheorem{Thm}{Théorème} [chapter]
+\newtheorem{Def}[Thm]{Définition}
+\newtheorem{Exe}[Thm]{Exemple}
+\newtheorem{Rem}[Thm]{Remarque}
+\newtheorem{Prop}[Thm]{Proposition}
+\newtheorem{Lemme}[Thm]{Lemme}
+\newtheorem{Corol}[Thm]{Corollaire}
+\newtheorem{Rappel}[Thm]{Rappel}
+
+%\newenvironment{Preuve}[1][]{\subsubsection*{Preuve #1}}{\vspace{-1em}\begin{flushright}$\square$\end{flushright}}
+
+\DeclareMathOperator{\e}{e}
+%\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\convAdh}{\adh{conv}}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Lips}{Lips}
+\DeclareMathOperator{\Image}{Im}
+\DeclareMathOperator{\SpanAdh}{\adh{span}}
+
+\renewcommand{\newline}{\vspace{\baselineskip}}

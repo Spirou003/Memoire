@@ -1,0 +1,133 @@
+\begin{Lemme}\label{constantebaseincondnorme}
+Soit une suite $(e_n)_{n\in\mathbb{N}}$ de $E$, supposons qu'elle admet une constante de base inconditionnelle $K>0$. On définit sur $\SpanAdh((e_n)_{n\in\mathbb{N}})$ la norme
+
+\[
+\triplenorme{x}
+=
+\sup\left\{
+\norme{\sum_{n\in A} \lambda_n x_n e_n} \text{tel que } \emptyset\neq A\subseteq\mathbb{N}\text{ fini}, \abs{\lambda_n}\leqslant 1,\forall n\in A
+\right\}
+\]
+
+Alors
+
+\begin{enumerate}[(1)]
+\item pour tout $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, $\norme{x}\leqslant\triplenorme{x}\leqslant 4K\norme{x}$
+\item $(e_n)_{n\in\mathbb{N}}$ a une constante de base inconditionnelle qui vaut 1 pour $(E,\triplenorme{.})$
+\item pour toute paire d'ensembles finis disjoints non vides de naturels $A$ et $B$, pour toute suite de scalaires $(z_n)_{n\in\mathbb{N}}$, si on note
+
+\[
+x=\sum_{n\in A} z_n e_n ~~~~~~ y=\sum_{n\in B} z_n e_n
+\]
+
+alors quelque soit $\lambda\in\mathbb{K}$, $\triplenorme{x+\lambda y}=\triplenorme{x+\abs{\lambda}y}$
+\end{enumerate}
+\end{Lemme}
+
+\begin{proof}
+(1)\\
+Soit $x\in\SpanAdh((f_n)_{n\in\mathbb{N}})$. En prenant $A=\{1,...,n\}$, pour tout $k\in A$, $\varepsilon_k=1$, et en faisant tendre $n$ vers l'infini, on obtient la première inégalité. Réciproquement, soient $x\in E$, $A\subseteq\mathbb{N}$ un ensemble fini non vide et $\abs{\lambda_n}\leqslant 1$ pour tout $n\in A$. On a
+
+\[
+\norme{\sum_{n\in A} \lambda_n x_n e_n}
+\leqslant
+\norme{\sum_{n\in A} \Re(\lambda_n) x_n e_n}
++
+\norme{\sum_{n\in A} i\Im(\lambda_n) x_n e_n}
+\]
+
+Les deux sommes seront traîtées identiquement. Alors, on suppose pour simplifier les notations que $\varepsilon_k\in[-1,1]$, quelque soit $k\in A$. On considère $E_\mathbb{R}$ l'équivalent réel de $E$. Par le théorème de Hahn-Banach (\ref{HBF}) il existe $x\dual_\mathbb{R}\in S(E_\mathbb{R}\dual)$ tel que
+
+\[
+\norme{\sum_{n\in A}\lambda_n x_n e_n}
+=
+x\dual_\mathbb{R}\left(\sum_{n\in A}\lambda_n x_n e_n\right)
+\]
+
+Alors
+
+\[
+\norme{\sum_{n\in A} \lambda_n x_n e_n}
+\leqslant
+\sum_{n\in A}\abs{\lambda_n}\abs{x\dual_\mathbb{R}(x_n e_n)}
+\leqslant
+\left(\max_{n\in A}\abs{\lambda_n}\right) \sum_{n\in A}\abs{x\dual_\mathbb{R}(x_n e_n)}
+\]
+
+En posant $\varepsilon_n=signe(x\dual_\mathbb{R}(x_n e_n))$, et puisque $\max\limits_{n\in A}\abs{\lambda_n}\leqslant 1$, on a
+
+\[
+\left(\max_{n\in A}\abs{\lambda_n}\right) \sum_{n\in A}\abs{x\dual_\mathbb{R}(x_n e_n)}
+\leqslant
+\sum_{n\in A}x\dual_\mathbb{R}(\varepsilon_n x_n e_n)
+\leqslant
+\norme{x\dual_\mathbb{R}\left(\sum_{n\in A}\varepsilon_n x_n e_n\right)}
+\leqslant
+\norme{\sum_{n\in A}\varepsilon_n x_n e_n}
+\]
+
+Maintenant que l'on a fait disparaître $x\dual_\mathbb{R}$, on peut à nouveau considérer l'espace initial plutôt que son équivalent réel. Avec $A^{+}=\{n\in A|\varepsilon_n=1\}$ et $A^{-}=\{n\in A|\varepsilon_n=-1\}$, on a
+
+\[
+\norme{\sum_{n\in A}\varepsilon_n x_n e_n}
+\leqslant
+\norme{\sum_{n\in A^{+}} x_n e_n}+\norme{\sum_{n\in A^{-}} x_n e_n}
+\leqslant
+2K\norme{x}
+\]
+
+La dernière inégalité étant donnée par le fait que $(e_n)_{n\in\mathbb{N}}$ admet $K$ pour constante de base inconditionnelle. En rassemblant partie réelle et partie imaginaire, on obtient l'inégalité annoncée.
+
+(2)\\
+Soient $A\subseteq B$ deux ensembles finis non vides de naturels, et une suite de scalaires $(x_n)_{n\in\mathbb{N}}$. On a
+
+\[
+\begin{array}{lllll}
+\displaystyle
+\triplenorme{\sum_{n\in A} x_n e_n}
+&
+\displaystyle
+=
+\max\left\{
+\norme{\sum_{n\in C} \lambda_n x_n e_n} \text{tel que } \emptyset\neq C\subseteq A\text{ et } \forall n\in C, \abs{\lambda_n}\leqslant 1
+\right\}
+\\
+&
+\displaystyle
+\leqslant
+\max\left\{
+\norme{\sum_{n\in C} \lambda_n x_n e_n} \text{tel que } \emptyset\neq C\subseteq B\text{ et } \forall n\in C, \abs{\lambda_n}\leqslant 1
+\right\}
+\\
+&
+\displaystyle
+=
+\triplenorme{\sum_{n\in B} x_n e_n}
+\end{array}
+\]
+
+(3)\\
+Soit $\lambda\in\mathbb{K}$. On a
+\begin{align*}
+&
+\triplenorme{x+\lambda y}
+\displaystyle
+=
+\max\left\{
+\norme{\sum_{n\in A\cap C}\!\!\lambda_n z_n e_n + \lambda\!\!\sum_{k\in B\cap C}\!\!\lambda_n z_n e_n} \text{tel que }\emptyset\neq C\subseteq\mathbb{N}\text{ fini}, \forall n\in C, \abs{\lambda_n}\leqslant 1
+\right\}
+\\
+&
+\displaystyle
+=
+\max\left\{
+\norme{\sum_{n\in A\cap C}\!\lambda_n z_n e_n + \abs{\lambda} \sum_{n\in B\cap C}\!\e^{i\arg(\lambda)}\lambda_n z_n e_n} \text{tel que } \emptyset\neq C\subseteq\mathbb{N}\text{ fini}, \forall n\in C, \abs{\lambda_n}\leqslant 1
+\right\}
+\\
+&
+\displaystyle
+=
+\triplenorme{x+\abs{\lambda}y}
+\end{align*}
+\end{proof}
+

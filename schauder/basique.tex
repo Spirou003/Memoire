@@ -1,0 +1,215 @@
+\section{Suite basique, base de Schauder, constante de base}
+
+Dans le chapitre précédent, on a vu une propriété dont la démonstration nécessitait le raisonnement suivant:\newline
+
+\begin{itemize}
+\item On se fixe une base algébrique de l'espace vectoriel $E$.
+\item On prend un point de $E$ et une suite qui converge vers ce point.
+\item On décompose chaque vecteur choisi suivant la base fixée.
+\item Puisque la suite est convergente, les coordonnées sont elles aussi convergentes.\newline
+\end{itemize}
+Bien que ce type de raisonnement soit toujours vrai en dimension finie, ce n'est plus le cas en dimension infinie. Par exemple, plaçons-nous dans $l^\infty$. Les $(e_n)_{n\in\mathbb{N}}$ forment une famille libre de vecteurs de $l^\infty$, mais ne sont pas une base algébrique. La suite $x=\left(\frac{1}{n}\right)_{n\in\mathbb{N}_0}$ est linéairement indépendante des $(e_n)_{n\in\mathbb{N}}$ pour des combinaisons linéaires finies. Alors, on peut utiliser le théorème de la base incomplète afin d'obtenir une base algébrique de $l^\infty$ qui contient les $(e_n)_{n\in\mathbb{N}}$ ainsi que $x$. On considère maintenant la suite $(x^{(n)})_{n\in\mathbb{N}}$ telle que pour $n,m\in\mathbb{N}_0$, on a
+
+\[
+x^{(n)}_m
+=
+\sum_{m=1}^n \frac{e_m}{m}
+\]
+
+Que l'on peut représenter
+
+\[
+\begin{array}{ccccccccccccccccccc}
+x^{(1)} & = & ( & 1 & , & 0 & , & 0 & & ... & & ... & & 0 & , & 0 & & ... & )\\
+x^{(2)} & = & ( & 1 & , & 1/2 & , & 0 & & ... & & ... & & 0 & , & 0 & & ... & )\\
+x^{(3)} & = & ( & 1 & , & 1/2 & , & 1/3 & & ... & & ... & & 0 & , & 0 & & ... & )\\
+\vdots &  &  & \vdots &  & \vdots &  & \vdots &  & \ddots &  &  &  & \vdots &  & \vdots & & & \\
+\vdots &  &  & \vdots &  & \vdots &  & \vdots &  &  &  & \ddots &  & \vdots &  & \vdots & & & \\
+x^{(n)} & = & ( & 1 & , & 1/2 & , & 1/3 & & ... & & ... & , & 1/n & , & 0 & , & ... & )\\
+...
+\end{array}
+\]
+
+On a bien que chaque $x^{(n)}$ appartient à $l^\infty$ et que $x^{(n)}\rightarrow x$. Cependant on n'a pas de convergence en coordonnées de la base algébrique choisie. En effet, $x$ est sa propre décomposition dans la base choisie, et quel que soit $n$, la décomposition de $x^{(n)}$ ne fait pas intervenir $x$.\newline
+
+On va donc définir un nouveau type de base pour lequel la convergence générale donne la convergence des coordonnées. On verra ensuite certains liens qu'elle a avec la dualité.
+
+\begin{Def}
+Soient $E$ un espace vectoriel normé et $(e_n)_{n\in\mathbb{N}}$ une suite de vecteurs de $E$. On dira que $(e_n)_{n\in\mathbb{N}}$ est une suite basique si pour tout $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, il existe une unique suite de scalaires $(x_n)_{n\in\mathbb{N}}$ telle que
+\[\sum_{n\in\mathbb{N}}x_n e_n=x\]
+
+Si de plus, $\SpanAdh((e_n)_{n\in\mathbb{N}})=E$, on dit que c'est une base de Schauder, et on appelle $x_n$ la $n^\text{ième}$ coordonnée de $x$.
+\end{Def}
+
+\subsubsection*{Exemples}
+La base canonique $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder des espaces $c_0$ et $l^p$, pour $p\in[1,+\infty[$.
+
+L'espace $l^\infty$ n'étant pas séparable, il ne contient aucune base de Schauder. Pour rappel, un espace vectoriel normé est séparable s'il admet une partie dénombrable dense.
+
+\begin{Lemme}\label{espseriescgebanach}
+Soit $E$ un espace de Banach qui contient une base de Schauder $(e_n)_{n\in\mathbb{N}}$. L'espace vectoriel
+\[
+F :=
+\left\{
+(a_n)_{n\in\mathbb{N}}\in\mathbb{K}^\mathbb{N}
+~|~
+\sum_{n\in\mathbb{N}}a_n e_n\text{ converge}
+\right\},
+\]
+muni de la norme
+\[
+\norme{(a_n)_{n\in\mathbb{N}}}_F
+=
+\sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}
+\]
+est un espace de Banach.
+\end{Lemme}
+\begin{proof}
+Le fait que $(F,\norme{.}_F)$ soit un espace vectoriel normé est évident. On montre qu'il est complet. Soit une suite de Cauchy $(a^{(n)})_{n\in\mathbb{N}}$ de vecteurs de $F$. On a que
+\[
+\forall\varepsilon>0,\exists n_0\in\mathbb{N}\text{ tel que }\forall n\geqslant m\geqslant n_0,
+\norme{a^{(n)}-a^{(m)}}_F=\sup_{N\in\mathbb{N}}\norme{\sum_{k=0}^N (a^{(n)}_k-a^{(m)}_k)e_k}<\varepsilon
+\]
+d'où
+\[
+\forall N\in\mathbb{N},\forall\varepsilon>0,\exists n_0\in\mathbb{N}\text{ tel que }\forall n\geqslant m\geqslant n_0,
+\norme{\sum_{k=0}^N (a^{(n)}_k-a^{(m)}_k)e_k}<\varepsilon
+\]
+Cela signifie que pour tout $N\in\mathbb{N}$, la suite $\left(\sum\limits_{k=0}^N a^{(n)}_k e_k\right)_{n\in\mathbb{N}}$ est de Cauchy. Elle converge donc vers un élément, que l'on note $y^{(N)}$. Puisque $y^{(N)}$ est une limite de combinaisons linéaires de $e_0,...,e_N$, il existe $y^{(N)}_0,...,y^{(N)}_N\in\mathbb{K}$ tels que $y^{(N)}=\sum\limits_{k=0}^N y^{(N)}_k e_k$. De plus, $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder de $E$, donc on peut identifier
+\[
+\sum_{k=0}^N \lambda_k e_k \longleftrightarrow (\lambda_0,...,\lambda_N)
+\]
+D'où $(a^{(n)}_0,...,a^{(n)}_N)\rightarrow(y^{(N)}_0,...,y^{(N)}_N)$, c'est-à-dire que pour $k\in\{1,...,N\}$, $(a^{(n)}_k)_{n\in\mathbb{N}}$ est convergente. On note alors $a_k$ sa limite. Puisque ce raisonnement est valable quelque soit $N$, on obtient une suite $a=(a_k)_{k\in\mathbb{N}}$. Il nous reste à démontrer que $a\in F$ et que $a^{(n)}\rightarrow a$.
+
+Comme $(a^{(n)})_{n\in\mathbb{N}}$ est de Cauchy, on a que
+\[
+\forall\varepsilon>0,\exists n_0\in\mathbb{N}\text{ tel que }\forall n\geqslant m\geqslant n_0,\forall N\in\mathbb{N},
+\norme{\sum_{k=0}^N (a^{(n)}_k-a^{(m)}_k)e_k}<\varepsilon
+\]
+Par passage à la limite sur $m$, on obtient
+\[
+\forall\varepsilon>0,\exists n_0\in\mathbb{N}\text{ tel que }\forall n\geqslant m\geqslant n_0,\forall N\in\mathbb{N},
+\norme{\sum_{k=0}^N (a^{(n)}_k-a_k)e_k}<\varepsilon
+\]
+On en déduit les deux assertions qu'il restait à prouver.
+\end{proof}
+
+On va maintenant donner une nouvelle caractérisation aux suites basiques.
+
+\begin{Def}
+On dira qu'une suite $(e_n)_{n\in\mathbb{N}}$ de vecteurs non nuls admet une constante de base s'il existe un réel $K>0$ tel que pour tous $p\leqslant q\in\mathbb{N}$ et $a_0,...,a_q\in\mathbb{K}$, on a
+\[
+\norme{\sum_{n=0}^p a_n e_n}\leqslant K\norme{\sum_{n=0}^q a_n e_n}
+\]
+La plus petite valeur qui vérifie cette propriété est appelée constante de base.\footnote{On dira \textit{une constante de base} pour une valeur qui vérifie la propriété, et \textit{la constante de base} pour la plus petite valeur qui vérifie la propriété.} \\
+Une suite basique dont la constante de base vaut 1 est appelée suite basique monotone.
+\end{Def}
+
+\begin{Rem}
+Autrement dit, pour $p\leqslant q\in\mathbb{N}$, les projections
+\[
+P_{q, p}:\Span(e_0,...,e_q)\maps\Span(e_0,...,e_p)
+\]
+sont continues et de norme uniformément bornée.
+
+Ceci implique que les projections $P_n:E\maps\Span(e_0,...,e_n)$ sont continues et de norme inférieure à $K$.
+De plus, on se rend facilement compte en prenant $p=q$, qu'une constante de base ne peut être inférieure à 1.
+\end{Rem}
+
+\begin{Prop}\label{schauderbasique}
+Dans un espace de Banach, une suite est basique si et seulement si elle admet une constante de base.
+\end{Prop}
+\begin{proof}
+On suppose que $(e_n)_{n\in\mathbb{N}}$ est une suite basique. L'espace décrit par le lemme (\ref{espseriescgebanach}), que l'on notera $F$, est un espace de Banach. On note $E_0=\SpanAdh((e_n)_{n\in\mathbb{N}})$. L'application
+\[
+\begin{array}{lll}
+F&\maps&E_0\\
+(a_n)_{n\in\mathbb{N}}&\maps&\displaystyle\sum_{n\in\mathbb{N}}a_n e_n
+\end{array}
+\]
+est bijective. La surjectivité provient de la définition de $F$ et $E_0$, et l'injectivité vient du fait que la suite $(e_n)_{n\in\mathbb{N}}$ est une suite basique. De plus, cette application est continue
+\[
+\norme{\sum_{n\in\mathbb{N}}a_n e_n}\leqslant \sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}=\norme{(a_n)_{n\in\mathbb{N}}}_F
+\]
+D'où, par le théorème des isomorphismes de Banach, elle est bicontinue. Il existe par conséquent $K>0$ tel que pour toute suite $(a_n)_{n\in\mathbb{N}}$ de vecteurs de $F$,
+\[
+\sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}
+\leqslant
+K\norme{\sum_{n\in\mathbb{N}}a_n e_n}
+\]
+Ce qui démontre la première implication.\newline
+
+Maintenant, supposons que la suite admet $K>0$ comme constante de base. Soit $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$. On a une suite $(x^{(n)})_{n\in\mathbb{N}}$ de vecteurs de $\Span((e_n)_{n\in\mathbb{N}})$ qui converge vers $x$. Pour $n\in\mathbb{N}$, on réécrit
+\[
+x^{(n)}=\sum_{k=0}^{m_n}x^{(n)}_k e_k\text{, avec }m_n\in\mathbb{N}\text{, et pour }k\in\{0,...,m_n\}, x^{(n)}_k\in\mathbb{K}
+\]
+Cette suite étant convergente, quelque soit $k\in\mathbb{N}$, la suite $\left(P_k(x^{(n)})\right)_{n\in\mathbb{N}}$ est aussi convergente, et converge vers $P_k(x)$.\\
+Si $k=0$, $P_0(x^{(n)})=x^{(n)}_0 e_0\rightarrow x_0 e_0$ pour un scalaire $x_0$.\\
+Si $k=1$, $P_1(x^{(n)})=x^{(n)}_0 e_0+x^{(n)}_1 e_1\rightarrow x_0 e_0+x_1 e_1$ pour un scalaire $x_1$.\\
+...\\
+Si $k=N$, $P_N(x^{(n)})=\sum\limits_{l=0}^N x^{(n)}_l e_l\rightarrow \sum\limits_{l=0}^N x_l e_l$ pour un scalaire $x_N$.\\
+...
+
+On obtient ainsi une suite $(x_n)_{n\in\mathbb{N}}$ telle que pour tout $n\in\mathbb{N}$,
+\[
+P_k(x)=\sum_{l=0}^k x_l e_l
+\]
+Montrons que $P_k(x)\rightarrow x$. Soit $\varepsilon>0$. Puisque $x^{(n)}\rightarrow x$, il existe $n\in\mathbb{N}$ tel que pour tout $m\geqslant n$, $\norme{x^{(m)}-x}<\varepsilon$. Prenons $k_0 = m_{n}$. Alors, quelque soit $k\geqslant k_0$, on a que $P_k(x^{(n)})=x^{(n)}$, d'où
+\[
+\begin{array}{ll}
+\norme{P_k(x)-x}
+&\leqslant
+\norme{P_k(x)-P_k(x^{(n)})}+
+\norme{P_k(x^{(n)})-x^{(n)}}+
+\norme{x^{(n)}-x}
+\\&\leqslant
+K\norme{x^{(n)}-x}+
+\norme{x^{(n)}-x}
+\leqslant
+(1+K)\varepsilon
+\end{array}
+\]
+Montrons que cette décomposition est unique. Prenons une deuxième suite de scalaires $(y_n)_{n\in\mathbb{N}}$ telle que $\sum\limits_{n\in\mathbb{N}}y_n e_n = x$. Alors, $\sum\limits_{n\in\mathbb{N}}(x_n-y_n)e_n = 0$, donc pour tout $N\in\mathbb{N}$,
+\[
+\sum_{n=0}^N(x_n-y_n)e_n
+=
+P_N\left(\sum_{n\in\mathbb{N}}(x_n-y_n)e_n\right)
+=
+P_N(0)
+=
+0
+\]
+On en déduit alors, puisque les $(e_n)_{n\in\mathbb{N}}$ sont non nuls, que les décompositions sont égales, et donc qu'il n'y en a qu'une. Ceci termine la démonstration.
+\end{proof}
+
+Soient $E$ un espace de Banach et $(e_n)_{n\in\mathbb{N}}$ une suite basique de $E$. Au regard de la propriété que l'on vient de démontrer, on définit les applications linéaires
+\[
+\begin{array}{lllll}
+f_n&:&\SpanAdh((e_n)_{n\in\mathbb{N}})&\maps&\mathbb{K}\\
+&:&\displaystyle x=\sum_{n\in\mathbb{N}}x_n e_n&\mapsto&x_n
+\end{array}
+\]
+Ces applications sont continues, car
+\[
+\abs{f_0(x)}=\abs{x_0}=
+\frac{\norme{x_0 e_0}}{\norme{e_0}}=
+\frac{\norme{P_0(x)}}{\norme{e_0}}\leqslant
+\frac{K\norme{x}}{\norme{e_0}}
+\]
+et
+\[
+\abs{f_{n+1}(x)}=\frac{\norme{x_{n+1} e_{n+1}}}{\norme{e_{n+1}}}
+=
+\frac{\norme{P_{n+1}(x)-P_n(x)}}{\norme{e_{n+1}}}
+\leqslant
+\frac{2K\norme{x}}{\norme{e_{n+1}}}
+\]
+Par conséquent, elles peuvent être étendues à $E$ par le théorème de Hahn-Banach (\ref{HBA}). Ces applications sont appelées fonctionnelles coordonnées si la suite $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder.
+
+Dans le cas où $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder, on obtient ce que l'on voulait, à savoir que pour une suite $(x_n)_{n\in\mathbb{N}}$ convergeant vers $x$, on a $f_k(x_n)\underset{n\rightarrow+\infty}{\longrightarrow} f_k(x)$ quelque soit $k\in\mathbb{N}$. On obtient de plus, pour un vecteur $x$, l'écriture suivante:
+\[
+x=\sum_{n\in\mathbb{N}}f_n(x)e_n.
+\]
+
+Pour la même raison, quelque soit $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, on a que $P_n(x)\rightarrow x$. Autrement dit, la suite des projections $(P_n)_{n\in\mathbb{N}}$ converge préfaiblement vers l'identité sur $\SpanAdh((e_n)_{n\in\mathbb{N}})$.
+

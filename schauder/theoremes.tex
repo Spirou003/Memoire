@@ -1,0 +1,194 @@
+Désormais, ajoutons une petite hypothèse supplémentaire, demandons que la base soit monotone. L'impact de cette hypothèse sur les propriétés de la base choisie est plutôt important, comme l'indique le théorème suivant.
+
+\begin{Thm}\label{dualisometriqueschauder}
+Soit $E$ un espace de Banach contenant $(e_n)_{n\in\mathbb{N}}$ une base de Schauder monotone et contractante. Alors, on peut identifier $E\bidual$ isométriquement à l'espace
+\[
+\left\{
+(a_n)_{n\in\mathbb{N}}\in\mathbb{K}~\left|~\sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}<+\infty\right.
+\right\}
+\]
+muni de la norme
+\[
+\norme{(a_n)_{n\in\mathbb{N}}}
+=
+\sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}
+\]
+via la correspondance $x\bidual\longleftrightarrow(x\bidual(f_n))_{n\in\mathbb{N}}$, où les $(f_n)_{n\in\mathbb{N}}$ sont les fonctionnelles coordonnées.
+\end{Thm}
+\begin{proof}
+Par la proposition (\ref{contractantessifonctionnelleschauder}), on sait que les fonctionnelles coordonnées forment une base de Schauder de $E\dual$. Notons $P_n\dual$ les projections associées aux $(f_n)_{n\in\mathbb{N}}$.
+
+Nommons $A$ l'espace que l'on veut identifier à $E\bidual$. On va démontrer que l'application linéaire
+\[
+\begin{array}{lllll}
+T&:&E\bidual&\maps&A\\
+&:&x\bidual&\mapsto&(x\bidual(f_n))_{n\in\mathbb{N}}
+\end{array}
+\]
+est une bijection isométrique. Pour cela, commençons par vérifier que cette application est bien définie, c'est-à-dire que quelque soit $x\bidual$, on a $\norme{T(x\bidual)}<+\infty$. On passera par les adjointes des projections.
+
+Soient $x\dual\in E\dual$, $x\bidual\in E\bidual$ et $n\in\mathbb{N}$. On a
+\[
+\biadj{P_n}(x\bidual)(x\dual)
+=
+x\bidual(P_n\dual(x\dual))
+=
+\sum_{k=0}^n x\dual(e_k)x\bidual(f_k)
+\]
+On en déduit que $\biadj{P_n}(x\bidual)=\sum\limits_{k=0}^n x\bidual(f_k) \: ev_{e_k}$. Cependant, on a que
+\[
+\norme{\biadj{P_n}(x\bidual)}
+\leqslant
+\norme{\biadj{P_n}}\norme{x\bidual}
+=
+\norme{P_n}\norme{x\bidual}
+\leqslant
+\norme{x\bidual}
+\]
+Donc, par passage au supremum sur $n$, on obtient que
+\[
+\sup_{n\in\mathbb{N}}\norme{\sum_{k=0}^n x\bidual(f_k) \: ev_{e_k}}
+=
+\sup_{n\in\mathbb{N}}\norme{\sum_{k=0}^n x\bidual(f_k)e_k}
+=
+\norme{T(x\bidual)}
+\leqslant
+\norme{x\bidual}
+\]
+On vient de démontrer que $T$ est bien définie, et qu'elle est continue. On va montrer que $T$ est une isométrie (et donc est injective).
+
+Soit $x\bidual\in E\bidual$, et soit $(x_n\dual)_{n\in\mathbb{N}}$ une suite à valeur dans $S(E\dual)$ telle que pour tout $n\in\mathbb{N}_0$, $\abs{x\bidual(x_n\dual)-\norme{x\bidual}}\leqslant\frac{1}{n}$. Puisque $(f_n)_{n\in\mathbb{N}}$ est une base de Schauder, quelque soit $n\in\mathbb{N}$ on a $P_k\dual(x_n\dual)\underset{k\rightarrow+\infty}{\longrightarrow}x_n\dual$. Puisque $\norme{x_n\dual}=1$, on a également que $\frac{P_k\dual(x_n\dual)}{\norme{P_k\dual(x_n\dual)}}\underset{k\rightarrow+\infty}{\longrightarrow}x_n\dual$. Soit alors une suite croissante $(k_n)_{n\in\mathbb{N}}$ telle que pour tout $n\in\mathbb{N}$, on a
+\[
+\norme{\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}-x_n\dual}\leqslant\frac{1}{n}
+\]
+Soit $n\in\mathbb{N}$. On a
+\[
+\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)-\norme{x\bidual}}
+\leqslant
+\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}-x_n\dual\right)}
++ \abs{x\bidual(x_n\dual)-\norme{x\bidual}}
+\leqslant \frac{\norme{x\bidual}}{n} + \frac{1}{n}
+\]
+D'où $\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}\rightarrow\norme{x\bidual}$. De plus, on a, pour tout $n\in\mathbb{N}$, que
+\[
+\begin{array}{ll}
+\displaystyle
+\norme{\sum_{l=0}^{k_n} x\bidual(f_l) \: ev_{e_l}}
+&\geqslant\displaystyle
+\abs{\left(\sum_{l=0}^{k_n} x\bidual(f_l) \: ev_{e_l}\right)\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}
+=
+\abs{\sum_{l=0}^{k_n} x\bidual(f_l)\frac{x_n\dual(e_l)f_l(e_l)}{\norme{P_{k_n}\dual(x_n\dual)}}}
+\\&\displaystyle
+=
+\abs{\sum_{l=0}^{k_n} x\bidual(f_l)\frac{x_n\dual(e_l)}{\norme{P_{k_n}\dual(x_n\dual)}}}
+=
+\abs{x\bidual\left(\frac{\sum\limits_{l=0}^{k_n}x_n\dual(e_l)f_l}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}
+=
+\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}
+\end{array}
+\]
+Par passage au supremum sur $n$, on obtient l'égalité souhaitée.
+
+Reste à démontrer qu'elle est surjective. Soient $a\in A$, $x\dual\in E\dual$ et $\varepsilon>0$. La base $(e_n)_{n\in\mathbb{N}}$ étant contractante, on a $n_0\in\mathbb{N}$ tel que si $n\geqslant n_0$,
+\[
+\sup\left\{
+\abs{x\dual(x)}
+\left|
+\norme{x}=1\text{ et }
+x=\sum_{j\geqslant n}x_j e_j,\text{ pour }(a_j)_{j\geqslant n}\in\mathbb{K}^\mathbb{N}
+\right.
+\right\}
+<\varepsilon
+\]
+Soient $n>m\geqslant n_0$. Si $\sum\limits_{k=m}^n a_k e_k=0$, son image par $x\dual$ est nulle. Dans l'autre cas, puisque la suite $\left(\sum\limits_{k=0}^n a_k e_k\right)_{n\in\mathbb{N}}$ est bornée, on a
+\[
+\begin{array}{ll}
+\displaystyle
+\abs{\left(\sum_{k=m}^n a_k ev_{e_k}\right)(x\dual)}
+&=\displaystyle
+\abs{x\dual\left(\sum_{k=m}^n a_k e_k\right)}
+=
+\abs{x\dual\left(\frac{\sum\limits_{k=m}^n a_k e_k}{\norme{\sum\limits_{k=m}^n a_k e_k}}\right)}\norme{\sum_{k=m}^n a_k e_k}
+<
+\varepsilon\norme{\sum_{k=m}^n a_k e_k}
+\\&\displaystyle
+\leqslant
+2\varepsilon\norme{\sum_{k=0}^n a_k e_k}
+\leqslant
+2\varepsilon\sup_{N\in\mathbb{N}}\norme{\sum_{k=0}^N a_k e_k}
+\end{array}
+\]
+La série converge donc vers un élément $x\bidual\in E\bidual$ pour $\pweak{E\dual}$. À ce stade, il est évident que $T(x\bidual)=a$, l'application $T$ est donc surjective, et le théorème prouvé.
+\end{proof}
+
+On a ainsi une caractérisation complète du bidual en fonction de la base de Schauder monotone que l'on s'est fixée. On peut également remarquer que cette caractérisation ne nécessite aucune connaissance du dual. Ceci est très important pour étudier certains espaces de Banach comme par exemple l'espace de James. Mais on va voir que les liens entre les bases de Schauder et le bidual ne s'arrêtent pas là.
+
+\begin{Corol}Si un espace de Banach contient une base de Schauder monotone, contractante et complète, alors il est réflexif.\end{Corol}
+
+Bien que celle-ci soit simple, nous ne donnerons pas de démonstration de ce corollaire, car on va démontrer un résultat plus puissant qui ne nécessite pas la monotonicité de la base choisie.
+
+\begin{Thm}[James]\label{JamesSchauder}
+Dans un espace réflexif, toute base de Schauder est complète et contractante. Inversement, si un espace de Banach admet une base de Schauder complète et contractante, alors il est réflexif.
+\end{Thm}
+\begin{proof}
+Supposons que $E$ soit un espace réflexif qui contient une base de Schauder $(e_n)_{n\in\mathbb{N}}$. Montrons qu'elle est complète et contractante.
+
+Soit $(a_n)_{n\in\mathbb{N}}$ une suite de scalaires telle que $\sup\limits_{N\in\mathbb{N}}\norme{\sum\limits_{n=0}^N a_n e_n}<+\infty$.\\
+Par le théorème de Kakutani (\ref{kakutani}), comme l'espace est réflexif, la boule unité est faiblement compacte. Donc par le théorème d'Eberlein-\v{S}mulian (\ref{eberlein}), elle est faiblement séquentiellement compacte. Alors, il existe une suite $(n_k)_{k\in\mathbb{N}}$ telle que $\left(\sum\limits_{n=0}^{n_k} a_n e_n\right)_{k\in\mathbb{N}}$ converge faiblement vers un élément $a\in E$.\\
+Soit $n\in\mathbb{N}$. On a que $f_n\left(\sum\limits_{l=0}^{n_k} a_l e_l\right)\underset{k\rightarrow+\infty}{\longrightarrow} a_n$, donc par unicité de la limite, $f_n(a)=a_n$, et puisque $a=\sum\limits_{n\in\mathbb{N}}f_n(a)e_n=\sum\limits_{n\in\mathbb{N}}a_n e_n$, la base est complète.
+
+Supposons qu'elle ne soit pas contractante. Alors, il existe $x\dual\in E\dual$, $\varepsilon>0$, une suite croissante $(n_k)_{n\in\mathbb{N}}$ de naturels et une suite $(v_k)_{k\in\mathbb{N}}$ tous de norme 1, tels que $P_{n_k}(v_k)=0$ et $\abs{x\dual(v_k)}>\varepsilon$ pour tout $k\in\mathbb{N}$. Alors, la suite $(v_k)_{k\in\mathbb{N}}$ étant bornée et la boule unité étant compacte, le théorème d'Eberlein-\v{S}mulian nous dit qu'elle admet une sous-suite faiblement convergente. De plus, quelque soit $n\in\mathbb{N}$, on a que $f_n(v_k)\rightarrow 0$, donc $(v_k)_{k\in\mathbb{N}}$ converge faiblement vers 0. En particulier, on a que $x\dual(v_k)\rightarrow 0$, ce qui amène à une contradiction.\newline
+
+Réciproquement, supposons que l'on ait un espace de Banach $E$ qui contient une base de Schauder $(e_n)_{n\in\mathbb{N}}$ complète et contractante.
+
+Soient $x\bidual\in E\bidual$ et $n\in\mathbb{N}$. On a
+\[
+\norme{\sum_{k=0}^n x\bidual(f_k)e_k}
+=
+\norme{\sum_{k=0}^n x\bidual(f_k)ev_{e_k}}
+=
+\norme{\biadj{P_n}(x\bidual)}
+\leqslant
+\norme{\biadj{P_n}}\norme{(x\bidual)}
+=
+\norme{P_n}\norme{(x\bidual)}
+\leqslant
+K\norme{x\bidual}
+\]
+D'où $\sup\limits_{n\in\mathbb{N}}\norme{\sum\limits_{k=0}^n x\bidual(f_k)e_k}<+\infty$.
+
+Puisque la base $(e_n)_{n\in\mathbb{N}}$ est complète, il existe $x\in E$ tel que $x=\sum\limits_{n\in\mathbb{N}}x\bidual(f_n)e_n$. On va montrer que $ev_x=x\bidual$.
+
+Soit $x\dual\in E\dual$. Par la proposition (\ref{contractantessifonctionnelleschauder}), comme $(e_n)_{n\in\mathbb{N}}$ est contractante, les fonctionnelles coordonnées forment une base de Schauder de $E\dual$, et $x\dual=\sum\limits_{n\in\mathbb{N}}x\dual(e_n)f_n$. D'une part, on a que
+\[
+x\bidual(x\dual)
+=
+x\bidual\left(\sum_{n\in\mathbb{N}}x\dual(e_n)f_n\right)
+=
+\sum_{n\in\mathbb{N}}x\dual(e_n)x\bidual(f_n)
+\]
+D'autre part, on a également que
+
+\[
+\begin{array}{ll}
+ev_x(x\dual)
+&
+\displaystyle
+=
+\left(\sum_{n\in\mathbb{N}}x\dual(e_n)f_n\right)\left(\sum_{k\in\mathbb{N}}x\bidual(f_k)e_k\right)
+=
+\sum_{n\in\mathbb{N}}\left(x\dual(e_n)\sum_{k\in\mathbb{N}}x\bidual(f_k)f_n(e_k)\right)
+\\
+&
+\displaystyle
+=
+\sum_{n\in\mathbb{N}}x\dual(e_n)x\bidual(f_n)
+\end{array}
+\]
+
+Donc, quelque soit $x\dual\in E\dual$, on a $ev_x(x\dual)=x\bidual(x\dual)$, par conséquent $ev_x=x\bidual$, et $E$ est réflexif.
+\end{proof}
+
+Ce théorème est très important, car il permet de savoir si un espace est réflexif en utilisant une seule base de Schauder. En effet, si on en a une qui est complète et contractante, l'espace est réflexif. En revanche, si l'une des deux conditions n'est pas vérifiée, l'espace n'est pas réflexif (sinon, toutes ses bases de Schauder, en particulier celle fixée, seraient complètes et contractantes).
+
+Une deuxième application du théorème se situe dans un espace réflexif. On sait que l'injection canonique étant une isométrie bijective, toute base de Schauder s'identifie à une base de Schauder du bidual. Puisque l'espace est réflexif, ses bases de Schauder sont automatiquement contractantes, ce qui implique que la suite des fonctionnelles coordonnées soit, elle aussi, une base de Schauder. L'intérêt est qu'ici, on peut en déduire une base de Schauder du dual sans faire le moindre effort, ce qui n'était pas possible avant.

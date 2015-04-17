@@ -1,0 +1,81 @@
+\section{Espace quotient}
+
+\begin{Def}\label{espaceortho}
+Soient $E$ un espace vectoriel normé et $F$ un sous-espace fermé de $E$. On dit que l'espace vectoriel
+\[
+F\ortho=\{x\dual\in E\dual | x\dual(F)=\{0\}\}
+\]
+est l'espace orthogonal de $F$.
+\end{Def}
+
+\begin{Prop}\label{quotientbanach}
+Soit $E$ un espace de Banach et $F$ un sous-espace fermé de $E$. Alors l'espace vectoriel $E/F$ muni de la norme
+\[
+\begin{array}{lllll}
+\norme{.}&:&E/F&\maps&\mathbb{R}^+\\
+&:&x+F&\mapsto&\inf\limits_{f\in F}\norme{x+f}
+\end{array}
+\]
+est un espace de Banach.
+\end{Prop}
+
+\begin{Prop}\label{ForthoisoEsurF}
+Soit $E$ un espace de Banach et $F$ un sous-espace fermé de $E$. Alors l'application
+\[
+\begin{array}{lllll}
+\varphi&:&F\ortho&\maps&(E/F)\dual\\
+&:&x\dual&\mapsto&\left(
+    \begin{array}{lll}
+    E/F&\maps&\mathbb{K}\\
+    x+F&\mapsto&x\dual(x)
+    \end{array}
+\right)
+\end{array}
+\]
+est une isométrie.
+\end{Prop}
+
+\begin{proof}
+En premier lieu, il faut s'assurer que $\varphi$ est bien définie, c'est-à-dire que pour tout $x\dual\in F\ortho$, $\varphi(x\dual)\in (E/F)\dual$. Soient $x\in E$, $f\in F$ et $x\dual\in F\ortho$. On a que $x\dual(x+f)=x\dual(x)$ car $x\dual$ s'annule sur $F$, donc l'image de $x+F$ par $\varphi(x\dual)$ ne dépend pas du représentant de classe choisi. La linéarité et la continuité de $\varphi(x\dual)$ sont évidentes.
+
+La linéarité de $\varphi$ est elle aussi évidente.
+
+L'application est continue. Soient $x\dual\in F\ortho$, $x\in E$ et $f\in F$. On a
+
+\[
+\abs{\varphi(x\dual)(x+F)}
+=
+\abs{x\dual(x)}
+=
+\abs{x\dual(x+f)}
+\leqslant
+\norme{x\dual}\norme{x+f}.
+\]
+
+Ce qui implique que $\abs{\varphi(x\dual)(x+F)}\leqslant \norme{x\dual}\norme{x+F}$. Par conséquent, $\norme{\varphi(x\dual)}\leqslant\norme{x\dual}$ et $\varphi$ est continue.
+
+On montre que $\varphi$ est surjective. Soit $\overline{x\dual}\in(E/F)\dual$. On prend
+
+\[
+\begin{array}{lllll}
+x\dual&:&E&\maps&\mathbb{K}\\
+&:&x&\mapsto&\overline{x\dual}(x+F)
+\end{array}
+\]
+
+La linéarité de $x\dual$ est évidente, montrons qu'elle est continue et de norme inférieure à $\norme{\overline{x\dual}}$, ceci nous donnera à la fois la surjectivité et le caractère isométrique de $\varphi$. Soit $x\in E$. On a
+
+\[
+\abs{x\dual(x)}
+=
+\abs{\overline{x\dual}(x+F)}
+\leqslant
+\norme{\overline{x\dual}}\norme{x+F}
+\leqslant
+\norme{\overline{x\dual}}\norme{x}
+\]
+
+De plus, quelque soit $f\in F$, on a que $x\dual(f)=\overline{x\dual}(f+F)=\overline{x\dual}(0+F)=0$ donc $x\dual\in F\ortho$. La vérification du fait que $\varphi(x\dual)=\overline{x\dual}$ est évidente, donc $\varphi$ est surjective.
+\end{proof}
+
+

@@ -1,0 +1,210 @@
+\section{Caractérisations de $\James{p}\bidual$}
+
+Ceci fait, on sait maintenant par les propositions (\ref{jamesenschauder}) et (\ref{jamesencontractante}) que la base canonique est une base de Schauder monotone et contractante (et donc, par la proposition (\ref{contractantessifonctionnelleschauder}), que $(f_n)_{n\in\mathbb{N}}$ est une base de Schauder de $\James{p}\dual$). On peut alors, par le théorème (\ref{dualisometriqueschauder}), identifier isométriquement $\James{p}\bidual$ à l'espace 
+\[
+\left\{a\in\mathbb{K}^\mathbb{N}|\normeJamesB{p}{a}<+\infty\right\}
+\]
+
+avec
+
+\[
+\normeJamesB{p}{a}
+=
+\sup_{n\in\mathbb{N}}\normeJames{p}{\sum_{k=0}^n a_k e_k}
+\]
+
+Mais on peut trouver une meilleure caractérisation que celle-ci. Pour cela, nous aurons besoin du lemme suivant.
+
+\begin{Lemme}\label{normeJamesimpliqueconverge}
+Toute suite $a\in\mathbb{K}^{\mathbb{N}}$ telle que $\normeJames{p}{a}<+\infty$ est convergente.
+\end{Lemme}
+\begin{proof}
+Soit $a\in\mathbb{K}^\mathbb{N}$ telle que $\normeJames{p}{a}<+\infty$. Il suffit de montrer qu'elle est de Cauchy. Supposons que ce ne soit pas le cas, on a $\varepsilon>0$ tel que $\forall N\in\mathbb{N}, \exists n>m\geqslant N$ tels que $\abs{a_n-a_m}>\varepsilon$.
+
+Prenons $N=0$. On obtient $n_0>m_0\geqslant N$ tels que $\abs{a_{n_0}-a_{m_0}}>\varepsilon$.
+
+Prenons $N=n_0+1$. On obtient $n_1>m_1\geqslant N$ tels que $\abs{a_{n_1}-a_{m_1}}>\varepsilon$.
+
+On continue de cette façon, on obtient alors deux suites $(n_k)_k\in\mathbb{N}$ et $(m_k)_k\in\mathbb{N}$ telles que
+\[
+m_0<n_0<m_1<n_1<...<m_k<n_k<...\text{   et   }\forall k\in\mathbb{N}, \abs{x_{n_k}-x_{m_k}}>\varepsilon
+\]
+En choisissant alternativement ces deux suites pour les $p_k$, on obtient une contradiction avec $\normeJames{p}{a}<+\infty$.
+\end{proof}
+
+\begin{Prop}\end{Prop}
+\[
+\left\{a\in\mathbb{K}^\mathbb{N}|\normeJamesB{p}{a}<+\infty\right\}
+=
+\left\{a\in\mathbb{K}^\mathbb{N}|\normeJames{p}{a}<+\infty\right\}
+\]
+\begin{proof}
+Soit $(a_n)_{n\in\mathbb{N}}$ une suite de scalaires. On a
+
+\[
+\sup_{n\in\mathbb{N}}\normeJames{p}{\sum_{k=0}^n a_k e_k}
+=
+\sup
+\left\{
+\left.
+\sqrt[p]{\sum_{k=1}^n\abs{a_{p_{2k-1}} - a_{p_{2k}}}^p + \abs{a_q}^p}
+\right|
+n\in\mathbb{N}_0,
+p_1<...<p_{2n}<q\in\mathbb{N}
+\right\}
+\]
+
+On va montrer que le deuxième membre de l'égalité ci-dessus (notons-le $\triplenorme{a}$) est fini si et seulement si $\normeJames{p}{a}<+\infty$.
+
+Si $\triplenorme{a}<+\infty$, en retirant $\abs{a_q}^p$ dans le supremum (ce qui en diminue sa valeur) on retrouve la définition de $\normeJames{p}{a}$. On suppose maintenant que $\normeJames{p}{a}<+\infty$. Alors, par le lemme précédent, cette suite est convergente, mais surtout bornée. Alors
+
+\[
+\begin{array}{ll}
+\norme{a}
+&=
+\displaystyle
+\sup
+\left\{
+\left.
+\sqrt[p]{\sum_{k=1}^n\abs{a_{p_{2k-1}} - a_{p_{2k}}}^p + \abs{a_q}^p}
+\right|
+n\in\mathbb{N}_0,
+p_1<...<p_{2n}<q\in\mathbb{N}
+\right\}
+\\
+&\leqslant
+\displaystyle
+\sup
+\left\{
+\left.
+\sqrt[p]{\sum_{k=1}^n\abs{a_{p_{2k-1}} - a_{p_{2k}}}^p} + \norme{a}_\infty
+\right|
+n\in\mathbb{N}_0,
+p_1<...<p_{2n}\in\mathbb{N}
+\right\}
+\\
+&=
+\normeJames{p}{a}+\norme{a}_\infty<+\infty
+\end{array}
+\]
+
+\end{proof}
+
+L'espace $\James{p}\bidual$ est donc uniquement composé de suites convergentes et bornées pour $\normeJames{p}{.}$. On en déduit alors immédiatement que $\James{p}\bidual=\langle\James{p},(1,1,...)\rangle$. La suite $(1,1,...)$ est un peu plus particulière que ce qu'en dit la précédente égalité.
+
+\begin{Prop}\end{Prop}
+La suite $(ev_{s_n})_{n\in\mathbb{N}}$ converge vers $\varepsilon_0=(1,1,...)$ pour la topologie préfaible.
+\begin{proof}
+Soient $\varepsilon>0$ et $x\dual\in\James{p}\dual$. La base canonique étant contractante, on sait que
+\[
+\exists n_0\text{ tel que }\forall n\geqslant n_0,
+\sup\left\{\abs{x\dual(x)}\text{ tel que }x=\sum_{j\geqslant n}a_j e_j\text{ et }\normeJames{p}{x}=1\right\}<\varepsilon
+\]
+De plus, pour tout $n\geqslant m\geqslant n_0$, on a que $s_n-s_m$ est de norme $\sqrt[p]{2}$, et est une combinaison linéaire finie des $(e_l)_{l\in\mathbb{N}}$ d'indices supérieurs à $n_0$. Dans ce cas, l'inégalité ci-dessus est valable, on obtient que $\abs{x\dual(s_n-s_m)}<\sqrt[p]{2}\varepsilon$. Ceci prouve que la suite $(x\dual(s_n))_{n\in\mathbb{N}}$ est de Cauchy, et donc que la série $\sum\limits_{n\in\mathbb{N}}x\dual(e_n)$ existe. L'application linéaire
+\[
+\begin{array}{lllll}
+s&:&E\dual&\maps&\mathbb{K}\\
+&:&y\dual&\mapsto&\displaystyle\sum_{n\in\mathbb{N}}y\dual(e_n)
+\end{array}
+\]
+est continue, car
+\[
+\abs{\sum_{n\in\mathbb{N}}x\dual(e_n)}
+=
+\abs{\lim_{N\in\mathbb{N}}\sum_{n=1}^N x\dual(e_n)}
+=
+\lim_{n\in\mathbb{N}}\abs{x\dual(s_n)}
+\leqslant
+\lim_{n\in\mathbb{N}}\norme{x\dual}\normeJames{p}{s_n}
+=
+\norme{x\dual}
+\]
+Donc la suite $(ev_{s_n})_{n\in\mathbb{N}}$ converge faiblement vers $s$. Soit $k\in\mathbb{N}$, on a que
+\[
+s(f_k)
+=
+\sum_{n\in\mathbb{N}}f_k(e_n)
+=
+1
+\]
+D'où $s=(1,1,...)=\varepsilon_0$.
+\end{proof}
+
+Vu les propositions précédentes, on serait tenté pour $x\bidual\in\James{p}\bidual$, de dire que $\normeJamesB{p}{x\bidual}=\normeJames{p}{x\bidual}$. Cependant, ce n'est pas le cas car $\normeJames{p}{\varepsilon_0}=0$ avec $\varepsilon_0\neq 0$. On peut néanmoins s'en approcher, comme le montre cette proposition.
+
+\begin{Prop}\end{Prop}
+Quelque soient $a\in\mathbb{K}$ et $x\in\James{p}$, $\max(\abs{a},\normeJames{p}{x}) \leqslant \normeJamesB{p}{x+a\varepsilon_0} \leqslant \abs{a}+\normeJames{p}{x}$. De plus, $\normeJamesB{p}{\varepsilon_0}=1$.
+\begin{proof}
+Soient $a\in\mathbb{K}$ et $x\in\James{p}$. On a que $\normeJamesB{p}{\varepsilon_0}=\sup\limits_{N\in\mathbb{N}}\normeJames{p}{\sum\limits_{n=0}^N e_n}=1$, et donc également que $\normeJamesB{p}{x+a\varepsilon_0}\leqslant\normeJames{p}{x}+\abs{a}$.
+
+Si $a=0$, il est évident que $\abs{a}\leqslant\normeJamesB{p}{x+a\varepsilon_0}$. Si $a\neq 0$, soit $\varepsilon\in~]0,a[$. La suite $x=(x_n)_{n\in\mathbb{N}}$ converge vers 0, donc il existe $n_0\in\mathbb{N}$ tel que $\abs{x_{n_0}}<\varepsilon$. Alors
+\[
+\normeJamesB{p}{x+a\varepsilon_0}
+=
+\sup_{N\in\mathbb{N}}\normeJames{p}{\sum_{n=0}^N(a+x_n)e_n}
+\geqslant
+\sqrt[p]{\abs{(a+x_{n_0})-0}^p}
+\geqslant
+\sqrt[p]{(\abs{a}-\varepsilon)^p}
+\]
+donc $\abs{a}\leqslant\normeJamesB{p}{x+a\varepsilon_0}$.
+
+De plus, quelque soient $M\in\mathbb{N}_0$ et $p_1<...<p_{2M}\in\mathbb{N}$, on a que
+\[
+\sqrt[p]{\sum_{k=1}^M\abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}
+\leqslant
+\normeJames{p}{\sum_{n=0}^{p_{2M}}(a+x_n)e_n}
+\leqslant
+\normeJamesB{p}{x+a\varepsilon_0}
+\]
+donc $\normeJames{p}{x}\leqslant\normeJamesB{p}{x+a\varepsilon_0}$.
+\end{proof}
+
+On a désormais en main tout ce qu'il nous faut pour démontrer que $\James{p}$ et $\James{p}\bidual$ sont isomorphes.
+
+\begin{Thm}\end{Thm}
+L'espace de James est isomorphe à son bidual.
+\begin{proof}
+On définit
+\[
+\begin{array}{lllll}
+T&:&\James{p}\bidual&\maps&\James{p}\\
+&:&(a_n)_{n\in\mathbb{N}}&\mapsto&\displaystyle(\lim_n a_n,a_0-\lim_n a_n,...,a_k-\lim_n a_n,...)
+\end{array}
+\]
+C'est évidemment une application linéaire. Montrons que c'est une bijection continue, et par le théorème des isomorphismes de Banach, on aura que $\James{p}$ et $\James{p}\bidual$ sont isomorphes.
+
+Soit $a\in\James{p}\bidual$ tel que $T(a)=0$. D'une part, la première coordonnée de $T(a)$ est nulle, ce qui signifie que $a\in\James{p}$, d'autre part, pour $n\in\mathbb{N}_0$ quelconque, la $n^\text{ième}$ coordonnée de $T(a)$ est nulle, donc $a_{n-1}=0$. On a dés lors que $a=0$, et que $T$ est injective.
+
+Soit maintenant $u=(a_n)_{n\in\mathbb{N}}\in\James{p}$. Prenons $v=(a_0+a_{n+1})_{n\in\mathbb{N}}$. Il est évident que $v\in\James{p}\bidual$, on a que $\lim\limits_n (a_0+a_n)= a_0$ et
+\[
+T(v)
+=
+(a_0,a_0+a_1-a_0,...,a_0+a_{n+1}-a_0,...)
+=
+u
+\]
+Donc $T$ est surjective. Soit $a\varepsilon_0+x\in\James{p}\bidual$. Posons $x_{-1}=a$. On a
+\[
+\begin{array}{l}
+\normeJames{p}{T(a\varepsilon_0+x)}
+=
+\normeJames{p}{(a,x_0,...,x_n,...)}\\
+\displaystyle
+=
+\sup\left\{\left.\sqrt[p]{\sum_{k=1}^n\abs{x_{p_{2k-1}-1}-x_{p_{2k}-1}}^p}\right|n\in\mathbb{N}_0,p_1<...<p_{2n}\in\mathbb{N}\right\}\\
+\displaystyle
+\leqslant
+\sup\left\{\left.\sqrt[p]{\abs{a-x_{p_m}}^p+\sum_{k=1}^n\abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}\right|n\in\mathbb{N}_0,m\in\mathbb{N},p_1<...<p_{2n}\in\mathbb{N}\right\}\\
+\displaystyle
+\leqslant
+\sup\left\{\abs{a}+\abs{x_{p_m}}+\left.\sqrt[p]{\sum_{k=1}^n\abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}\right|n\in\mathbb{N}_0,m\in\mathbb{N},p_1<...<p_{2n}\in\mathbb{N}\right\}\\
+\leqslant
+\abs{a}+2\normeJames{p}{x}
+\leqslant
+3\normeJamesB{p}{a\varepsilon_0+x}
+\end{array}
+\]
+Donc $T$ est continue.
+\end{proof}
+

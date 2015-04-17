@@ -1,0 +1,56 @@
+\section{Théorèmes de Hahn-Banach}
+
+\begin{Thm}\label{HBF}
+Toutes les applications du type $ev_x$ atteignent leur norme sur la boule unité. Plus formellement,
+
+\[
+\forall x\in E, \exists \: x\dual\in E\dual \text{ tel que }\norme{x\dual}=1\text{ et }x\dual(x)=\norme{x}
+\]
+\end{Thm}
+
+%\begin{Thm}\label{HBP}\end{Thm}
+%Soient $E$ un espace vectoriel, $G$ un sous-espace vectoriel de $E$, $f$ une forme linéaire de $E$ et $N$ une semi-norme de $E$. Si de plus pour tout $x\in G$ on a la majoration $\abs{f(x)}\leqslant N(x)$, alors la forme linéaire $f$ s'étend en une forme linéaire définie sur $E$ qui vérifie également cette majoration, sur $E$ tout entier.
+
+\begin{Thm}\label{HBA}
+Dans un espace vectoriel normé, toute fonctionnelle continue d'un sous-espace vectoriel s'étend en une fonctionnelle continue de même norme sur l'espace tout entier.
+\end{Thm}
+
+Pour le théorème suivant, voir \cite[p. 29-31]{BEAUZAMY}.
+
+\begin{Thm}
+Soit $E$ un $\mathbb{R}$-espace vectoriel normé. Soient $A\subseteq E$ convexe fermé non vide, $B\subseteq E$ convexe compact non vide, tels que $A\cap B=\emptyset$. Alors il existe $x\dual\in E\dual$ et $\alpha\in\mathbb{R}$ tels que pour tout $a\in A, b\in B$,
+\[x\dual(a)<\alpha<x\dual(b)\]
+\end{Thm}
+
+\begin{Corol}\label{HBC}
+Soit $E$ un $\mathbb{K}$-espace vectoriel normé. Soient $A$ et $B$ deux convexes fermés non vides disjoints de $E$ tels que l'un des deux est compact et $A$ est $\mathbb{K}$-symétrique, c'est-à-dire que $\lambda A\subseteq A$, quelque soit $\lambda\in S(\mathbb{K})$. Alors il existe $x\dual\in E\dual$ et $\alpha>0$ tels que pour tout $a\in A, b\in B$,
+\[\abs{x\dual(a)}<\alpha<\abs{x\dual(b)}\]
+\end{Corol}
+\begin{proof}
+On considère $E$ un espace vectoriel réel. Le théorème nous donne $x\dual\in E\dual$ et $\alpha\in\mathbb{R}$ tels que pour tout $a\in A, b\in B$,
+\[\begin{array}{rrrrr}
+x\dual(a)&<&\alpha &<&x\dual(b)\\
+-x\dual(a)&>&-\alpha &>&-x\dual(b)\\
+-x\dual(b)&<&-\alpha &<&-x\dual(a)
+\end{array}\]
+Ce qui indique que l'ordre des inégalités est indépendant du fait que ce soit $A$ ou $B$ le compact.
+
+Supposons que $A$ est $\mathbb{R}$-symétrique. Soit $a\in A$, on a que $-a\in A$, et donc $0\leqslant\abs{x\dual(a)}<\alpha$. Par conséquent, $\alpha>0$. Soit $b\in B$, on a que $0<\alpha<x\dual(b)\leqslant\abs{x\dual(b)}$. On en déduit alors le corollaire pour un $\mathbb{R}$-espace vectoriel normé.
+
+Considérons maintenant $E$ un $\mathbb{C}$-espace vectoriel normé, et notons $E_\mathbb{R}$ son équivalent réel. Appliquons le corollaire sur cet espace, on obtient alors $x_\mathbb{R}\dual\in E_\mathbb{R}\dual$ et $\alpha>0$ tels que pour tout $a\in A, b\in B, \abs{x_\mathbb{R}\dual(a)}<\alpha<\abs{x_\mathbb{R}\dual(b)}$. Le corollaire n'est pas encore démontré, puisqu'on l'a pour $x_\mathbb{R}\dual$ qui est $\mathbb{R}$-linéaire, et donc pas nécessairement $\mathbb{C}$-linéaire. Par contre, si on définit $x\dual$ tel que pour tout $x\in E$,
+\[
+x\dual(x)=x_\mathbb{R}\dual(x)-ix_\mathbb{R}\dual(ix)
+\]
+on obtient bien une application de $E\dual$. Montrons que les inégalités souhaitées sont vérifiées aussi pour $x\dual$.
+
+Soient alors $a\in A$ et $b\in B$. On a que
+\[\abs{x\dual(b)}\geqslant\abs{\Re(x\dual(b))}=\abs{x_\mathbb{R}\dual(b)}>\alpha\]
+De plus, $A$ est $\mathbb{C}$-symétrique, donc il existe $\theta\in\mathbb{R}$ tel que $x\dual(a\e^{i\theta})>0$ et $a\e^{i\theta}\in A$. Par conséquent,
+\[
+\abs{x\dual(a)}=\abs{x\dual(a\e^{i\theta})}=\abs{x_\mathbb{R}\dual(a\e^{i\theta})}<\alpha
+\]
+\end{proof}
+
+\begin{Thm}\label{HBH}
+Soient $E$ un espace vectoriel normé, $L\neq\emptyset$ un sous-espace affin de $E$ et $\Omega\neq\emptyset$ un ouvert convexe de $E$. Si $L$ et $\Omega$ sont disjoints, alors il existe un hyperplan affin qui contient $L$ et qui ne rencontre pas $\Omega$.
+\end{Thm}

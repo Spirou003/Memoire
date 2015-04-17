@@ -1,0 +1,43 @@
+\begin{Prop}\label{lipschitz}
+Soient $E$ un espace vectoriel normé, $c\in\mathbb{K}_0$ et $0\neq x\dual\in E\dual$. Alors, en posant $H=\inv{x\dual}(c)$, on a
+\[
+\sup_{x\in H}\frac{\abs{x\dual(x)}}{\norme{x}}
+=
+\sup_{\substack{x\in E\\x\neq 0}}\frac{\abs{x\dual(x)}}{\norme{x}}
+=
+\norme{x\dual}
+\]
+\end{Prop}
+
+\begin{proof}
+Soit $x\in H$, et soit $\alpha\in\mathbb{K}_0$. On a
+\[
+\sup_{x\in H}\frac{\abs{x\dual(x)}}{\norme{x}}
+=
+\sup_{x\in H}\frac{\abs{x\dual(x)}}{\norme{x}}\frac{\alpha}{\alpha}
+=
+\sup_{x\in H}\frac{\abs{x\dual(\alpha x)}}{\norme{\alpha x}}
+=
+\sup_{x\in\alpha H}\frac{\abs{x\dual(x)}}{\norme{x}}
+\]
+
+Puisque $H$ est le translaté d'un sous-espace de $E$ de codimension 1, on a que $\mathbb{K}_0 H$ et $\ker(x\dual)$ partitionnent $E$. On en déduit que
+\[
+\sup_{x\in H}\frac{\abs{x\dual(x)}}{\norme{x}}
+=
+\sup_{\substack{x\in E\\x\neq 0}}\frac{\abs{x\dual(x)}}{\norme{x}}
+\]
+
+De plus,
+\[
+\sup_{\substack{x\in E\\x\neq 0}}\frac{\abs{x\dual(x)}}{\norme{x}}
+=
+\sup_{\substack{x\in S(E)\\ \alpha>0}}\frac{\abs{x\dual(\alpha x)}}{\norme{\alpha x}}
+=
+\sup_{\substack{x\in S(E)\\ \alpha>0}}\frac{\alpha \abs{x\dual(x)}}{\alpha \norme{x}}
+=
+\sup_{x\in S(E)}\abs{x\dual(x)}
+=
+\norme{x\dual}
+\]
+\end{proof}

@@ -1,0 +1,77 @@
+Jusque maintenant, on a démontré des propriétés et théorèmes très diversifiés concernant les espaces réflexifs. Cependant, on a évité une question qui est restée ouverte pendant longtemps: est-il suffisant d'être isométrique à son bidual pour qu'un espace soit réflexif? Ce présent chapitre a pour but de présenter un espace atypique qui a répondu à cette question par la négative. Cet espace, nommé espace de James (en l'honneur de celui qui l'a découvert, Robert Clarke James), est isométrique à son bidual, mais n'est pourtant pas réflexif.
+
+Pour être exact, nous ne verrons pas l'espace de James tel qu'il a été découvert, mais plutôt une classe d'espaces qui le contient, et pour laquelle chaque espace est non réflexif mais isométrique à son bidual. Cela dit, on dira que tous ces espaces sont également des espaces de James, vu leur forte ressemblance avec celui que James a présenté. Comme il l'a fait, nous procèderons en deux étapes: on construit un espace non réflexif, isomorphe à son bidual et dont l'image par l'injection canonique est de codimension 1, ensuite on change la norme pour une équivalente plus compliquée mais qui rend l'espace isométriue à son bidual.
+
+\section{Définition de $\James{p}$}
+
+À partir de maintenant, et jusqu'à la fin de ce chapitre, on fixe le réel $p>1$. L'espace que James a présenté correspond à $p=2$ où le corps de base est $\mathbb{R}$. On définit l'espace de James comme suit:
+
+\[
+\James{p}=\left\{x\in c_0|\normeJames{p}{x}<+\infty\right\}
+\]
+
+avec
+
+\[
+\begin{array}{lllll}
+\normeJames{p}{.}&:&\mathbb{K}^\mathbb{N}&\maps&\mathbb{R}^+\cup\{+\infty\}\\
+&:&(x_n)_{n\in\mathbb{N}}&\mapsto&\displaystyle\sup\left\{\left.\sqrt[p]{\sum_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}\right|n\in\mathbb{N}_0, p_1<...<p_{2n}\in\mathbb{N}\right\}
+\end{array}
+\]
+
+Il est évident que telle qu'elle est définie, cette application n'est pas une norme sur $\mathbb{K}^\mathbb{N}$, car toute suite constante annule cette application. De plus, toute suite contenant une infinité de 0 et de 1 a une image infinie. Pourtant, les suites considérées sont toutes dans $\mathbb{K}^\mathbb{N}$.
+
+\begin{Prop}\end{Prop}
+L'espace $(\James{p},\normeJames{p}{.})$ est un espace de Banach.
+\begin{proof}
+Montrons que $\normeJames{p}{.}$ vérifie, pour tous $x, y\in\James{p}$, pour tout $\lambda\in\mathbb{K}$, les propriétés suivantes:
+\begin{enumerate}[(1)]
+\item $0\leqslant\normeJames{p}{x}<+\infty$
+\item $\normeJames{p}{\lambda x}=\abs{\lambda}\normeJames{p}{x}$
+\item $\forall k\in\mathbb{N}, \abs{x_k}\leqslant\normeJames{p}{x}$, c'est-à-dire $\norme{x}_\infty\leqslant\normeJames{p}{x}$
+\item $\normeJames{p}{x}=0\ssi x=0$
+\item $\normeJames{p}{x+y}\leqslant\normeJames{p}{x}+\normeJames{p}{y}$
+\end{enumerate}
+Les deux premières affirmations étant évidentes, on commence par la troisième.
+
+(3) Soit $k\in\mathbb{N}$. Si $x_k=0$, c'est évident. Considérons que $x_k\neq 0$. Puisque $x\in c_0$, on a que $x_n\rightarrow 0$. Soit $\varepsilon>0$, il existe $l\in\mathbb{N}$ tel que $l\neq k$ et $\abs{x_l}<\varepsilon$. Dans ce cas, $\abs{x_k-x_l}\geqslant\abs{x_k}-\abs{x_l}>\abs{x_k}-\varepsilon$. En prenant $n=1$, $p_1=k$, $p_2=l$ dans la définition de $\normeJames{p}{x}$, on obtient $\abs{x_k}-\varepsilon<\abs{x_k-x_l}\leqslant\normeJames{p}{x}$, et on en déduit que $\abs{x_k}\leqslant\normeJames{p}{x}$. Le (4) est maintenant évident.
+
+(5) Soient $x,y\in\James{p}$. On veut montrer que $\normeJames{p}{x+y}\leqslant\normeJames{p}{x}+\normeJames{p}{y}$. Soient donc $n\in\mathbb{N}_0$ et $p_1<...<p_{2n}\in\mathbb{N}$. Par l'inégalité de Hölder, on a
+\[
+\sqrt[p]{\sum_{k=1}^n \abs{ (x_{p_{2k-1}}+y_{p_{2k-1}})-(x_{p_{2k}}+y_{p_{2k}}) }^p}
+\leqslant
+\sqrt[p]{\sum_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p} + \sqrt[p]{\sum_{k=1}^n \abs{y_{p_{2k-1}}-y_{p_{2k}}}^p} 
+\]
+Par passage au supremum sur $n$ et les $p_k$, on obtient l'inégalité souhaitée.
+
+Maintenant, vérifier que $\James{p}$ est un espace vectoriel est immédiat. Montrons qu'il est complet.
+
+Soit $(x^{(n)})_{n\in\mathbb{N}}$ une suite de Cauchy de $\James{p}$, elle vérifie
+\[
+\forall\varepsilon>0,\exists n_0\in\mathbb{N}\text{ tel que }\forall n\geqslant m\geqslant n_0,\normeJames{p}{x^{(n)}-x^{(m)}}<\varepsilon
+\]
+et vérifie par conséquent
+\[
+\forall k\in\mathbb{N},\forall\varepsilon>0,\exists n_0\in\mathbb{N}\text{ tel que }\forall n\geqslant m\geqslant n_0,\abs{x^{(n)}_k-x^{(m)}_k}<\varepsilon
+\]
+Ce qui signifie que chaque suite $(x^{(n)}_k)_{n\in\mathbb{N}}$ est de Cauchy, et donc converge vers un élément que l'on note $x_k\in\mathbb{K}$. Il reste à démontrer que $x=(x_k)_{k\in\mathbb{N}}\in\James{p}$ (c'est-à-dire $x\in c_0$ et $\normeJames{p}{x}<+\infty$) et que $x^{(n)}\rightarrow x$.
+
+Pour montrer que $x\in c_0$, rappelons que $\norme{x}_\infty\leqslant\normeJames{p}{x}$. Ce qui signifie que la suite $(x^{(n)})_{n\in\mathbb{N}}$ est une suite de Cauchy de $c_0$. De plus, $x$ est obtenu de la même façon que le candidat limite qui intervient dans la démonstration du fait que $c_0$ est un espace de Banach. On en déduit donc que $x\in c_0$.
+
+Soient $l\in\mathbb{N}_0$ et $p_1<...<p_{2l}\in\mathbb{N}$. On a que
+\[
+\forall\varepsilon>0,\exists n_0\in\mathbb{N}\text{ tel que }\forall n\geqslant m\geqslant n_0, \sqrt[p]{\sum_{k=1}^l \abs{ (x^{(n)}_{p_{2k-1}}-x^{(m)}_{p_{2k-1}})-(x^{(n)}_{p_{2k}}-x^{(m)}_{p_{2k}}) }^p}<\varepsilon
+\]
+Par passage à la limite sur $m$,
+\[
+\forall\varepsilon>0,\exists n_0\in\mathbb{N}\text{ tel que }\forall n\geqslant n_0, \sqrt[p]{\sum_{k=1}^l \abs{ (x^{(n)}_{p_{2k-1}}-x_{p_{2k-1}})-(x^{(n)}_{p_{2k}}-x_{p_{2k}}) }^p}\leqslant\varepsilon
+\]
+Par passage au supremum sur $l$ et les $p_k$,
+\[
+\forall\varepsilon>0,\exists n_0\in\mathbb{N}\text{ tel que }\forall n\geqslant n_0, \normeJames{p}{x^{(n)}-x}\leqslant\varepsilon
+\]
+On en déduit qu'il existe $n\in\mathbb{N}$ tel que $\normeJames{p}{x^{(n)}-x}<+\infty$, donc $x\in\James{p}$. Dès lors, la ligne précédente signifie que $x^{(n)}\rightarrow x$, ce qui termine la démonstration.
+\end{proof}
+
+La définition de l'espace de James peut faire penser à la manière dont les espaces $l^p$ sont définis. Les normes respectives de $l^p$ et de $\James{p}$ sont en effet très ressemblantes. Cependant on verra qu'il y a une grande différences entre celles-ci, à commencer par le fait que $\James{p}$ n'est pas réflexif. Pour ce faire, nous passerons par les bases de Schauder.
+

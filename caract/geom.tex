@@ -1,0 +1,121 @@
+\section{Propriétés géométriques}
+
+À l'opposé du théorème de Kakutani, qui est pûrement topologique, on va démontrer un théorème de James qui donne une caractérisation géométrique des espaces réflexifs. Pour ceci, nous aurons besoin de plusieurs résultats intermédiaires. Le premier étant ce {\textit{lemme algébrique}}:
+
+\begin{Lemme}\label{lemmealgebrique}
+Soient $E$ un espace vectoriel normé, $n\in\mathbb{N}_0$ et $x\dual, x\dual_1,...,x\dual_n\in E\dual$. Si $x\dual_1,...,x\dual_n$ sont linéairement indépendants, alors les assertions suivantes sont équivalentes:
+\begin{enumerate}[(1)]
+\item $x\dual\in\Span(x\dual_1,...,x\dual_n)$
+\item $\bigcap\limits_{k=1}^n \ker(x\dual_k)\subseteq\ker(x\dual)$
+\end{enumerate}
+\end{Lemme}
+\begin{proof}
+~\\
+(1) $\Rightarrow$ (2)\\
+Puisque $x\dual\in\Span(x\dual_1,...,x\dual_n)$, il existe $a_1,...,a_n\in\mathbb{K}$ tels que $x\dual=\sum\limits_{k=1}^n a_k x\dual_k$. Soit $x\in\bigcap\limits_{i=k}^n \ker(x\dual_k)$. Alors
+\[
+x\dual(x)
+=
+\sum\limits_{k=1}^n a_k x\dual_k(x)
+=
+0
+\]
+
+(2) $\Rightarrow$ (1)\\
+Soit l'application linéaire
+\[
+\begin{array}{lllll}
+\varphi&:&E&\maps&\mathbb{K}^{n+1}\\
+&:&x&\mapsto&(x\dual(x),x\dual_1(x),...,x\dual_n(x))
+\end{array}
+\]
+Son image est un sous-espace vectoriel fermé de $\mathbb{K}^{n+1}$. Alors par le théorème de Hahn-Banach (\ref{HBC}), puisque $(1, 0, ..., 0)\notin \Image(\varphi)$, on peut séparer $\{(1, 0, ..., 0)\}$ et $\Image(\varphi)$, autrement dit il existe $A\in (\mathbb{K}^{n+1})\dual$ et $\alpha>0$ tels que pour tout $x\in E$, on a
+\[
+\abs{A(\varphi(x))}<\alpha<\abs{A((1,0,...,0))}
+\]
+Cela signifie que $\Image(A\circ\varphi)$ est borné. Or c'est un espace vectoriel, donc il est réduit à l'élément nul. De plus, $A$ s'identifie à $(a,a_1,...,a_n)\in\mathbb{K}^{n+1}$, alors d'une part $A((1,0,...,0))=a\neq 0$ car $\alpha<\abs{A((1,0,...,0))}$, d'autre part pour tout $x\in E$ on a que
+\[
+A(\varphi(x))
+=
+a x\dual(x) + \sum_{k=1}^n a_k x\dual_k(x)
+=
+0
+\]
+Ce qui signifie que $x\dual$ est une combinaison linéaire de $x\dual_1,...,x\dual_n$.
+\end{proof}
+
+\begin{Lemme}[Condition d'Helly]\label{hellycondition}
+Soit $E$ un espace vectoriel normé de dimension infinie. Soient $n\in\mathbb{N}_0$, $x\dual_1,...,x\dual_n\in E\dual$, $c_1,...,c_n\in\mathbb{K}$ et $M>0$. Alors, les assertions suivantes sont équivalentes:
+\begin{enumerate}[(1)]
+\item pour tout $\varepsilon>0$, il existe $x\in E$ tel que $\norme{x}=M+\varepsilon$ et $x\dual_k(x)=c_k$ quelque soit $k\in\{1,...,n\}$
+\item pour tous $a_1,...,a_n\in\mathbb{K}$, $\abs{\sum\limits_{k=1}^n a_k c_k} \leqslant M\norme{\sum\limits_{k=1}^n a_k x\dual_k}$
+\end{enumerate}
+\end{Lemme}
+\begin{proof}
+(1) $\Rightarrow$ (2)\\
+Soient $\varepsilon>0$ et soit $x\in E$ tel que donné par (1). Soient $a_1,...,a_n\in\mathbb{K}$. On a
+\[
+\abs{\sum_{k=1}^n a_k c_k}
+=
+\norme{\sum_{k=1}^n a_k x\dual_k(x)}
+\leqslant
+\norme{x}\norme{\sum_{k=1}^n a_k x\dual_k}
+=
+(M+\varepsilon)\norme{\sum_{k=1}^n a_k x\dual_k}
+\]
+D'où on en déduit (2).
+
+(2) $\Rightarrow$ (1)\\
+Soit $\varepsilon>0$. Si $c_1=...=c_n=0$, alors il suffit de prendre un point de norme $M+\varepsilon$ qui annule toutes les $x\dual_k$. Puisqu'on est en dimension infinie, un tel point existe toujours. On se place dans le cas où au moins l'un des $c_k$ est non-nul, sans perte de généralité on considère que c'est $c_1$.
+
+Supposons que $x\dual_1,...,x\dual_n$ soient linéairement indépendants. Alors, on définit les hyperplans affins $H_k=\inv{x\dual_k}(c_k)$, pour $k\in\{1,...,n\}$, ainsi que $H=\bigcap\limits_{k=1}^n H_k$. Puisque les $H_k$ sont les translatés d'espaces vectoriels de codimension 1 dans un espace de dimension infinie, on a que leur intersection $H$ est non vide. Posons $a=\inf\limits_{x\in H}\norme{x}$. On a que $a>0$ car quelque soit $x\in H$, $x\dual_1(x)=c_1\neq 0$. Alors, $H$ ne rencontre pas la boule ouverte centrée en zéro et de rayon $a$. Donc, par le théorème de Hahn-Banach (\ref{HBH}), il existe $x\dual\in E\dual$ et $c\in\mathbb{K}$ tels que $H\subseteq\mathcal{H}=\inv{x\dual}(c)$ et $\mathcal{H}$ ne rencontre pas la boule ouverte centrée en zéro et de rayon $a$.
+
+Soit $x\in H$. Clairement, $H_k-x$ est un espace vectoriel, quelque soit $k\in\{1,...,n\}$, il en va de même pour $\mathcal{H}-x$, d'où $\bigcap\limits_{k=1}^n \ker(x_k\dual)\subseteq\ker(x\dual)$. Alors par le lemme (\ref{lemmealgebrique}), $x\dual$ est une combinaison linéaire de $x\dual_1,...,x\dual_n$. Soient $a_1,...,a_n$ tels que $x\dual=\sum\limits_{k=1}^n a_k x\dual_k$. Soit $x\in\mathcal{H}$, on a
+\[
+c
+=
+x\dual(x)
+=
+\sum\limits_{k=1}^n a_k x\dual_k(x)
+=
+\sum\limits_{k=1}^n a_k c_k
+\]
+
+Puisque $H\subseteq \mathcal{H}$, on a que $\inf\limits_{x\in H}\norme{x}\geqslant\inf\limits_{x\in\mathcal{H}}\norme{x}$. Or, $\mathcal{H}$ ne rencontre pas la boule centrée en zéro de rayon $a$, donc $\inf\limits_{x\in H}\norme{x}=a\leqslant\inf\limits_{x\in\mathcal{H}}\norme{x}$. De plus, $c\neq 0$, car sinon on aurait que $0\in\mathcal{H}$, et donc que $\mathcal{H}$ rencontre la boule centrée en zéro et de rayon $a$. On a alors que
+
+\begin{alignat*}{3}
+\inf_{x\in H}\norme{x}
+&=
+\inf_{x\in\mathcal{H}}\frac{\norme{x}}{\abs{x\dual(x)}}\abs{x\dual(x)}
+=
+\abs{c}\inf_{x\in\mathcal{H}}\frac{\norme{x}}{\abs{x\dual(x)}} &\\
+&=
+\abs{c}\frac{1}{\sup\limits_{x\in\mathcal{H}}\frac{\abs{x\dual(x)}}{\norme{x}}} & \\
+&=
+\abs{c}\frac{1}{\norme{x\dual}} & ~~~~ \text{par la proposition (\ref{lipschitz})}\\
+&=
+\frac{\abs{\sum\limits_{k=1}^n a_k c_k}}{\norme{\sum\limits_{k=1}^n a_k x\dual_k}} &
+\end{alignat*}
+
+Par hypothèse, le dernier membre est inférieur à $M$. Donc, il existe $x\in H$ tel que $\norme{x}=M+\varepsilon$, ce que l'on cherchait.\newline
+
+Maintenant, supposons que $n\geqslant 2$, que les $n-1$ premières fonctionnelles soient linéairement indépendantes et que la dernière soit une combinaison linéaire des autres. Cela sera suffisant pour prouver que le lemme est vrai en toute généralité. Alors, il existe $a_1,...,a_{n-1}\in\mathbb{K}$ tels que $x\dual_n=\sum\limits_{k=1}^{n-1}a_k x\dual_k$. Dans ce cas, par (2) on a que
+\[
+\abs{c_n-\sum_{k=1}^{n-1}a_k c_k}
+\leqslant
+M\norme{x\dual_n-\sum_{k=1}^{n-1}a_k x\dual_k}
+=
+0
+\]
+D'où $c_n=\sum\limits_{k=1}^{n-1}a_k c_k$. On applique le lemme sur les $n-1$ premières fonctionnelles, on obtient $x$ tel que $\norme{x}=M+\varepsilon$ et $x\dual_k(x)=c_k$, quelque soit $k\in\{1,...,n-1\}$, où $\varepsilon>0$. Alors
+\[
+x\dual_n(x)
+=
+\sum_{k=1}^{n-1}a_k x\dual_k(x)
+=
+\sum_{k=1}^{n-1}a_k c_k
+=
+c_n
+\]
+\end{proof}
+

@@ -1,0 +1,200 @@
+\section{Deux bases de Schauder particulières}
+
+\begin{Prop}\label{jamesenschauder}\end{Prop}
+La base canonique $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder de $\James{p}$.
+
+\begin{proof}
+On montre dans un premier temps que cette suite admet une constante de base. Cela nous permettra d'affirmer que si un vecteur admet une décomposition selon cette base, alors elle est unique. On veut trouver $K>0$ tel que, pour tout $n\leqslant m\in\mathbb{N}$ et $a_0,...,a_m\in\mathbb{K}$,
+
+\[
+\normeJames{p}{\sum_{k=0}^n a_k e_k}\leqslant K\normeJames{p}{\sum_{k=0}^m a_k e_k}
+\]
+
+En remarquant que
+
+\[
+\sum_{k=0}^n a_k e_k = (a_0,...,a_n,0,...,0,...)
+\]
+
+on en déduit immédiatement l'inégalité souhaitée, pour $K=1$, puisque le fait d'ajouter des termes à la somme offre un plus grand choix de coordonnées non nulles au supremum calculé par $\normeJames{p}{.}$.
+
+Maintenant, montrons que c'est bien une base de Schauder. Soit $x\in\James{p}$. On veut montrer que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ converge vers $x$. L'idée générale de la preuve sera la suivante. On supposera par l'absurde que la série ne converge pas vers $x$. Grace à cela, quelque soient $m\in\mathbb{N}$ et $\varepsilon>0$, on pourra trouver $N$ et des $p_k$ tels que
+
+\[
+\sqrt[p]{\sum_{k=1}^N\abs{y_{p_{2k-1}}-y_{p_{2k}}}^p}>\varepsilon
+\]
+
+où $y=(y_n)_{n\in\mathbb{N}}=x-\sum\limits_{k=0}^m x_k e_k$. Cependant, les $m$ premières coordonnées de $y$ sont nulles, alors que celles de $x$ ne le sont pas nécessairement. On utilisera alors le fait que $x$ est une suite qui converge vers zéro afin de pouvoir retirer les $p_k$ dont les coordonnées de $x$ et $y$ ne sont pas les mêmes, en conservant une minoration similaire à celle écrite ci-dessus.
+
+Alors, il suffira d'appliquer autant de fois que nécessaire le même raisonnement pour en conclure que $\normeJames{p}{x}=+\infty$.\newline
+
+Supposons que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ ne converge pas vers $x$, soit alors $\varepsilon>0$ tel que
+
+\[
+(1)\text{ }\text{ }\text{ }\forall n\in\mathbb{N}, \exists\: m\geqslant n\text{ tel que }\normeJames{p}{x-\sum_{k=0}^m x_k e_k}>\varepsilon
+\]
+
+La suite $(x_n)_{n\in\mathbb{N}}$ convergeant vers 0, on a $n_0\in\mathbb{N}$ tel que pour tout $n\geqslant n_0, \abs{x_n}<\frac{\varepsilon}{2}$. Dans (1), prenons $n=n_0$, on obtient $m\geqslant n_0\in\mathbb{N}$. Posons $y=(y_n)_{n\in\mathbb{N}}=x-\sum\limits_{k=0}^m x_k e_k$. Puisque $\normeJames{p}{y}$ est un supremum, il existe $N\in\mathbb{N}$ et $p_1<...<p_{2N}\in\mathbb{N}$ tels que $y_{p1}$ et $y_{p2}$ ne sont pas tous les deux nuls, et
+
+\[
+\sqrt[p]{\sum_{k=1}^N\abs{y_{p_{2k-1}}-y_{p_{2k}}}^p}>\varepsilon
+\]
+
+On a deux possibilités: soit $p_1>m$, soit $p_1\leqslant m$.
+
+Si $p_1>m$, alors $x$ et $y$ sont égaux en toutes les coordonnées considérées, et on a
+
+\[
+\sqrt[p]{\sum_{k=1}^N\abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}>\varepsilon
+\]
+
+Si $p_1\leqslant m$, on retire $p_1$ et $p_2$ des entiers choisis, on que
+
+\[
+\sqrt[p]{\sum_{k=2}^N\abs{y_{p_{2k-1}}-y_{p_{2k}}}^p}
+=
+\sqrt[p]{\sum_{k=2}^N\abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}
+>
+\frac{\varepsilon}{2}
+\]
+
+Dans les deux cas, on obtient la même minoration.\newline
+
+Dans (1), on prend maintenant $n=p_{2N}+1$, et on reproduit le même procédé que ci-dessus. On obtient une nouvelle suite d'entiers tous supérieurs aux précédents, notons-les $q_1<...<q_{2M}$, tels que
+
+\[
+\sqrt[p]{\sum_{k=1}^M\abs{x_{q_{2k-1}}-x_{q_{2k}}}^p}>\frac{\varepsilon}{2}
+\]
+
+On en déduit alors, en choisissant $p_1<...<p_{2N}<q_1<...<q_{2M}$ que $\normeJames{p}{x}\geqslant 2\frac{\varepsilon}{2}$. En reproduisant ce processus autant de fois que nécessaire, on en déduit que pour tout $l\in\mathbb{N}$, $\normeJames{p}{x}\geqslant l\frac{\varepsilon}{2}$, ce qui contredit que $\normeJames{p}{x}<+\infty$. La seule supposition que l'on a faite est que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ ne converge pas vers $x$, elle était donc fausse, la série converge bien vers $x$.
+\end{proof}
+
+La base canonique étant une base de Schauder, les fonctionnelles coordonnées
+
+\[
+\begin{array}{lllll}
+f_k&:&\James{p}&\maps&\mathbb{K}\\
+&:&(a_n)_{n\in\mathbb{N}}&\mapsto&a_k
+\end{array}
+\]
+
+sont continues. De plus, elles sont de norme 1, puisque pour tout $k\in\mathbb{N}$ et $a\in\James{p}$ on a que $\abs{f_k(a)}=\abs{a_k}\leqslant\normeJames{p}{a}$, et que $\abs{f_k(a_k e_k)}=\abs{a_k}=\normeJames{p}{a_k e_k}$.
+
+\begin{Prop}\end{Prop}
+La suite des sommes partielles de la base canonique, c'est-à-dire $(s_n)_{n\in\mathbb{N}} = \left(\sum\limits_{k=0}^n e_k\right)_{n\in\mathbb{N}}$, est également une base de Schauder.
+\begin{proof}
+On démontre aisément que c'est une suite basique monotone. Montrons que c'est une base de Schauder. Pour cela, il est suffisant de démontrer que la série $\sum\limits_{n\in\mathbb{N}}(x_n-x_{n+1})s_n$ converge vers $x=\sum\limits_{n\in\mathbb{N}}x_n e_n$. Soit $N\in\mathbb{N}_0$, on a
+
+\begin{align*}
+\normeJames{p}{x - \sum_{n=0}^N (x_n-x_{n+1})s_n}
+\!\!
+&
+=
+\normeJames{p}{(\underbrace{x_{N+1}^{},...,x_{N+1}^{}}_{N+1\text{ fois}},x_{N+1}^{},x_{N+2}^{},...)}
+\!\!
+\leqslant
+2\normeJames{p}{(\underbrace{0,...,0}_{N+1\text{ fois}},x_{N+1}^{},x_{N+2}^{},...)}
+\\
+&
+=
+2\normeJames{p}{x - \sum_{n=0}^N x_n e_n}
+\end{align*}
+
+Puisque $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder de $\James{p}$, le dernier membre converge vers zéro quand $N$ tend vers l'infini. Donc il en est de même pour le premier, et $(s_n)_{n\in\mathbb{N}}$ est également une base de Schauder.
+\end{proof}
+
+On a maintenant deux bases de Schauder de $\James{p}$. Rappelons qu'un espace est réflexif si et seulement si ses bases de Schauder sont contractantes et complètes (théorème (\ref{JamesSchauder})). Soit $n\in\mathbb{N}$. On considère la fonctionnelle coordonnée $f_n$ associée à la base canonique $(e_n)_{n\in\mathbb{N}}$. Si on prend $m\geqslant n$, alors $f_n(s_m)=1$, et puisque $\normeJames{p}{s_m}=1$, on en déduit que la base $(s_n)_{n\in\mathbb{N}}$ ne peut pas être contractante. Dans ce cas, l'espace de James n'est pas réflexif.
+
+On va aller plus loin, en montrant qu'il est presque réflexif, c'est-à-dire que $\James{p}$ est de codimension 1 dans son bidual.
+
+\begin{Prop}\label{jamesencontractante}
+La base canonique de l'espace de James est contractante (et donc n'est pas complète).
+\end{Prop}
+\begin{proof}
+Pour ce faire, supposons par l'absurde que ce n'est pas vrai. On a $x\dual\in\James{p}\dual$ tel que $\sup\limits_{x\in E_n}\abs{x\dual(x)}$ ne converge pas vers 0, avec
+
+\[
+E_n=\left\{\left.x=\sum_{j\geqslant n}a_j e_j\right|(a_n)_{n\in\mathbb{N}}\in\mathbb{K}^\mathbb{N}\text{ et }\normeJames{p}{x}=1\right\}
+\]
+
+On a alors une suite strictement croissante de naturels $(n_k)_{k\in\mathbb{N}}$ et $\varepsilon>0$ tels que pour tout $k\in\mathbb{N}$, {$\sup\limits_{x\in E_{n_k}}\abs{x\dual(x)}>\varepsilon$}. Soit $x_0\in E_{n_0}$ tel que $\abs{x\dual(x_0)}>\varepsilon$. Comme $x_0\in E_{n_0}$, on a que $\sum\limits_{j=n_0}^n a_j e_j\underset{n\rightarrow+\infty}{\longrightarrow} x_0$ pour la norme et pour la topologie faible. On en déduit alors qu'il existe $n\in\mathbb{N}$ tel que
+
+\[
+\frac{1}{2}\leqslant\normeJames{p}{\sum_{j=n_0}^n a_j e_j}\leqslant\frac{3}{2}
+~~~ \text{et} ~~~
+\frac{\varepsilon}{2}\leqslant\abs{x\dual\left(\sum_{j=n_0}^n a_j e_j\right)}\leqslant\frac{3\varepsilon}{2}
+\]
+
+et en particulier, on peut trouver des coefficients $a'_{n_0},...,a'_n\in\mathbb{K}$ tels que
+
+\[
+\frac{\varepsilon}{3}\leqslant\abs{x\dual\left(\sum_{j=n_0}^n a'_j e_j\right)}
+\]
+
+On reproduit le processus pour tous les $E_n$, on obtient ainsi une suite $(u_n)_{n\in\mathbb{N}}$ de combinaisons linéaires finies des $e_n$ telle que, pour tout $k\in\mathbb{N}$
+\begin{itemize}
+\item $\normeJames{p}{u_k}=1$
+\item $u_k\in E_{n_k}$
+\item $x\dual(u_k)\geqslant\varepsilon/3$
+\item si on additionne tous les $u_l$, on obtient une suite que l'on peut représenter par \\ $([u_0], [u_1], ... [u_l], ...)$. Cette suite n'est pas dans $\James{p}$.
+\end{itemize}
+Montrons désormais que $x=\sum\limits_{n\in\mathbb{N}_0}\frac{1}{n}u_n\in\James{p}$. Cela nous amènera à notre contradiction puisque pour $x\dual\in\James{p}\dual$, on aura
+
+\[
+x\dual\left(\sum_{n\in\mathbb{N}_0}\frac{1}{n}u_n\right)
+\geqslant
+\sum_{n\in\mathbb{N}_0}\frac{1}{n}\varepsilon
+=+\infty
+\]
+
+Posons $(v_n)_{n\in\mathbb{N}} = ([u_0], [u_1], ... [u_l], ...)$. Soient $N\in\mathbb{N}$ et $p_1<...<p_{2N}$. On va procèder par étapes.
+
+Supposons que tous les $p_n$ sont dans le $k^\text{ième}$ bloc. Alors, on a
+
+\[
+\sum_{l=1}^N \abs{x_{p_{2l-1}}-x_{p_{2l}}}^p
+=
+\sum_{l=1}^N \frac{1}{k^p}\abs{v_{p_{2l-1}}-v_{p_{2l}}}^p
+\leqslant
+\frac{1}{k^p}\normeJames{p}{u_k}^p
+=
+\frac{1}{k^p}
+\]
+
+Maintenant, supposons que les $p_n$ sont répartis par paires dans les $k$ premiers blocs. Notons $n_l$ et $N_l$ les indices de la première et de la dernière paire de $p_n$ situées dans le $l^\text{ième}$ bloc. Alors
+
+\[
+\sum_{l=1}^N \abs{x_{p_{2l-1}}-x_{p_{2l}}}^p
+=
+\sum_{l=n_1}^{N_1}\abs{x_{p_{2l-1}}-x_{p_{2l}}}^p + ... + \sum_{l=n_k}^{N_k}\abs{x_{p_{2l-1}}-x_{p_{2l}}}^p
+\leqslant
+\frac{1}{1^p}+...+\frac{1}{k^p}
+\]
+
+Cependant, les $p_n$ ne sont pas nécessairement bien répartis dans différents blocs, il peut y en avoir qui chevauchent plusieurs blocs. Supposons que $p_1$ est sur le $k^\text{ième}$ bloc et $p_2$ est sur le $K^\text{ième}$ bloc. Alors
+
+\[
+\abs{x_{p_1}-x_{p_2}}^p
+\leqslant
+\left(\frac{1}{k}\abs{v_{p_1}}+\frac{1}{K}\abs{v_{p_2}}\right)^p
+\leqslant
+\left(\frac{1}{k}\normeJames{p}{u_k}+\frac{1}{k}\normeJames{p}{u_K}\right)^p
+=
+\left(\frac{2}{k}\right)^p
+\]
+
+Remarquons que de telles paires sont en nombre limité. Pour un bloc, on a au maximum deux telles paires qui le chevauchent: une paire qui se termine sur le bloc, et une paire qui commence sur le bloc.
+
+Considérons maintenant la somme générale, et changeons de notations. Soient $N, M\in\mathbb{N}$, $p_1<...<p_{2N}$ et $q_1<...<q_{2M}$ tels que les $p_n$ sont répartis par paires dans différents blocs, les paires de $q_n$ chevauchant chacune deux blocs, et tels que si toutes ces paires de $p_n$ et toutes ces paires de $q_n$ sont mises bout-à-bout dans un certain ordre, elles forment une suite strictement croissante. Notons $k$ l'entier du dernier bloc touché par les paires choisies. On a alors
+
+\[
+{\sum_{l=1}^N\abs{x_{p_{2l-1}}-x_{p_{2l}}}^p + \sum_{l=1}^M\abs{x_{q_{2l-1}}-x_{q_{2l}}}^p}
+\leqslant
+\sum_{l=1}^k\frac{1}{l^p} + \sum_{l=1}^k 2\frac{2^p}{l^p}
+<
+(1+2^{p+1})\sum_{l\in\mathbb{N}}\frac{1}{l^p}
+\]
+
+Par conséquent, puisque la série $\sum\limits_{l\in\mathbb{N}}\frac{1}{l^p}$ est convergente et par passage au supremum, on en déduit que $\normeJames{p}{x}<+\infty$, ce qui termine la preuve.
+\end{proof}
+

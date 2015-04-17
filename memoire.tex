@@ -1,0 +1,30 @@
+\documentclass[12pt,a4paper]{report}
+
+\include{preambule}
+
+\titleformat\chapter[hang]{\normalfont\huge\bfseries}{\thechapter}{1em}{}
+
+%\includeonly{intro}
+
+\begin{document}
+\scrollmode
+
+    \include{head}
+    \include{toc}
+    
+    \include{intro}
+
+    \include{rappelsinc}
+    \include{topoinc}
+    \include{caractinc}
+    \include{schauderinc}
+    \include{incondinc}
+    \include{jamesinc}
+
+    \titleformat\chapter[hang]{\normalfont\huge\bfseries}{}{1em}{}
+    \include{annexeinc}
+
+    \include{bib}
+
+\batchmode
+\end{document}

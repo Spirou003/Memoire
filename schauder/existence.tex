@@ -1,0 +1,82 @@
+On sait qu'un espace non séparable ne contient aucune base de Schauder. D'ailleurs, être séparable n'est pas suffisant pour forcer l'espace à contenir une base de Schauder. En effet, pour $p>1$, $p\neq 2$, l'espace $L^p([0,1])$ contient un sous-espace sans base de Schauder (voir \cite[p. 309-317]{PENFLO}). On va voir que pour les suites basiques, cela se passe différemment.
+
+\begin{Lemme}\label{basiquexiste}
+Soit $E$ un espace de Banach de dimension infinie. Soit $(e_0,...,e_n)$ une suite finie de constante de base $K$. Quel que soit $\varepsilon>0$, on peut trouver $e_{n+1}\in S(E)$ tel que $(e_0,...,e_{n+1})$ a une constante de base inférieure à $K(1+\varepsilon)$.
+\end{Lemme}
+\begin{proof}
+Soit $\varepsilon>0$, on pose $\delta=\frac{\varepsilon}{1+\varepsilon}$. Dans $\Span(e_0,...,e_n)$ la sphère unité est compacte, on a donc $(p_1,...,p_N)$ un $\delta$-réseau de cette sphère. Par le théorème de Hahn-Banach (\ref{HBF}), il existe $\varphi_k\in E\dual$ de norme 1 tel que $\varphi_k(p_k)=1$, quelque soit $k\in\{1,...,N\}$. Comme $E$ est de dimension infinie, il existe $e_{n+1}\in E$ tel que $\norme{e_{n+1}}=1$ et $\varphi_k(e_{n+1})=0$, quelque soit $k\in\{1,...,N\}$.
+
+Soient $a_0,...,a_{n+1}\in\mathbb{K}$ tels que $\norme{\sum\limits_{k=0}^n a_k e_k}=1$. Il existe $m\in\{1,...,N\}$ tel que
+\[
+\norme{p_m-\sum_{k=0}^n a_k e_k}
+\leqslant \delta
+\]
+Alors
+\[
+\begin{array}{ll}
+1 &\displaystyle
+= \varphi_m\left(p_m+a_{n+1}e_{n+1}\right)
+\leqslant
+\norme{p_m+a_{n+1}e_{n+1}}
+=
+\norme{p_m+\sum_{k=0}^{n+1}a_k e_k-\sum_{k=0}^n a_k e_k}
+\\&\displaystyle
+\leqslant
+\norme{p_m-\sum_{k=0}^n a_k e_k}+\norme{\sum_{k=0}^{n+1}a_k e_k}
+\leqslant
+\delta+\norme{\sum_{k=0}^{n+1}a_k e_k}
+\end{array}
+\]
+D'où
+\[
+\norme{\sum_{k=0}^{n+1}a_k e_k}
+\geqslant
+1-\delta
+=
+\frac{1}{1+\varepsilon}
+\]
+Par conséquent
+\[
+(1+\varepsilon)\norme{\sum_{k=0}^{n+1}a_k e_k}
+\geqslant
+1 = \norme{\sum_{k=0}^{n}a_k e_k}
+\]
+Par homogénéïté, le résultat s'étend à toute suite finie de $n+1$ scalaires quelconques. Montrons maintenant que la suite finie $(e_0,...,e_{n+1})$ possède une constante de base inférieure à $K(1+\varepsilon)$. Les autres cas étant évidents, on considère uniquement le cas où $p\leqslant n$ et $q=n+1$. Alors, pour $a_0,...,a_{n+1}\in\mathbb{K}$, on a
+\[
+\norme{\sum_{k=0}^p a_k e_k}
+\leqslant
+K\norme{\sum_{k=0}^n a_k e_k}
+\leqslant
+K(1+\varepsilon)\norme{\sum_{k=0}^{n+1} a_k e_k}
+\]
+\end{proof}
+\begin{Corol}
+Tout espace de Banach de dimension infinie admet une suite basique normalisée. De plus, quelque soit $\varepsilon>0$, on peut choisir cette suite de telle sorte que sa constante de base soit inférieure à $1+\varepsilon$.
+\end{Corol}
+\begin{proof}
+Soient $e_1\in S(E)$ et $\varepsilon>0$. Ce vecteur est une suite finie à un élément, de constante de base égale à 1. On procède par induction sur le lemme (\ref{basiquexiste}), en choisissant $\varepsilon_n=\exp(\frac{1}{2^n}\frac{\ln(1+\varepsilon)}{2})-1>0$. À la $n^\text{ième}$ étape, la suite finie a une constante de base inférieure à
+
+\[
+\begin{array}{ll}
+\displaystyle\prod_{k=0}^n(1+\varepsilon_k)
+\hspace*{-0.3cm}\linebreak[0]
+&\displaystyle=
+\prod_{k=0}^n\exp\left(\frac{1}{2^k}\frac{\ln(1+\varepsilon)}{2}\right)
+=
+\exp\left(\sum_{k=0}^n\frac{1}{2^k}\frac{\ln(1+\varepsilon)}{2}\right)
+\\&=
+\exp\left(\left(2-\frac{1}{2^k}\right)\frac{\ln(1+\varepsilon)}{2}\right)
+=
+\exp\left(\ln(1+\varepsilon)-\frac{1}{2^k}\frac{\ln(1+\varepsilon)}{2}\right)
+=
+(1+\varepsilon)\exp\left(-\frac{1}{2^k}\frac{\ln(1+\varepsilon)}{2}\right)
+\end{array}
+\]
+
+qui converge de manière croissante vers $1+\varepsilon$. Le lemme donne à chaque étape un vecteur de norme 1, le corollaire est prouvé.
+\end{proof}
+
+\begin{Rem}
+Avec le lemme (\ref{basiquexiste}), on ne peut pas faire mieux que le résultat que l'on vient de démontrer. En effet, à partir du moment où on a choisi le premier vecteur, la constante de base associée est égale à 1. Ensuite, quelque soit $\varepsilon>0$ utilisé, le lemme ne garantit pas que la constante de base reste égale à 1. L'existence d'une suite basique monotone est par conséquent impossible à établir de cette manière.
+\end{Rem}
+

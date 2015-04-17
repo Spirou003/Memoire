@@ -1,0 +1,14 @@
+\begin{Thm}[James]
+Dans un espace de Banach, les assertions suivantes sont équivalentes:
+\begin{enumerate}[(1)]
+\item l'espace est réflexif
+\item toute fonctionnelle atteint sa norme sur la boule unité
+\end{enumerate}
+\end{Thm}
+
+\begin{proof}
+(1) $\Rightarrow$ (2)\\
+Soit $x\dual\in E\dual$. Par le théorème de Hahn-Banach (\ref{HBF}), il existe $x\bidual\in E\bidual$ tel que $\norme{x\bidual}=1$ et $x\bidual(x\dual)=\norme{x\dual}$. Comme $E$ est réflexif, il existe $x\in E$ tel que $ev_x=x\bidual$, et $\norme{x}=\norme{ev_x}=1$. Donc $x\dual(x)=x\bidual(x\dual)=\norme{x\dual}$.
+
+(2) $\Rightarrow$ (1): voir \cite[p. 159-169]{JAMESF}.
+\end{proof}
