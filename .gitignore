@@ -1,0 +1,5 @@
+*.ps
+*.pdf
+_delete
+_out
+pdf_refs
