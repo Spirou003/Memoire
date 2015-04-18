@@ -1,4 +1,5 @@
 echo off
+mkdir _out
 latex -halt-on-error -interaction=batchmode -output-directory=_out %1.tex > NUL 2> NUL
 echo on
 latex -halt-on-error -interaction=batchmode -output-directory=_out %1.tex
