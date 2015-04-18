@@ -1,0 +1,168 @@
+\section{Une norme, une isométrie}
+
+On va maintenant munir $\James{p}$ d'une nouvelle norme, équivalente à celle qu'on lui a mise précédemment. La norme sera la suivante:
+
+\[
+\normeJamesI{p}{x}
+=
+\sup
+\left\{
+\left.
+\sqrt[p]{\sum_{k=1}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p + \abs{x_{p_1}-x_{p_n}}^p}
+\right|
+n\in\mathbb{N}_0, p_1<...<p_{n}\in\mathbb{N}
+\right\}
+\]
+
+\begin{Prop}\label{newnormeequiv}
+On a les propriétés suivantes:
+\begin{enumerate}[(1)]
+\item La norme $\normeJamesI{p}{.}$ est une norme sur $\James{p}$ et est équivalente à $\normeJames{p}{.}$.
+\item Pour toute suite de scalaires $(x_n)_{n\in\mathbb{N}}$, on a $\normeJames{p}{x}\leqslant\normeJamesI{p}{x}\leqslant 3\normeJames{p}{x}$.
+\end{enumerate}
+\end{Prop}
+\begin{proof}
+(2) Soit $x\in\mathbb{K}^\mathbb{N}$.
+
+Soient $n\in\mathbb{N}_0$ et $p_1<...<p_n$ des naturels. On a
+
+\begin{align*}
+\sqrt[p]{\sum_{k=1}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p + \abs{x_{p_1}-x_{p_n}}^p}
+&\leqslant
+\sqrt[p]{\sum_{\substack{k=1\\k~pair}}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p}
++ \sqrt[p]{\sum_{\substack{k=1\\k~impair}}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p}
++ \normeJames{p}{x}
+\\
+&\leqslant
+3 \normeJames{p}{x}
+\end{align*}
+
+Maintenant, soient $p_{n+1}<...<p_{2_n}$ des naturels strictement supérieurs à $p_n$. On a
+
+\[
+\sqrt[p]{\sum_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}
+\leqslant
+\sqrt[p]{\sum_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p + \sum_{k=1}^{n-1} \abs{x_{p_{2k}}-x_{p_{2k+1}}}^p + \abs{x_{p_1}-x_{p_n}}^p}
+=
+\normeJamesI{p}{x}
+\]
+
+Par passage au supremum sur $n$ et les $p_k$, on en déduit que $\normeJames{p}{x}\leqslant\normeJamesI{p}{x}\leqslant 3\normeJames{p}{x}$.
+
+(1) On démontrera de manière similaire à celle utilisée pour $\normeJames{p}{.}$ tous les axiomes d'une norme, excepté celui d'être à valeurs finies que l'on déduit immédiatement de (2). L'équivalence des normes est un cas particulier de (2).
+\end{proof}
+
+On a alors que les espaces $(\James{p},\normeJames{p}{.})$ et $(\James{p},\normeJamesI{p}{.})$ sont isomorphes. Donc par la proposition (\ref{isoreflex}) l'espace $(\James{p},\normeJamesI{p}{.})$ n'est pas réflexif, en particulier on en déduit qu'il est de codimension 1 dans son bidual. De plus, puisque la base canonique est une base de Schauder contractante de $(\James{p},\normeJames{p}{.})$, c'est également une base de Schauder contractante de $(\James{p},\normeJamesI{p}{.})$.
+
+\begin{Prop}
+La base canonique de $(\James{p},\normeJamesI{p}{.})$ est une base monotone.
+\end{Prop}
+\begin{proof}
+Soient $n\leqslant m\in\mathbb{N}$, $a_1,...,a_m\in\mathbb{K}$, $N\in\mathbb{N}_0$ et des naturels $p_1<...<p_N$. Si $N=1$ c'est évident, on suppose alors que $N\geqslant 2$. Si $p_N\leqslant n$ on a
+
+\[
+\sqrt[p]{\sum_{k=1}^{N-1} \abs{a_{p_{k}}-a_{p_{k+1}}}^p + \abs{a_{p_1}-a_{p_N}}^p}
+\leqslant
+\normeJamesI{p}{\sum_{k=0}^m a_k e_k}
+\]
+
+Dans l'autre cas, on suppose sans perte de généralité que $p_{N-1}\leqslant n$. On a alors
+
+\begin{align*}
+\sqrt[p]{\sum_{k=1}^{N-1} \abs{a_{p_{k}}-a_{p_{k+1}}}^p + \abs{a_{p_1}-a_{p_N}}^p}
+&=
+\sqrt[p]{\sum_{k=1}^{N-2} \abs{a_{p_{k}}-a_{p_{k+1}}}^p + \abs{a_{p_1}-0}^p + \abs{a_{p_{N-1}}-0}^p}
+\\
+&\leqslant
+\normeJamesI{p}{\sum_{k=0}^m a_k e_k}
+\end{align*}
+
+On conclut en passant au supremum sur $N$ et les $p_k$.
+\end{proof}
+
+Puisqu'on a une base de Schauder monotone contractante on peut, par le théorème (\ref{dualisometriqueschauder}), identifier isométriquement le bidual de $(\James{p},\normeJamesI{p}{.})$ à l'espace 
+\[
+\left\{a\in\mathbb{K}^\mathbb{N}|\normeJamesIB{p}{a}<+\infty\right\}
+\]
+
+avec
+
+\[
+\normeJamesIB{p}{a}
+=
+\sup_{n\in\mathbb{N}}\normeJamesI{p}{\sum_{k=0}^n a_k e_k}
+\]
+
+Par le (2) de la proposition (\ref{newnormeequiv}), on en déduit que $\James{p}\bidual=\{a\in\mathbb{K}^\mathbb{N}|\normeJamesI{p}{a}<+\infty\}$.
+
+\begin{Thm}
+Les espaces $(\James{p},\normeJamesI{p}{.})$ et $(\James{p}\bidual,\normeJamesIB{p}{.})$ sont isométriques.
+\end{Thm}
+\begin{proof}
+On définit l'application
+
+\[
+\begin{array}{lllll}
+T&:&\James{p}\bidual&\maps&\James{p}\\
+&:&(a_n)_{n\in\mathbb{N}}&\mapsto&\displaystyle(\lim_n a_n,a_0-\lim_n a_n,...,a_k-\lim_n a_n,...)
+\end{array}
+\]
+
+C'est une application linéaire bijective, par le même raisonnement que celui du théorème (\ref{jamesisomorphebidual}). On montre que c'est une isométrie.
+
+Soit $a\in\James{p}$. Soit $A\in\James{p}\bidual$ tel que $T(A)=a$. On a $A_k = a_{k+1}-a_0$, quelque soit $k\in\mathbb{N}$. Soient $n\in\mathbb{N}_0$ et des naturels $p_1<...<p_n$.
+
+Soit $N\in\mathbb{N}$. On va montrer que $\normeJamesI{p}{\sum\limits_{k=0}^N A_k e_k}\leqslant\normeJamesI{p}{T(A)}$, et par passage au supremum sur $N$ on aura la première inégalité souhaitée. Le cas où $n=1$ est évident, on considère alors $n\geqslant 2$. Si $p_n\leqslant N$, on a
+
+\[
+\sqrt[p]{\sum_{k=1}^{n-1} \abs{A_{p_{k}}-A_{p_{k+1}}}^p + \abs{A_{p_1}-A_{p_n}}^p}
+=
+\sqrt[p]{\sum_{k=1}^{n-1} \abs{a_{p_{k}+1}-a_{p_{k+1}+1}}^p + \abs{a_{p_1+1}-a_{p_n+1}}^p}
+\leqslant
+\normeJamesI{p}{a}
+\]
+
+En revanche, si $p_n>N$, on suppose sans perte de généralité que $p_{n-1}\leqslant N$. Alors, la somme devient
+
+\begin{align*}
+&
+\sqrt[p]{\sum_{k=1}^{n-2} \abs{A_{p_{k}}-A_{p_{k+1}}}^p \!\! + \! \abs{A_{p_{n-1}}}^p \!\! + \! \abs{A_{p_1}}^p}
+= \!
+\sqrt[p]{\sum_{k=1}^{n-2} \abs{a_{p_{k}+1}-a_{p_{k+1}+1}}^p \!\! + \! \abs{a_{p_{n-1}+1}-a_0}^p \!\! + \! \abs{a_{p_1+1}-a_0}^p}
+\\
+&~~~~
+\leqslant
+\normeJamesI{p}{a}
+\end{align*}
+
+Par passage au supremum sur $n$ et les $p_k$ on obtient la première inégalité.
+
+Réciproquement, on a à nouveau que le cas $n=1$ est évident, on suppose $n\geqslant 2$. Si $p_1\geqslant 1$, on a
+
+\begin{align*}
+\sqrt[p]{\sum_{k=1}^{n-1} \abs{a_{p_{k}}-a_{p_{k+1}}}^p + \abs{a_{p_1}-a_{p_n}}^p}
+&=
+\sqrt[p]{\sum_{k=1}^{n-1} \abs{A_{p_{k}-1}-A_{p_{k+1}-1}}^p + \abs{A_{p_1-1}-A_{p_n-1}}^p}
+\\
+&\leqslant
+\normeJames{p}{\sum_{k=0}^{p_n-1}A_k ev_{e_k}}
+\end{align*}
+
+Dans l'autre cas, si $p_1=0$, on a
+
+\begin{align*}
+\sqrt[p]{\sum_{k=1}^{n-1} \abs{a_{p_{k}}-a_{p_{k+1}}}^p + \abs{a_{p_1}-a_{p_n}}^p}
+=
+\sqrt[p]{\sum_{k=2}^{n-1} \abs{A_{p_{k}-1}-A_{p_{k+1}-1}}^p + \abs{a_0-a_{p_n}}^p + \abs{a_0-a_{p_2}}^p}
+\\
+=
+\sqrt[p]{\sum_{k=2}^{n-1} \abs{A_{p_{k}-1}-A_{p_{k+1}-1}}^p + \abs{A_{p_n-1}-0}^p + \abs{A_{p_2-1}-0}^p}
+\leqslant
+\normeJames{p}{\sum_{k=0}^{p_n-1}A_k ev_{e_k}}
+\end{align*}
+
+Par passage au supremum sur $n$ et les $p_k$, on obtient que $\normeJamesI{p}{T(A)}\leqslant\normeJamesIB{p}{A}$.
+
+On en conclut que $T$ est une isométrie de $(\James{p},\normeJamesI{p}{.})$ vers $(\James{p}\bidual,\normeJamesIB{p}{.})$.
+\end{proof}
+
