@@ -2,7 +2,7 @@
 Les assertions suivantes sont équivalentes:
 \begin{enumerate}[(1)]
 \item $E$ n'est pas réflexif
-\item quelque soit $\theta\in~]0,1[$, il existe une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ et une suite $(x\dual_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E\dual)$ telles que, pour tout $n,m\in\mathbb{N}$
+\item Quelque soit $\theta\in~]0,1[$, il existe une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ et une suite $(x\dual_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E\dual)$ telles que, pour tout $n,m\in\mathbb{N}$
 \[
 x\dual_n(x_m) =
 \begin{cases}
@@ -10,15 +10,17 @@ x\dual_n(x_m) =
 0 & ~si~~~ n > k
 \end{cases}
 \]
-\item quelque soit $\theta\in~]0,1[$, il existe une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ telle que pour tout $k<K\in\mathbb{N}$, on a $\dist(\conv(x_1,...,x_k), \conv(x_{k+1},...,x_K))\geqslant\theta$
+\item Quelque soit $\theta\in~]0,1[$, il existe une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ telle que pour tout $k<K\in\mathbb{N}$, on a $\dist(\conv(x_1,...,x_k), \conv(x_{k+1},...,x_K))\geqslant\theta$
 \end{enumerate}
 \end{Thm}
 \begin{Rem}
 La propriété (3) est aussi appelée "Condition J".
 \end{Rem}
 \begin{proof}
-(1) $\Rightarrow$ (2)\newline
+~
 
+(1) $\Rightarrow$ (2)\\
+%
 Puisque $E$ n'est pas réflexif, on sait que $i(E)$ est un sous-espace fermé non trivial de $E\bidual$, et de dimension infinie. On peut alors trouver une fonctionnelle $x\tridual$ de norme 1 qui s'annule sur $i(E)$. Soient $\theta\in~]0,1[$ et $x\bidual\in E\bidual$ tels que $\norme{x\bidual}<1$ et $x\tridual(x\bidual)>\theta$. On a que $\norme{x\bidual}>\theta$. On va construire par induction les deux suites qui correspondent à ce que l'on cherche, vérifiant en plus que $x\bidual(x\dual_n)=\theta$, pour tout $n\in\mathbb{N}$.\newline
 
 La première étape de l'induction consiste à choisir $x_0$ et $x\dual_0$. Puisque $\norme{x\bidual}>\theta$, il existe $x\dual_0\in S(E\dual)$ tel que $x\bidual(x\dual_0)=\theta$. On trouve de manière semblable $x_0\in S(E)$ tel que $x\dual_0(x_0)=\theta$.\newline
@@ -44,7 +46,7 @@ M\norme{a x\bidual + \sum_{k=0}^n a_k ev_{x_k}}
 \end{array}
 \]
 
-À nouveau, pour trouver $x_{n+1}$ qui satisfait aux conditions de l'induction, on applique la condition d'Helly sur $E$, avec les fonctionnelles $x\dual_0,...,x\dual_{n+1}$ associées au scalaire $\theta$, avec $M=\norme{x\bidual}<1$. En effet on a, pour tout $a_0,...,a_{n+1}\in\mathbb{K}$, que
+À nouveau, pour trouver $x_{n+1}$ qui satisfait aux conditions de l'induction, on applique la condition d'Helly sur $E$, en prenant les fonctionnelles $x\dual_0,...,x\dual_{n+1}$ associées au scalaire $\theta$, et $M=\norme{x\bidual}<1$. En effet on a, pour tout $a_0,...,a_{n+1}\in\mathbb{K}$, que
 \[
 \abs{\sum_{k=0}^{n+1}a_k\theta}
 =
@@ -58,6 +60,7 @@ M\norme{\sum_{k=0}^{n+1}a_k x\dual_k}
 Ceci termine la première implication.\newline
 
 (2) $\Rightarrow$ (3)\\
+%
 Soit $\theta\in~]0,1[$, par (2) on a une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ et une suite $(x\dual_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E\dual)$. Soient $k\leqslant K\in\mathbb{N}$ et $a_0,...,a_K\in\mathbb{R}^+$ tels que $\sum\limits_{l=0}^k a_l=\sum\limits_{l=k+1}^K a_l=1$. Alors
 \[
 \theta
@@ -70,6 +73,7 @@ x\dual_k\left(\sum\limits_{l=k+1}^K a_l x_l-\sum\limits_{l=0}^k a_l x_l\right)
 \]
 
 (3) $\Rightarrow$ (1)\\
+%
 On procède par contraposition. Supposons que $E$ est réflexif, et soit $\theta\in~]0,1[$. Soit une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$. Posons $C_k=\convAdh(x_k,x_{k+1},...)\neq\emptyset$, pour $k\in\mathbb{N}$. Il est évident que quelque soit $k\in\mathbb{N}$, $C_k\supseteq C_{k+1}$. Les $C_k$ sont des convexes fermés pour la norme, donc le théorème de Mazur (\ref{mazur}) nous dit qu'ils sont également faiblement fermés. Par le théorème de Kakutani (\ref{kakutani}), puisque $E$ est réflexif, la boule unité est faiblement compacte, donc les $C_k$ étant tous bornés, ils sont aussi faiblement compacts. Puisque les $C_k$ sont des compacts emboîtés, on a que $\bigcap\limits_{k\in\mathbb{N}}C_k\neq\emptyset$.
 
 Soit $u$ un élément de cet ensemble. On a que $u\in C_0$, donc il existe $n\in\mathbb{N}$ et des scalaires $u_0,...,u_n\in\mathbb{R}^+$ tels que $\sum\limits_{k=0}^n u_k = 1$ et $\norme{u-\sum\limits_{k=0}^n u_k x_k}\leqslant\frac{\theta}{3}$. De plus, $u\in C_{n+1}$, donc il existe $N\in\mathbb{N}$ et des scalaires $u_{n+1},...,u_N\in\mathbb{R}^+$ tels que $\sum\limits_{k=n+1}^N u_k = 1$ et $\norme{u-\sum\limits_{k=n+1}^N u_k x_k}\leqslant\frac{\theta}{3}$. Par conséquent
@@ -92,7 +96,7 @@ On obtient donc:
 Les assertions suivantes sont équivalentes:
 \begin{itemize}
 \item $E$ n'est pas réflexif
-\item il existe $\theta\in~]0,1[$ et deux suites $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ et $(x\dual_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E\dual)$ tels que, pour tout $n,m\in\mathbb{N}$
+\item Il existe $\theta\in~]0,1[$ et deux suites $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ et $(x\dual_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E\dual)$ tels que, pour tout $n,m\in\mathbb{N}$
 \[
 x\dual_n(x_m) =
 \begin{cases}
@@ -100,7 +104,7 @@ x\dual_n(x_m) =
 0 & ~si~~~ n > k
 \end{cases}
 \]
-\item il existe $\theta\in~]0,1[$ et une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ tels que pour tout $k<K\in\mathbb{N}$, \[\dist(\conv(x_1,...,x_k), \conv(x_{k+1},...,x_K))\geqslant\theta\]
+\item Il existe $\theta\in~]0,1[$ et une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ tels que pour tout $k<K\in\mathbb{N}$, \[\dist(\conv(x_1,...,x_k), \conv(x_{k+1},...,x_K))\geqslant\theta\]
 \end{itemize}
 \end{Corol}
 

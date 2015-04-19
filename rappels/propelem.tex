@@ -3,11 +3,14 @@ Les assertions suivantes sont équivalentes:
 \begin{enumerate}[(1)]
 \item $E$ est réflexif
 \item $E\dual$ est réflexif
-\item tout sous-espace vectoriel fermé de $E$ est réflexif
+\item Tout sous-espace vectoriel fermé de $E$ est réflexif
 \end{enumerate}
 \end{Prop}
 \begin{proof}
+~
+
 (1) $\Rightarrow$ (2)\\
+%
 Notons $i$ l'injection canonique de $E$, et $j$ l'injection canonique de $E\dual$. On veut montrer que $j$ est surjectif. Puisqu'on a l'injectivité, cela revient à démontrer que $j$ est bijective, et donc de manière équivalente qu'il admet un inverse. Pour ce faire, on va montrer que $\adj{i}$ est l'inverse de $j$. Pour cela, il suffira de vérifier que \hbox{$j\circ\adj{i}=Id_{E\tridual}$}.
 
 Soient $x\tridual\in E\tridual$ et $x\bidual\in E\bidual$. Puisque $E$ est réflexif, il existe $x\in E$ tel que $i(x)=x\bidual$. On calcule
@@ -31,6 +34,7 @@ Qui se traduit par
 Par conséquent, $\adj{i}$ est bien l'inverse de $j$, donc $j$ est surjectif et $E\dual$ réflexif.\newline
 
 (1) $\Rightarrow$ (3)\\
+%
 Puisque $F$ est fermé, l'application linéaire
 \[
 \begin{array}{lllll}
@@ -61,8 +65,8 @@ x\dual(x)
 
 Puisque $\pi$ est surjective, cela revient à dire que $y\bidual(y\dual)=y\dual(x)$, et ce quelque soit $y\dual\in F\dual$. Donc, $ev_x=y\bidual$.\newline
 
-(2) $\Rightarrow$ (1)\newline
-
+(2) $\Rightarrow$ (1)\\
+%
 On sait que $E\dual$ est réflexif, donc $E\bidual$ aussi, donc tout sous-espace fermé de $E\bidual$ aussi. En particulier, c'est valable pour $i(E)$ qui est isomorphe à $E$, donc $E$ est réflexif.
 
 (3) $\Rightarrow$ (1) est évident.

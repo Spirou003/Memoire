@@ -26,7 +26,7 @@ x^{(3)} & = & ( & 1 & , & 1/2 & , & 1/3 & & ... & & ... & & 0 & , & 0 & & ... & 
 \vdots &  &  & \vdots &  & \vdots &  & \vdots &  & \ddots &  &  &  & \vdots &  & \vdots & & & \\
 \vdots &  &  & \vdots &  & \vdots &  & \vdots &  &  &  & \ddots &  & \vdots &  & \vdots & & & \\
 x^{(n)} & = & ( & 1 & , & 1/2 & , & 1/3 & & ... & & ... & , & 1/n & , & 0 & , & ... & )\\
-...
+\vdots &  &  & \vdots &  & \vdots &  & \vdots &  &  &  &  &  & \vdots &  & \vdots & & & \\
 \end{array}
 \]
 
@@ -42,9 +42,10 @@ Si de plus, $\SpanAdh((e_n)_{n\in\mathbb{N}})=E$, on dit que c'est une base de S
 \end{Def}
 
 \subsubsection*{Exemples}
-La base canonique $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder des espaces $c_0$ et $l^p$, pour $p\in[1,+\infty[$.
-
-L'espace $l^\infty$ n'étant pas séparable, il ne contient aucune base de Schauder. Pour rappel, un espace vectoriel normé est séparable s'il admet une partie dénombrable dense.
+\begin{itemize}
+\item La base canonique $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder des espaces $c_0$ et $l^p$, pour $p\in[1,+\infty[$.
+\item L'espace $l^\infty$ n'étant pas séparable, il ne contient aucune base de Schauder. Pour rappel, un espace vectoriel normé est séparable s'il admet une partie dénombrable dense.
+\end{itemize}
 
 \begin{Lemme}\label{espseriescgebanach}
 Soit $E$ un espace de Banach qui contient une base de Schauder $(e_n)_{n\in\mathbb{N}}$. L'espace vectoriel
@@ -97,7 +98,7 @@ On en déduit les deux assertions qu'il restait à prouver.
 On va maintenant donner une nouvelle caractérisation aux suites basiques.
 
 \begin{Def}
-On dira qu'une suite $(e_n)_{n\in\mathbb{N}}$ de vecteurs non nuls admet une constante de base s'il existe un réel $K>0$ tel que pour tous $p\leqslant q\in\mathbb{N}$ et $a_0,...,a_q\in\mathbb{K}$, on a
+On dira qu'une suite $(e_n)_{n\in\mathbb{N}}$ de vecteurs non nuls admet une constante de base s'il existe un réel $K>0$ tel que pour tout $p\leqslant q\in\mathbb{N}$ et $a_0,...,a_q\in\mathbb{K}$, on a
 \[
 \norme{\sum_{n=0}^p a_n e_n}\leqslant K\norme{\sum_{n=0}^q a_n e_n}
 \]
@@ -120,6 +121,10 @@ De plus, on se rend facilement compte en prenant $p=q$, qu'une constante de base
 Dans un espace de Banach, une suite est basique si et seulement si elle admet une constante de base.
 \end{Prop}
 \begin{proof}
+~
+
+$\Rightarrow)$\\
+%
 On suppose que $(e_n)_{n\in\mathbb{N}}$ est une suite basique. L'espace décrit par le lemme (\ref{espseriescgebanach}), que l'on notera $F$, est un espace de Banach. On note $E_0=\SpanAdh((e_n)_{n\in\mathbb{N}})$. L'application
 \[
 \begin{array}{lll}
@@ -139,7 +144,9 @@ K\norme{\sum_{n\in\mathbb{N}}a_n e_n}
 \]
 Ce qui démontre la première implication.\newline
 
-Maintenant, supposons que la suite admet $K>0$ comme constante de base. Soit $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$. On a une suite $(x^{(n)})_{n\in\mathbb{N}}$ de vecteurs de $\Span((e_n)_{n\in\mathbb{N}})$ qui converge vers $x$. Pour $n\in\mathbb{N}$, on réécrit
+$\Leftarrow)$\\
+%
+Supposons que la suite admet $K>0$ comme constante de base. Soit $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$. On a une suite $(x^{(n)})_{n\in\mathbb{N}}$ de vecteurs de $\Span((e_n)_{n\in\mathbb{N}})$ qui converge vers $x$. Pour $n\in\mathbb{N}$, on réécrit
 \[
 x^{(n)}=\sum_{k=0}^{m_n}x^{(n)}_k e_k\text{, avec }m_n\in\mathbb{N}\text{, et pour }k\in\{0,...,m_n\}, x^{(n)}_k\in\mathbb{K}
 \]

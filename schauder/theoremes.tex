@@ -131,6 +131,10 @@ Bien que celle-ci soit simple, nous ne donnerons pas de démonstration de ce coro
 Dans un espace réflexif, toute base de Schauder est complète et contractante. Inversement, si un espace de Banach admet une base de Schauder complète et contractante, alors il est réflexif.
 \end{Thm}
 \begin{proof}
+~
+
+$\Rightarrow)$\\
+%
 Supposons que $E$ soit un espace réflexif qui contient une base de Schauder $(e_n)_{n\in\mathbb{N}}$. Montrons qu'elle est complète et contractante.
 
 Soit $(a_n)_{n\in\mathbb{N}}$ une suite de scalaires telle que $\sup\limits_{N\in\mathbb{N}}\norme{\sum\limits_{n=0}^N a_n e_n}<+\infty$.\\
@@ -139,6 +143,8 @@ Soit $n\in\mathbb{N}$. On a que $f_n\left(\sum\limits_{l=0}^{n_k} a_l e_l\right)
 
 Supposons qu'elle ne soit pas contractante. Alors, il existe $x\dual\in E\dual$, $\varepsilon>0$, une suite croissante $(n_k)_{n\in\mathbb{N}}$ de naturels et une suite $(v_k)_{k\in\mathbb{N}}$ tous de norme 1, tels que $P_{n_k}(v_k)=0$ et $\abs{x\dual(v_k)}>\varepsilon$ pour tout $k\in\mathbb{N}$. Alors, la suite $(v_k)_{k\in\mathbb{N}}$ étant bornée et la boule unité étant compacte, le théorème d'Eberlein-\v{S}mulian nous dit qu'elle admet une sous-suite faiblement convergente. De plus, quelque soit $n\in\mathbb{N}$, on a que $f_n(v_k)\rightarrow 0$, donc $(v_k)_{k\in\mathbb{N}}$ converge faiblement vers 0. En particulier, on a que $x\dual(v_k)\rightarrow 0$, ce qui amène à une contradiction.\newline
 
+$\Leftarrow)$\\
+%
 Réciproquement, supposons que l'on ait un espace de Banach $E$ qui contient une base de Schauder $(e_n)_{n\in\mathbb{N}}$ complète et contractante.
 
 Soient $x\bidual\in E\bidual$ et $n\in\mathbb{N}$. On a

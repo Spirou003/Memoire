@@ -1,6 +1,6 @@
 \section{Propriétés de ces topologies}
 
-Ces deux nouvelles topologies n'ont aucun intérêt dans le cas d'un espace vectoriel de dimension finie, car elles coïncident avec la topologie de la norme. En revanche, nous verrons que dans le cas d'un espace vectoriel de dimension infinie, il peut y avoir de nombreuses différences entre ces trois topologies.
+Ces deux nouvelles topologies n'ont aucun intérêt dans le cas d'un espace vectoriel de dimension finie, car elles coïncident avec la topologie de la norme. En revanche, nous verrons que dans le cas d'un espace de dimension infinie, il peut y avoir de nombreuses différences entre ces trois topologies.
 
 \begin{Rem}
 Sur $E\dual$, la topologie $\pweak{E}$ est plus faible que la topologie $\weak{E\dual}$. En effet, tous les voisinages utilisés pour définir la topologie $\pweak{E}$ sont de la forme
@@ -38,7 +38,7 @@ On finit par $\pweak{E}$. Soient $x\dual\neq y\dual\in E\dual$. Puisque $x\dual\
 Si $E$ est un espace vectoriel normé de dimension infinie, alors aucun voisinage des topologies $\weak{E}$ et $\pweak{E}$ n'est borné pour la topologie de la norme.
 \end{Prop}
 \begin{proof}
-Soient $\varepsilon>0,n\in\mathbb{N}_0$ et $x_1\dual,...,x_n\dual\in E\dual$. On a que $\codim(\ker(x_k\dual))\leqslant 1, \forall k\in\{1,...,n\}$. Par conséquent, $\dim\left(\bigcap\limits_{k=1}^n \ker(x_k\dual)\right)=+\infty$, on peut donc trouver, quelque soit $\alpha>0$, $x\in E$ tel que $\norme{x}=\alpha$ et $x_k\dual(x)=0$ pour tout $k\in\{1,...,n\}$, c'est-à-dire que $x\in V_{\varepsilon, x_1\dual,...,x_n\dual}(0)$. Par un raisonnement identique, on obtient le même résultat pour la topologie préfaible.
+Soient $\varepsilon>0,n\in\mathbb{N}_0$ et $x_1\dual,...,x_n\dual\in E\dual$. On a que $\codim(\ker(x_k\dual))\leqslant 1$, quelque soit $k\in\{1,...,n\}$. Par conséquent, $\dim\left(\bigcap\limits_{k=1}^n \ker(x_k\dual)\right)=+\infty$, on peut donc trouver, quelque soit $\alpha>0$, $x\in E$ tel que $\norme{x}=\alpha$ et $x_k\dual(x)=0$ pour tout $k\in\{1,...,n\}$, c'est-à-dire que $x\in V_{\varepsilon, x_1\dual,...,x_n\dual}(0)$. Par un raisonnement identique, on obtient le même résultat pour la topologie préfaible.
 \end{proof}
 
 \begin{Corol}\label{spheredenseboulevide}
@@ -77,7 +77,11 @@ Si $E$ est réflexif, la conclusion est évidente, puisque $i(B(E))=B(E\bidual)$. 
 \end{Rem}
 \begin{proof}
 Soient $x\bidual\in B(E\bidual)$ et $V$ un voisinage de $x\bidual$. On peut supposer qu'il est de la forme $V_{\varepsilon, x_1\dual,...,x_n\dual}(x\bidual)$. On pose $\alpha=(\alpha_1,...,\alpha_n)=(x\bidual(x_1\dual),...,x\bidual(x_n\dual))$ et
-\[\varphi:E\maps\mathbb{K}^n:n\mapsto(x_1\dual(x),...,x_n\dual(x))=(ev_x(x_1\dual),...,ev_x(x_n\dual)).\]
+\begin{align*}
+\varphi&:&E&\maps&\mathbb{K}^n\\
+&:&n&\mapsto&(x_1\dual(x),...,x_n\dual(x))=(ev_x(x_1\dual),...,ev_x(x_n\dual))
+\end{align*}
+
 On démontrera deux résultats intermédiaires avant de conclure:
 \begin{itemize}
 \item $\forall\beta_1,...,\beta_n\in\mathbb{K}, \abs{\sum\limits_{k=1}^n \alpha_k\beta_k}\leqslant\norme{\sum\limits_{k=1}^n \beta_k x_k\dual}$
@@ -92,7 +96,7 @@ Soient $\beta_1,...,\beta_n\in\mathbb{K}$. On a que
 \norme{\sum_{k=1}^n \beta_k x_k\dual}
 \]
 
-Maintenant, supposons par l'absurde que $\alpha\notin\conj{\varphi(B(E))}$. Dans ce cas, par le théorème de Hahn-Banach (\ref{HBC}), on peut séparer $\{\alpha\}$ et $\conj{\varphi(B(E))}$. On obtient alors $y\dual\in(\mathbb{K}^n)\dual$ et $\gamma>0$ tel que pour tout $z\in \conj{\varphi(B(E))}$, $\abs{y\dual(z)}<\gamma<\abs{y\dual(\alpha)}$. En particulier, c'est aussi vrai pour les $\varphi(x)$, où $x\in B(E)$. Identifions $y\dual$ avec $(\beta_1,...,\beta_n)\in\mathbb{K}^n$, et prenons $x\in B(E)$. On a
+Maintenant, supposons par l'absurde que $\alpha\notin\conj{\varphi(B(E))}$. Dans ce cas, par le théorème de Hahn-Banach (\ref{HBC}), on peut séparer $\{\alpha\}$ et $\conj{\varphi(B(E))}$. On obtient alors $y\dual\in(\mathbb{K}^n)\dual$ et $\gamma>0$ tels que pour tout $z\in \conj{\varphi(B(E))}$, $\abs{y\dual(z)}<\gamma<\abs{y\dual(\alpha)}$. En particulier, c'est aussi vrai pour les $\varphi(x)$, où $x\in B(E)$. Identifions $y\dual$ avec $(\beta_1,...,\beta_n)\in\mathbb{K}^n$, et prenons $x\in B(E)$. On a
 \[
 \begin{array}{rrrrr}
 \abs{y\dual(\varphi(x))} & < & \gamma & < & \abs{y\dual(\alpha)}\\
@@ -103,7 +107,7 @@ Maintenant, supposons par l'absurde que $\alpha\notin\conj{\varphi(B(E))}$. Dans
 \]
 Or, on vient de démontrer que $\norme{\sum\limits_{k=1}^n \beta_k x_k\dual}<\abs{\sum\limits_{k=1}^n \alpha_k\beta_k}\leqslant\norme{\sum\limits_{k=1}^n \beta_k x_k\dual}$, ce qui est absurde.
 
-On a par conséquent que $\alpha\in\conj{\varphi(B(E))}$. Dans ce cas, il existe une suite $(x_m)_{m\in\mathbb{N}}$ à valeurs dans $B(E)$ telle que $\varphi(x_m)\rightarrow\alpha$, c'est à dire que $\abs{\varphi(x_m)-\alpha}\rightarrow 0$. Puisque les normes sont équivalentes, c'est vrai pour la norme infinie, on obtient donc que $\abs{x_k\dual(x_m)-x\bidual(x_k\dual)}\rightarrow 0$, quelque soit $k\in\{1,...,n\}$. On en déduit alors qu'il existe $N\in\mathbb{N}$ tel que $\abs{ev_{x_N^{ }}(x_k\dual)-x\bidual(x_k\dual)}<\varepsilon$ quelque soit $k\in\{1,...,n\}$, et on a $ev_{x_N^{ }}\in V_{\varepsilon, x_1\dual,...,x_n\dual}(x\bidual)$, c'est-à-dire que $i(B(E))$ est dense dans $B(E\bidual)$ pour $\pweak{E\dual}$.
+On a par conséquent que $\alpha\in\conj{\varphi(B(E))}$. Dans ce cas, il existe une suite $(x_m)_{m\in\mathbb{N}}$ à valeurs dans $B(E)$ telle que $\varphi(x_m)\rightarrow\alpha$, c'est à dire que $\norme{\varphi(x_m)-\alpha}\rightarrow 0$. Puisque dans $\mathbb{K}^n$ toutes les normes sont équivalentes, c'est vrai aussi pour la norme infinie, on obtient donc que $\abs{x_k\dual(x_m)-x\bidual(x_k\dual)}\rightarrow 0$, quelque soit $k\in\{1,...,n\}$. On en déduit alors qu'il existe $N\in\mathbb{N}$ tel que $\abs{ev_{x_N^{ }}(x_k\dual)-x\bidual(x_k\dual)}<\varepsilon$ quelque soit $k\in\{1,...,n\}$, et on a $ev_{x_N^{ }}\in V_{\varepsilon, x_1\dual,...,x_n\dual}(x\bidual)$, c'est-à-dire que $i(B(E))$ est dense dans $B(E\bidual)$ pour $\pweak{E\dual}$.
 \end{proof}
 
 

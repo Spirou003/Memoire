@@ -10,8 +10,10 @@ Soient $E$ un espace vectoriel normé, $n\in\mathbb{N}_0$ et $x\dual, x\dual_1,..
 \end{enumerate}
 \end{Lemme}
 \begin{proof}
-~\\
+~
+
 (1) $\Rightarrow$ (2)\\
+%
 Puisque $x\dual\in\Span(x\dual_1,...,x\dual_n)$, il existe $a_1,...,a_n\in\mathbb{K}$ tels que $x\dual=\sum\limits_{k=1}^n a_k x\dual_k$. Soit $x\in\bigcap\limits_{i=k}^n \ker(x\dual_k)$. Alors
 \[
 x\dual(x)
@@ -22,6 +24,7 @@ x\dual(x)
 \]
 
 (2) $\Rightarrow$ (1)\\
+%
 Soit l'application linéaire
 \[
 \begin{array}{lllll}
@@ -47,12 +50,15 @@ Ce qui signifie que $x\dual$ est une combinaison linéaire de $x\dual_1,...,x\dua
 \begin{Lemme}[Condition d'Helly]\label{hellycondition}
 Soit $E$ un espace vectoriel normé de dimension infinie. Soient $n\in\mathbb{N}_0$, $x\dual_1,...,x\dual_n\in E\dual$, $c_1,...,c_n\in\mathbb{K}$ et $M>0$. Alors, les assertions suivantes sont équivalentes:
 \begin{enumerate}[(1)]
-\item pour tout $\varepsilon>0$, il existe $x\in E$ tel que $\norme{x}=M+\varepsilon$ et $x\dual_k(x)=c_k$ quelque soit $k\in\{1,...,n\}$
-\item pour tous $a_1,...,a_n\in\mathbb{K}$, $\abs{\sum\limits_{k=1}^n a_k c_k} \leqslant M\norme{\sum\limits_{k=1}^n a_k x\dual_k}$
+\item Pour tout $\varepsilon>0$, il existe $x\in E$ tel que $\norme{x}=M+\varepsilon$ et $x\dual_k(x)=c_k$ quelque soit $k\in\{1,...,n\}$
+\item Pour tout $a_1,...,a_n\in\mathbb{K}$, $\abs{\sum\limits_{k=1}^n a_k c_k} \leqslant M\norme{\sum\limits_{k=1}^n a_k x\dual_k}$
 \end{enumerate}
 \end{Lemme}
 \begin{proof}
+~
+
 (1) $\Rightarrow$ (2)\\
+%
 Soient $\varepsilon>0$ et soit $x\in E$ tel que donné par (1). Soient $a_1,...,a_n\in\mathbb{K}$. On a
 \[
 \abs{\sum_{k=1}^n a_k c_k}
@@ -63,9 +69,10 @@ Soient $\varepsilon>0$ et soit $x\in E$ tel que donné par (1). Soient $a_1,...,a
 =
 (M+\varepsilon)\norme{\sum_{k=1}^n a_k x\dual_k}
 \]
-D'où on en déduit (2).
+D'où on en déduit (2).\newline
 
 (2) $\Rightarrow$ (1)\\
+%
 Soit $\varepsilon>0$. Si $c_1=...=c_n=0$, alors il suffit de prendre un point de norme $M+\varepsilon$ qui annule toutes les $x\dual_k$. Puisqu'on est en dimension infinie, un tel point existe toujours. On se place dans le cas où au moins l'un des $c_k$ est non-nul, sans perte de généralité on considère que c'est $c_1$.
 
 Supposons que $x\dual_1,...,x\dual_n$ soient linéairement indépendants. Alors, on définit les hyperplans affins $H_k=\inv{x\dual_k}(c_k)$, pour $k\in\{1,...,n\}$, ainsi que $H=\bigcap\limits_{k=1}^n H_k$. Puisque les $H_k$ sont les translatés d'espaces vectoriels de codimension 1 dans un espace de dimension infinie, on a que leur intersection $H$ est non vide. Posons $a=\inf\limits_{x\in H}\norme{x}$. On a que $a>0$ car quelque soit $x\in H$, $x\dual_1(x)=c_1\neq 0$. Alors, $H$ ne rencontre pas la boule ouverte centrée en zéro et de rayon $a$. Donc, par le théorème de Hahn-Banach (\ref{HBH}), il existe $x\dual\in E\dual$ et $c\in\mathbb{K}$ tels que $H\subseteq\mathcal{H}=\inv{x\dual}(c)$ et $\mathcal{H}$ ne rencontre pas la boule ouverte centrée en zéro et de rayon $a$.
@@ -97,7 +104,7 @@ Puisque $H\subseteq \mathcal{H}$, on a que $\inf\limits_{x\in H}\norme{x}\geqsla
 \frac{\abs{\sum\limits_{k=1}^n a_k c_k}}{\norme{\sum\limits_{k=1}^n a_k x\dual_k}} &
 \end{alignat*}
 
-Par hypothèse, le dernier membre est inférieur à $M$. Donc, il existe $x\in H$ tel que $\norme{x}=M+\varepsilon$, ce que l'on cherchait.\newline
+Par hypothèse, le dernier membre est inférieur à $M$. Donc, il existe $x\in H$ pour lequel $\norme{x}=M+\varepsilon$, ce que l'on cherchait.\newline
 
 Maintenant, supposons que $n\geqslant 2$, que les $n-1$ premières fonctionnelles soient linéairement indépendantes et que la dernière soit une combinaison linéaire des autres. Cela sera suffisant pour prouver que le lemme est vrai en toute généralité. Alors, il existe $a_1,...,a_{n-1}\in\mathbb{K}$ tels que $x\dual_n=\sum\limits_{k=1}^{n-1}a_k x\dual_k$. Dans ce cas, par (2) on a que
 \[

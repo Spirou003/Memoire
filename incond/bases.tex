@@ -12,19 +12,19 @@ Soit une suite basique $(e_n)_{n\in\mathbb{N}}$ de $E$. Alors, les assertions su
 \begin{enumerate}[(1)]
 \item $(e_n)_{n\in\mathbb{N}}$ est une suite basique inconditionnelle
 %
-\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n=a$, et quelque soit $\varepsilon>0$, il existe $F_0\subset\mathbb{N}$ fini tel que pour tout ensemble fini $F_0\subseteq F\subset\mathbb{N}$, $\norme{a-\sum\limits_{n\in F}a_n e_n}<\varepsilon$
+\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n=a$, et quelque soit $\varepsilon>0$, il existe $F_0\subset\mathbb{N}$ fini tel que pour tout ensemble fini $F_0\subseteq F\subset\mathbb{N}$, $\norme{a-\sum\limits_{n\in F}a_n e_n}<\varepsilon$
 %
-\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, on a $\forall\varepsilon>0,\exists n_0>0$ tel que $\forall F\subset\mathbb{N}$ fini, $\min(F)>n_0\Rightarrow\norme{\sum\limits_{n\in F}a_n e_n}<\varepsilon$
+\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, on a $\forall\varepsilon>0,\exists n_0>0$ tel que $\forall F\subset\mathbb{N}$ fini, $\min(F)>n_0\Rightarrow\norme{\sum\limits_{n\in F}a_n e_n}<\varepsilon$
 %
-\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}y_n$ converge pour toute sous-suite $(y_n)_{n\in\mathbb{N}}$ de $(a_n e_n)_{n\in\mathbb{N}}$
+\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}y_n$ converge pour toute sous-suite $(y_n)_{n\in\mathbb{N}}$ de $(a_n e_n)_{n\in\mathbb{N}}$
 %
-\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}\varepsilon_n a_n e_n$ converge pour toute suite $(\varepsilon_n)_{n\in\mathbb{N}}$ à valeurs dans $\{-1,1\}$
+\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}\varepsilon_n a_n e_n$ converge pour toute suite $(\varepsilon_n)_{n\in\mathbb{N}}$ à valeurs dans $\{-1,1\}$
 %
-\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}\lambda_n a_n e_n$ converge pour toute suite bornée de scalaires $(\lambda_n)_{n\in\mathbb{N}}$
+\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}\lambda_n a_n e_n$ converge pour toute suite bornée de scalaires $(\lambda_n)_{n\in\mathbb{N}}$
 %
-\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}b_n e_n$ converge pour toute suite de scalaires $(b_n)_{n\in\mathbb{N}}$ majorée par $(a_n)_{n\in\mathbb{N}}$
+\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}b_n e_n$ converge pour toute suite de scalaires $(b_n)_{n\in\mathbb{N}}$ majorée par $(a_n)_{n\in\mathbb{N}}$
 %
-\item quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, on a $\lim\limits_{n\rightarrow+\infty}\sup\limits_{x\dual\in B(E\dual)}\sum\limits_{k\geqslant n}\abs{x\dual(x_k)}=0$
+\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, on a $\lim\limits_{n\rightarrow+\infty}\sup\limits_{x\dual\in B(E\dual)}\sum\limits_{k\geqslant n}\abs{x\dual(x_k)}=0$
 \end{enumerate}
 \end{Prop}
 
@@ -63,13 +63,16 @@ sont également continues et de norme inférieure à $K$.
 Soit une suite $(e_n)_{n\in\mathbb{N}}$ de $E$. Les assertions suivantes sont équivalentes:
 \begin{enumerate}[(1)]
 \item $(e_n)_{n\in\mathbb{N}}$ est une suite basique inconditionnelle
-\item pour toute permutation $\sigma$ de $\mathbb{N}$, $(e_{\sigma(n)})_{n\in\mathbb{N}}$ est une suite basique inconditionnelle
+\item Pour toute permutation $\sigma$ de $\mathbb{N}$, $(e_{\sigma(n)})_{n\in\mathbb{N}}$ est une suite basique inconditionnelle
 \item $(e_n)_{n\in\mathbb{N}}$ admet une constante de base inconditionnelle
 \end{enumerate}
 \end{Prop}
 
 \begin{proof}
+~
+
 (1) $\Rightarrow$ (2)\\
+%
 Soient $\sigma$ une permutation de $\mathbb{N}$ et $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$. Par (1), il existe une suite de scalaires $(x_n)_{n\in\mathbb{N}}$ telle que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ converge inconditionnellement. Cela revient à dire que la série $\sum\limits_{n\in\mathbb{N}}x_{\sigma(n)} e_{\sigma(n)}$ converge inconditionnellement. Donc $(e_{\sigma(n)})_{n\in\mathbb{N}}$ est une suite basique inconditionnelle.
 
 (2) $\Rightarrow$ (1) est évident.\newline

@@ -1,13 +1,16 @@
 \begin{Thm}\label{incondcompleteco}
 Soit un espace de Banach $E$ contenant une suite basique inconditionnelle. Les assertions suivantes sont équivalentes:
 \begin{enumerate}[(1)]
-\item il existe une suite basique inconditionnelle non complète dans $E$
+\item Il existe une suite basique inconditionnelle non complète dans $E$
 \item $E$ contient un sous-espace isomorphe à $c_0$
 \end{enumerate}
 \end{Thm}
 
 \begin{proof}
+~
+
 (1) $\Rightarrow$ (2)\\
+%
 Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non complète de $E$. On pose $E_0=\SpanAdh((e_n)_{n\in\mathbb{N}})$. On équipe $E_0$ de la norme équivalente $\triplenorme{.}$ décrite par le lemme (\ref{constantebaseincondnorme}). Puisque $(e_n)_{n\in\mathbb{N}}$ n'est pas complète, il existe une suite de scalaires $(a_n)_{n\in\mathbb{N}}$ pour laquelle
 
 \[
@@ -103,15 +106,18 @@ Notons $F$ le sous-espace de $E$ qui est isomorphe à $c_0$, et notons $T:c_0\map
 \begin{Thm}\label{incondcontractantelun}
 Soit un espace de Banach contenant une suite basique inconditionnelle. Les assertions suivantes sont équivalentes:
 \begin{enumerate}[(1)]
-\item il existe une suite basique inconditionnelle non contractante dans $E$
+\item Il existe une suite basique inconditionnelle non contractante dans $E$
 \item $E$ contient un sous-espace isomorphe à $l^1$
 \end{enumerate}
 \end{Thm}
 
 \begin{proof}
-(1) $\Rightarrow$ (2)\newline
+~
 
+(1) $\Rightarrow$ (2)\\
+%
 Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non contractante de $E$. On pose $E_0=\SpanAdh((e_n)_{n\in\mathbb{N}})$. On équipe $E_0$ de la norme équivalente $\triplenorme{.}$ décrite par le lemme (\ref{constantebaseincondnorme}). Puisque la suite $(e_n)_{n\in\mathbb{N}}$ n'est pas contractante, il existe $x\dual\in S(E\dual)$ et $\theta>0$ tels que pour tout $n\in\mathbb{N}$, on trouve $N\geqslant n$ vérifiant
+%overfull
 
 \[
 \sup
@@ -218,10 +224,14 @@ Soit un espace de Banach contenant une base de Schauder inconditionnelle $(e_n)_
 \end{Thm}
 
 \begin{proof}
+~
+
 (1) $\Rightarrow$ (2)\\
+%
 Puisque $E$ est réflexif, par la proposition (\ref{equivreflexif}) tout sous-espace de $E$ l'est aussi. Puisque ni $c_0$ ni $l^1$ n'est réflexif, aucun des deux ne peut être isomorphe à un sous-espace de $E$.
 
 (2) $\Rightarrow$ (1)\\
+%
 Puisque $E$ ne contient aucun espace isomorphe à $c_0$, toutes ses bases de Schauder inconditionnelle sont complètes. De plus, $E$ ne contient aucun sous-espace isomorphe à $l^1$, ce qui implique que toutes ses bases de Schauder inconditionnelle soient contractantes. Par hypothèse, $E$ contient une base de Schauder inconditionnelle, elle est alors complète et contractante. On conclut avec le théorème (\ref{JamesSchauder}).
 \end{proof}
 
