@@ -47,7 +47,7 @@ Si $E$ est réflexif, alors $E$ est complet et $i$ est bicontinue.
 En effet, $i$ étant une bijection linéaire, $i^{-1}$ est aussi une bijection linéaire. De plus, le fait que $i$ est une isométrie implique qu'elle est bicontinue. Dans ce cas, puisque $i(E) = E\bidual$, et que $E\bidual$ est complet, on en déduit que $E$ l'est aussi.
 \end{proof}
 
-\subsection*{Exemples}
+\subsubsection*{Exemples}
 Soit $E$ un espace vectoriel normé de dimension finie. Toute application linéaire de $E$ dans $\mathbb{K}$ est continue, donc son dual topologique et son dual algébrique sont égaux. On sait aussi que le dual algébrique a même dimension que $E$, donc $\dim(E)=\dim(E\bidual)$. L'application $i:E\maps E\bidual$ étant injective, elle est aussi surjective. Donc $E$ est réflexif.
 
 Pour $p, q\in~]1,+\infty[$ tels que $\frac{1}{p}+\frac{1}{q}=1$, l'espace $l^p$ est réflexif, et $(l^p)\dual=l^q$.
@@ -61,10 +61,10 @@ Soit $H$ un espace de Hilbert. Alors toute forme linéaire continue sur $H$ s'écr
 \[\forall x\dual\in H\dual, \exists \: ! \: x\in H\text{ tel que }\norme{x}=\norme{x\dual}\text{ et }\forall y\in H, x\dual(y)=\scal{y}{x}\]
 \end{Thm}
 \begin{Corol}
-Tout espace $H$ de Hilbert est réflexif.
+Tout espace de Hilbert est réflexif.
 \end{Corol}
 \begin{proof}
-Soit $x\bidual\in H\bidual$. Par le théorème de Riesz-Fréchet, l'application anti-linéaire
+Soient $H$ un espace de Hilbert et $x\bidual\in H\bidual$. Par le théorème de Riesz-Fréchet, l'application anti-linéaire
 \[l:H\maps H\dual:y\mapsto \left(l_y:H\maps \mathbb{K}:x\mapsto\scal{x}{y}\right)\]
 est une isométrie bijective. Par conséquent, $\conj{x\bidual\circ l}\in H\dual$.
 On lui applique le théorème de Riesz-Fréchet, il existe $x\in H$ tel que $\norme{x}=\norme{\conj{x\bidual\circ l}}=\norme{x\bidual}$ et $\conj{x\bidual\circ l}(y) = \scal{y}{x}=\conj{\scal{x}{y}}$, pour tout $y\in H$. On a donc que pour tout $y\in H, x\bidual(l_y) = (x\bidual\circ l)(y) = \scal{x}{y} = l_y(x)$, d'où $x\bidual=ev_x$ et $i$ est surjective.
