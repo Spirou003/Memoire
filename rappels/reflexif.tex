@@ -8,7 +8,7 @@ Soient $E$ et $F$ deux espaces vectoriels normés. On définit l'espace vectoriel
 \]
 muni de la norme
 \[
-\norme{T} = \sup_{x\in B(E)}\norme{T(x)} ~~~~~~ T\in\mathscr{L}(E, F)
+\norme{T} = \sup_{x\in B(E)}\norme{T(x)} ~~~~~~~~\text{pour } T\in\mathscr{L}(E, F)
 \]
 
 \begin{Prop}
@@ -18,9 +18,19 @@ $\mathscr{L}(E, F)$ est complet $\ssi F$ est complet.
 On désignera le dual topologique de $(E, \norme{.})$ par $E\dual=\mathscr{L}(E, \mathbb{K})$, qui est un espace de Banach. De la même façon, on désignera le bidual topologique de $(E, \norme{.})$ par $E\bidual = \mathscr{L}(E^*, \mathbb{K})$.
 
 On peut immédiatement identifier une catégorie particulière d'éléments du bidual. Soit $x\in E$. On définit
-\[ev_x : E\dual\maps\mathbb{K}:x\dual\mapsto x\dual(x)\]
+\[
+\begin{array}{lllll}
+ev_x&:&E\dual&\maps&\mathbb{K}\\
+&:&x\dual&\mapsto&x\dual(x)
+\end{array}
+\]
 l'évaluation en $x$ des fonctionnelles de $E$. On démontre aisément que $ev_x\in E\bidual$, et on peut dès lors définir l'application linéaire
-\[i:E\maps E\bidual:x\mapsto ev_x .\]
+\[
+\begin{array}{lllll}
+i&:&E&\maps&E\bidual\\
+&:&x&\mapsto&ev_x
+\end{array}
+\]
 Cette application est en fait une isométrie, c'est-à-dire que pour tout $x\in E, \norme{i(x)}=\norme{x}$. En effet,
 \[\norme{i(x)} =
 \sup_{x\dual\in B(E\dual)}\abs{x\dual(x)} \leqslant
@@ -48,13 +58,13 @@ En effet, $i$ étant une bijection linéaire, $i^{-1}$ est aussi une bijection lin
 \end{proof}
 
 \subsubsection*{Exemples}
-\begin{enumerate}[(1)]
+\begin{itemize}
 \item Soit $E$ un espace vectoriel normé de dimension finie. Toute application linéaire de $E$ dans $\mathbb{K}$ est continue, donc son dual topologique et son dual algébrique sont égaux. On sait aussi que le dual algébrique a même dimension que $E$, donc $\dim(E)=\dim(E\bidual)$. L'application $i:E\maps E\bidual$ étant injective, elle est aussi surjective. Donc $E$ est réflexif.
 \item Pour $p, q\in~]1,+\infty[$ tels que $\frac{1}{p}+\frac{1}{q}=1$, l'espace $l^p$ est réflexif, et $(l^p)\dual=l^q$.
 \item L'espace $c_0$ n'est pas réflexif, puisque $c_0\dual=l^1$, $(l^1)\dual=l^\infty$, et $c_0\neq l^\infty$.
 \item L'espace $c_{00}$ n'est pas réflexif, puisqu'il n'est pas complet.
 \item À titre d'exemple, on a le corollaire du théorème suivant:
-\end{enumerate}
+\end{itemize}
 
 \begin{Thm}[Riesz-Fréchet]\label{rieszfrechet}
 Soit $H$ un espace de Hilbert. Alors toute forme linéaire continue sur $H$ s'écrit de manière unique comme un produit scalaire où l'une des deux variables est fixée. Plus formellement
@@ -65,7 +75,17 @@ Tout espace de Hilbert est réflexif.
 \end{Corol}
 \begin{proof}
 Soient $H$ un espace de Hilbert et $x\bidual\in H\bidual$. Par le théorème de Riesz-Fréchet, l'application anti-linéaire
-\[l:H\maps H\dual:y\mapsto \left(l_y:H\maps \mathbb{K}:x\mapsto\scal{x}{y}\right)\]
+\[
+\begin{array}{lllll}
+l&:&H&\maps&H\dual\\
+&:&y&\mapsto&\left(
+    \begin{array}{lllll}
+    l_y&:&H&\maps&\mathbb{K}\\
+    &:&x&\mapsto&\scal{x}{y}
+    \end{array}
+\right)
+\end{array}
+\]
 est une isométrie bijective. Par conséquent, $\conj{x\bidual\circ l}\in H\dual$.
 On lui applique le théorème de Riesz-Fréchet, il existe $x\in H$ tel que $\norme{x}=\norme{\conj{x\bidual\circ l}}=\norme{x\bidual}$ et $\conj{x\bidual\circ l}(y) = \scal{y}{x}=\conj{\scal{x}{y}}$, pour tout $y\in H$. On a donc que pour tout $y\in H, x\bidual(l_y) = (x\bidual\circ l)(y) = \scal{x}{y} = l_y(x)$, d'où $x\bidual=ev_x$ et $i$ est surjective.
 \end{proof}

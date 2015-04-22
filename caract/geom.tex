@@ -90,19 +90,19 @@ x\dual(x)
 
 Puisque $H\subseteq \mathcal{H}$, on a que $\inf\limits_{x\in H}\norme{x}\geqslant\inf\limits_{x\in\mathcal{H}}\norme{x}$. Or, $\mathcal{H}$ ne rencontre pas la boule centrée en zéro de rayon $a$, donc $\inf\limits_{x\in H}\norme{x}=a\leqslant\inf\limits_{x\in\mathcal{H}}\norme{x}$. De plus, $c\neq 0$, car sinon on aurait que $0\in\mathcal{H}$, et donc que $\mathcal{H}$ rencontre la boule centrée en zéro et de rayon $a$. On a alors que
 
-\begin{alignat*}{3}
+\begin{align*}
 \inf_{x\in H}\norme{x}
 &=
 \inf_{x\in\mathcal{H}}\frac{\norme{x}}{\abs{x\dual(x)}}\abs{x\dual(x)}
 =
-\abs{c}\inf_{x\in\mathcal{H}}\frac{\norme{x}}{\abs{x\dual(x)}} &\\
+\abs{c}\inf_{x\in\mathcal{H}}\frac{\norme{x}}{\abs{x\dual(x)}} 
+=
+\abs{c}\frac{1}{\sup\limits_{x\in\mathcal{H}}\frac{\abs{x\dual(x)}}{\norme{x}}} \\
 &=
-\abs{c}\frac{1}{\sup\limits_{x\in\mathcal{H}}\frac{\abs{x\dual(x)}}{\norme{x}}} & \\
+\abs{c}\frac{1}{\norme{x\dual}} \hspace{8cm} \text{par la proposition (\ref{lipschitz})}\\
 &=
-\abs{c}\frac{1}{\norme{x\dual}} & ~~~~ \text{par la proposition (\ref{lipschitz})}\\
-&=
-\frac{\abs{\sum\limits_{k=1}^n a_k c_k}}{\norme{\sum\limits_{k=1}^n a_k x\dual_k}} &
-\end{alignat*}
+\frac{\abs{\sum\limits_{k=1}^n a_k c_k}}{\norme{\sum\limits_{k=1}^n a_k x\dual_k}}
+\end{align*}
 
 Par hypothèse, le dernier membre est inférieur à $M$. Donc, il existe $x\in H$ pour lequel $\norme{x}=M+\varepsilon$, ce que l'on cherchait.\newline
 
