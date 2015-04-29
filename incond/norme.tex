@@ -5,7 +5,7 @@ Soit une suite $(e_n)_{n\in\mathbb{N}}$ de $E$, supposons qu'elle admet une cons
 \triplenorme{x}
 =
 \sup\left\{
-\norme{\sum_{n\in A} \lambda_n x_n e_n} \text{tel que } \emptyset\neq A\subseteq\mathbb{N}\text{ fini}, \abs{\lambda_n}\leqslant 1,\forall n\in A
+\norme{\sum_{n\in F} \lambda_n x_n e_n} \text{tel que } \emptyset\neq F\subseteq\mathbb{N}\text{ fini}, \abs{\lambda_n}\leqslant 1,\forall n\in F
 \right\}
 \]
 
@@ -29,52 +29,52 @@ alors quelque soit $\lambda\in\mathbb{K}$, $\triplenorme{x+\lambda y}=\triplenor
 
 (1)\\
 %
-Soit $x\in\SpanAdh((f_n)_{n\in\mathbb{N}})$. En prenant $A=\{1,...,n\}$, pour tout $k\in A$, $\lambda_k=1$, et en faisant tendre $n$ vers l'infini, on obtient la première inégalité. Réciproquement, soient $x\in E$, $A\subseteq\mathbb{N}$ un ensemble fini non vide et $\abs{\lambda_n}\leqslant 1$ pour tout $n\in A$. On a
+Soit $x\in\SpanAdh((f_n)_{n\in\mathbb{N}})$. En prenant $F=\{1,...,n\}$, pour tout $k\in F$, $\lambda_k=1$, et en faisant tendre $n$ vers l'infini, on obtient la première inégalité. Réciproquement, soient $x\in E$, $F\subseteq\mathbb{N}$ un ensemble fini non vide et $\abs{\lambda_n}\leqslant 1$ pour tout $n\in F$. On a
 
 \[
-\norme{\sum_{n\in A} \lambda_n x_n e_n}
+\norme{\sum_{n\in F} \lambda_n x_n e_n}
 \leqslant
-\norme{\sum_{n\in A} \Re(\lambda_n) x_n e_n}
+\norme{\sum_{n\in F} \Re(\lambda_n) x_n e_n}
 +
-\norme{\sum_{n\in A} i\Im(\lambda_n) x_n e_n}
+\norme{\sum_{n\in F} i\Im(\lambda_n) x_n e_n}
 \]
 
-Les deux sommes seront traîtées identiquement. Alors, on suppose pour simplifier les notations que $\lambda_n\in[-1,1]$, quelque soit $n\in A$. On considère $E_\mathbb{R}$ l'équivalent réel de $E$. Par le théorème de Hahn-Banach (\ref{HBF}) il existe $x\dual_\mathbb{R}\in S(E_\mathbb{R}\dual)$ tel que
+Les deux sommes seront traîtées identiquement. Alors, on suppose pour simplifier les notations que $\lambda_n\in[-1,1]$, quelque soit $n\in F$. On considère $E_\mathbb{R}$ l'équivalent réel de $E$. Par le théorème de Hahn-Banach (\ref{HBF}) il existe $x\dual_\mathbb{R}\in S(E_\mathbb{R}\dual)$ tel que
 
 \[
-\norme{\sum_{n\in A}\lambda_n x_n e_n}
+\norme{\sum_{n\in F}\lambda_n x_n e_n}
 =
-x\dual_\mathbb{R}\left(\sum_{n\in A}\lambda_n x_n e_n\right)
+x\dual_\mathbb{R}\left(\sum_{n\in F}\lambda_n x_n e_n\right)
 \]
 
 Alors
 
 \[
-\norme{\sum_{n\in A} \lambda_n x_n e_n}
+\norme{\sum_{n\in F} \lambda_n x_n e_n}
 \leqslant
-\sum_{n\in A}\abs{\lambda_n}\abs{x\dual_\mathbb{R}(x_n e_n)}
+\sum_{n\in F}\abs{\lambda_n}\abs{x\dual_\mathbb{R}(x_n e_n)}
 \leqslant
-\left(\max_{n\in A}\abs{\lambda_n}\right) \sum_{n\in A}\abs{x\dual_\mathbb{R}(x_n e_n)}
+\left(\max_{n\in F}\abs{\lambda_n}\right) \sum_{n\in F}\abs{x\dual_\mathbb{R}(x_n e_n)}
 \]
 
-En posant $\varepsilon_n=signe(x\dual_\mathbb{R}(x_n e_n))$, et puisque $\max\limits_{n\in A}\abs{\lambda_n}\leqslant 1$, on a
+En posant $\varepsilon_n=signe(x\dual_\mathbb{R}(x_n e_n))$, et puisque $\max\limits_{n\in F}\abs{\lambda_n}\leqslant 1$, on a
 
 \[
-\left(\max_{n\in A}\abs{\lambda_n}\right) \sum_{n\in A}\abs{x\dual_\mathbb{R}(x_n e_n)}
+\left(\max_{n\in F}\abs{\lambda_n}\right) \sum_{n\in F}\abs{x\dual_\mathbb{R}(x_n e_n)}
 \leqslant
-\sum_{n\in A}x\dual_\mathbb{R}(\varepsilon_n x_n e_n)
+\sum_{n\in F}x\dual_\mathbb{R}(\varepsilon_n x_n e_n)
 \leqslant
-\norme{x\dual_\mathbb{R}\left(\sum_{n\in A}\varepsilon_n x_n e_n\right)}
+\norme{x\dual_\mathbb{R}\left(\sum_{n\in F}\varepsilon_n x_n e_n\right)}
 \leqslant
-\norme{\sum_{n\in A}\varepsilon_n x_n e_n}
+\norme{\sum_{n\in F}\varepsilon_n x_n e_n}
 \]
 
-Maintenant que l'on a fait disparaître $x\dual_\mathbb{R}$, on peut à nouveau considérer l'espace initial plutôt que son équivalent réel. Avec $A^{+}=\{n\in A|\varepsilon_n=1\}$ et $A^{-}=\{n\in A|\varepsilon_n=-1\}$, on a
+Maintenant que l'on a fait disparaître $x\dual_\mathbb{R}$, on peut à nouveau considérer l'espace initial plutôt que son équivalent réel. Avec $F^{+}=\{n\in F|\varepsilon_n=1\}$ et $F^{-}=\{n\in F|\varepsilon_n=-1\}$, on a
 
 \[
-\norme{\sum_{n\in A}\varepsilon_n x_n e_n}
+\norme{\sum_{n\in F}\varepsilon_n x_n e_n}
 \leqslant
-\norme{\sum_{n\in A^{+}} x_n e_n}+\norme{\sum_{n\in A^{-}} x_n e_n}
+\norme{\sum_{n\in F^{+}} x_n e_n}+\norme{\sum_{n\in F^{-}} x_n e_n}
 \leqslant
 2K\norme{x}
 \]
@@ -91,15 +91,15 @@ Soient $A\subseteq B$ deux ensembles finis non vides de naturels, et une suite d
 &
 \displaystyle
 =
-\max\left\{
-\norme{\sum_{n\in C} \lambda_n x_n e_n} \text{tel que } \emptyset\neq C\subseteq A\text{ et } \forall n\in C, \abs{\lambda_n}\leqslant 1
+\sup\left\{
+\norme{\sum_{n\in A\cap F} \lambda_n x_n e_n} \text{tel que } \emptyset\neq F\subseteq\mathbb{N}\text{ fini}, \abs{\lambda_n}\leqslant 1,\forall n\in F
 \right\}
 \\
 &
 \displaystyle
 \leqslant
-\max\left\{
-\norme{\sum_{n\in C} \lambda_n x_n e_n} \text{tel que } \emptyset\neq C\subseteq B\text{ et } \forall n\in C, \abs{\lambda_n}\leqslant 1
+\sup\left\{
+\norme{\sum_{n\in B\cap F} \lambda_n x_n e_n} \text{tel que } \emptyset\neq F\subseteq\mathbb{N}\text{ fini}, \abs{\lambda_n}\leqslant 1,\forall n\in F
 \right\}
 \\
 &
@@ -116,15 +116,15 @@ Soit $\lambda\in\mathbb{K}$. On a
 \triplenorme{x+\lambda y}
 \displaystyle
 =
-\max\left\{
-\norme{\sum_{n\in A\cap C}\!\!\lambda_n z_n e_n + \lambda\!\!\sum_{k\in B\cap C}\!\!\lambda_n z_n e_n} \text{tel que }\emptyset\neq C\subseteq\mathbb{N}\text{ fini}, \forall n\in C, \abs{\lambda_n}\leqslant 1
+\sup\left\{
+\norme{\sum_{n\in A\cap F}\!\!\lambda_n z_n e_n + \lambda\!\!\sum_{k\in B\cap F}\!\!\lambda_n z_n e_n} \text{tel que }\emptyset\neq F\subseteq\mathbb{N}\text{ fini}, \forall n\in F, \abs{\lambda_n}\leqslant 1
 \right\}
 \\
 &
 \displaystyle
 =
-\max\left\{
-\norme{\sum_{n\in A\cap C}\!\lambda_n z_n e_n + \abs{\lambda} \sum_{n\in B\cap C}\!\e^{i\arg(\lambda)}\lambda_n z_n e_n} \text{tel que } \emptyset\neq C\subseteq\mathbb{N}\text{ fini}, \forall n\in C, \abs{\lambda_n}\leqslant 1
+\sup\left\{
+\norme{\sum_{n\in A\cap F}\!\lambda_n z_n e_n + \abs{\lambda} \sum_{n\in B\cap F}\!\e^{i\arg(\lambda)}\lambda_n z_n e_n} \text{tel que } \emptyset\neq F\subseteq\mathbb{N}\text{ fini}, \forall n\in F, \abs{\lambda_n}\leqslant 1
 \right\}
 \\
 &

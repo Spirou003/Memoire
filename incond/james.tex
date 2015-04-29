@@ -64,7 +64,7 @@ D'autre part, par définition de $\triplenorme{.}$ et des $(f_n)_{n\in\mathbb{N}}
 \geqslant
 \max_{n\in A}\triplenorme{b_n f_n}
 \geqslant
-\theta\max_{n\in A}\triplenorme{b_n}
+\theta\max_{n\in A}\abs{b_n}
 \]
 
 On en déduit alors que pour toute série convergente $\sum\limits_{n\in\mathbb{N}}b_n f_n$, on a
@@ -130,56 +130,56 @@ Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non contractant
 \theta
 \]
 
-En prenant $n=0$, on obtient $n_0\geqslant 0$ et on peut trouver $x\in S(E)$ tel que
+En prenant $n=0$, on obtient $N\geqslant 0$ et on peut trouver $x\in S(E)$ tel que
 
 \[
 \abs{x\dual(x)}>\theta
 ~~~~\text{et}~~~~
-x=\sum_{k\geqslant n_0}x_k e_k 
+x=\sum_{k\geqslant N}x_k e_k 
 ~~~ \text{ avec }
 (x_k)_{k\in\mathbb{N}}\text{ une suite de scalaires}
 \]
 
-Puisque la série est convergente, il existe $N\geqslant n_0$ tel que
+Puisque la série est convergente, il existe $M\geqslant N$ tel que
 
 \[
 \frac{1}{2}\theta
 \leqslant
-\abs{x\dual\left(\sum_{k=n_0}^N x_k e_k\right)}
+\abs{x\dual\left(\sum_{k=N}^M x_k e_k\right)}
 \leqslant
 \frac{3}{2}\theta
 ~~~~\text{et}~~~~
 \frac{1}{2}
 \leqslant
-\triplenorme{\sum_{k=n_0}^N x_k e_k}
+\triplenorme{\sum_{k=N}^M x_k e_k}
 \leqslant
 \frac{3}{2}
 \]
 
-Il existe alors un scalaire par lequel on peut multiplier cette somme partielle afin d'obtenir des scalaires $y_{n_0},...,y_N$ tels que
+Il existe alors un scalaire par lequel on peut multiplier cette somme partielle afin d'obtenir des scalaires $y_N,...,y_M$ tels que
 
 \[
 \frac{1}{3}\theta
 \leqslant
-x\dual\left(\sum_{k=n_0}^N y_k e_k\right)
+x\dual\left(\sum_{k=N}^M y_k e_k\right)
 \leqslant
 3\theta
 ~~~~\text{et}~~~~
-\triplenorme{\sum_{k=n_0}^N y_k e_k} = 1
+\triplenorme{\sum_{k=N}^M y_k e_k} = 1
 \]
 
-On note $f_0$ cette nouvelle somme partielle. On reproduit le processus en prenant $n=N+1$, on obtient $f_1\in E_0$, $M>N+1$ et des scalaires $y_{N+1},...,y_M$ qui satisfont aux propriétés
+On note $f_0$ cette nouvelle somme partielle. On reproduit le processus en prenant $n=M+1$, on obtient $f_1\in E_0$, $L>M+1$ et des scalaires $y_{M+1},...,y_L$ qui satisfont aux propriétés
 
 \[
 \frac{1}{3}\theta
 \leqslant
-x\dual\left(\sum_{k=N+1}^M y_k e_k\right)
+x\dual\left(\sum_{k=M+1}^L y_k e_k\right)
 \leqslant
 3\theta
 ~~~~~~~~
-\triplenorme{\sum_{k=N+1}^M y_k e_k} = 1
+\triplenorme{\sum_{k=M+1}^L y_k e_k} = 1
 ~~~~\text{et}~~~~
-f_1=\sum_{k=N+1}^M y_k e_k
+f_1=\sum_{k=M+1}^L y_k e_k
 \]
 
 En itérant ce processus, on obtient une suite $(f_n)_{n\in\mathbb{N}}$ de vecteurs de norme 1 et d'image par $x\dual$ supérieure à $\frac{\theta}{3}$. Alors, quelque soient un ensemble fini non vide $A\subseteq\mathbb{N}$ et une suite de scalaires $(a_n)_{n\in\mathbb{N}}$, on a d'une part
