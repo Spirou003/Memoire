@@ -80,9 +80,51 @@ Dans l'espace $c_0$, on prend la base sommante $(s_n)_{n\in\mathbb{N}} = \left(\
 
 D'une part elle n'est pas contractante car quelque soit $n\in\mathbb{N}$, avec $f=(c_0\maps\mathbb{K}:x\mapsto x_0)$ la première fonctionnelle coordonnée associée à la base $(e_n)_{n\in\mathbb{N}}$, on a que $f(s_n)=1$.
 
-D'autre part elle n'est pas complète car en prenant pour suite de scalaires la suite $((-1)^n)_{n\in\mathbb{N}}$, on construit une suite d'éléments de norme 1, qui n'est pas de Cauchy.\newline
+D'autre part elle n'est pas complète car en prenant pour suite de scalaires la suite $((-1)^n)_{n\in\mathbb{N}}$, on construit une suite d'éléments de norme 1, qui n'est pas de Cauchy.
 
-Nous ne donnons pas d'exemple de base de Schauder contractante et complète, car l'existence d'une telle base fera l'objet d'un théorème.
+\subsubsection*{Base de Schauder contractante, complète}
+On prend la base canonique dans $l^p$, avec $p,q\in~]1,+\infty[$ tels que $\frac{1}{p}+\frac{1}{q}=1$.
+
+Par l'absurde, supposons qu'elle ne soit pas contractante. Il existe alors $x\dual\in l^q$ et $\varepsilon>0$ tels que pour tout $n\in\mathbb{N}$, il existe $N\geqslant n$ tel que
+\[
+\sup\left\{
+\abs{x\dual(x)}
+\left|
+\norme{x}_p=1\text{ et }
+x=\sum_{j\geqslant N}x_j e_j,\text{ pour }(a_j)_{j\geqslant n}\in\mathbb{K}^\mathbb{N}
+\right.
+\right\}
+>\varepsilon
+\]
+Puisque $x\dual\in l^q$, $x\dual=(x\dual_n)_{n\in\mathbb{N}}$ et il existe $n_0\in\mathbb{N}$ tel que $\sum\limits_{n\geqslant n_0}\abs{x\dual_n}^q<\varepsilon$.
+
+Puisque la base n'est pas contractante, il existe $N\geqslant n_0$ et $x\in S(l^p)$ tel que $x=\sum\limits_{n\geqslant N}x_n e_n$ et $\abs{x\dual(x)}>\varepsilon$. Cependant,
+\[
+\abs{x\dual(x)}
+=
+\abs{\sum_{n\geqslant N}x\dual_n x_n}
+\leqslant
+\sqrt[q]{\sum_{n\geqslant N}^{\phantom{N}}\abs{x\dual_n}^q}
+\leqslant
+\varepsilon
+\]
+Ce qui est absurde.
+
+Soit $(a_n)_{n\in\mathbb{N}}$ une suite de scalaires telle que $\sup\limits_{N\in\mathbb{N}}\norme{\sum\limits_{n=0}^N a_n e_n}_p<+\infty$. On a
+
+\[
+\sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}_p
+=
+\sup_{N\in\mathbb{N}}\sqrt[p]{\sum_{n=0}^N\abs{a_n}^p}
+=
+\sqrt[p]{\sum_{n\in\mathbb{N}}^{\phantom{N}}\abs{a_n}^p}
+=
+\norme{\sum_{n=0}^N a_n e_n}_p
+<
++\infty
+\]
+
+Donc la suite est bien dans $l^p$.
 
 Ceci fait, donnons quelques caractérisations de ces deux nouveaux types de base. On verra, au travers celles-ci, que les nouveaux types de bases considérés sont très puissants.
 
