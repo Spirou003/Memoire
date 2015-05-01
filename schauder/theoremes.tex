@@ -3,6 +3,7 @@ Désormais, ajoutons une petite hypothèse supplémentaire, demandons que la base s
 \begin{Thm}\label{dualisometriqueschauder}
 Soit $E$ un espace de Banach contenant $(e_n)_{n\in\mathbb{N}}$ une base de Schauder monotone et contractante. Alors, on peut identifier $E\bidual$ isométriquement à l'espace
 \[
+F=
 \left\{
 (a_n)_{n\in\mathbb{N}}\in\mathbb{K}~\left|~\sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}<+\infty\right.
 \right\}
@@ -18,10 +19,10 @@ via la correspondance $x\bidual\longleftrightarrow(x\bidual(f_n))_{n\in\mathbb{N
 \begin{proof}
 Par la proposition (\ref{contractantessifonctionnelleschauder}), on sait que les fonctionnelles coordonnées forment une base de Schauder de $E\dual$. Notons $P_n\dual$ les projections associées aux $(f_n)_{n\in\mathbb{N}}$.
 
-Nommons $A$ l'espace que l'on veut identifier à $E\bidual$. On va démontrer que l'application linéaire
+Nommons $F$ l'espace que l'on veut identifier à $E\bidual$. On va démontrer que l'application linéaire
 \[
 \begin{array}{lllll}
-T&:&E\bidual&\maps&A\\
+T&:&E\bidual&\maps&F\\
 &:&x\bidual&\mapsto&(x\bidual(f_n))_{n\in\mathbb{N}}
 \end{array}
 \]
@@ -89,7 +90,7 @@ D'où $\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\d
 \]
 Par passage au supremum sur $n$, on obtient l'égalité souhaitée.
 
-Reste à démontrer qu'elle est surjective. Soient $a\in A$, $x\dual\in E\dual$ et $\varepsilon>0$. La base $(e_n)_{n\in\mathbb{N}}$ étant contractante, on a $n_0\in\mathbb{N}$ tel que si $n\geqslant n_0$,
+Reste à démontrer qu'elle est surjective. Soient $a\in F$, $x\dual\in E\dual$ et $\varepsilon>0$. La base $(e_n)_{n\in\mathbb{N}}$ étant contractante, on a $n_0\in\mathbb{N}$ tel que si $n\geqslant n_0$,
 \[
 \sup\left\{
 \abs{x\dual(x)}
