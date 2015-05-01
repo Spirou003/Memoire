@@ -11,7 +11,7 @@ $B(E\dual)$ est compacte pour la topologie $\pweak{E}$.
 \end{Thm}
 
 \begin{Rem}
-Ceci peut paraître surprenant, voire même contradictoire, mais il n'en est rien. Le théorème de Riesz s'applique pour la topologie de la norme, alors que le théorème d'Alaoglu s'applique sur la topologie préfaible, qui est strictement plus faible que la topologie de la norme en dimension infinie. Le seul cas où la topologie de la norme coïncide avec la topologie préfaible, c'est en dimension finie. Dans ce cas, le dual est aussi de dimension finie, et les deux théorèmes affirment alors que la boule unité du dual est compacte.
+Ceci peut paraître surprenant, voire même contradictoire, mais il n'en est rien. Le théorème de Riesz s'applique sur la topologie de la norme, alors que le théorème d'Alaoglu s'applique sur la topologie préfaible, qui est strictement plus faible que la topologie de la norme en dimension infinie. Le seul cas où la topologie de la norme coïncide avec la topologie préfaible, c'est en dimension finie. Dans ce cas, le dual est aussi de dimension finie, et les deux théorèmes affirment alors que la boule unité du dual est compacte pour la norme.
 \end{Rem}
 Pour démontrer le théorème d'Alaoglu, nous aurons besoin du théorème suivant:
 
@@ -22,8 +22,8 @@ Un produit quelconque d'espaces topologiques compacts est un espace topologique 
 \begin{proof}[Démonstration du théorème d'Alaoglu]
 On va procéder en deux étapes:
 \begin{itemize}
-\item On cherche un homéomorphisme $\varphi$ de $(E,\pweak{E})$ vers un espace dans lequel on connait des compacts
-\item On montre que l'image de $B(E\dual)$ est incluse à un compact
+\item On cherche un espace dans lequel on connait des compacts, ainsi qi'un homéomorphisme $\varphi$ partant de $(E,\pweak{E})$ vers cet espace
+\item On montre que l'image de $B(E\dual)$ par $\varphi$ est incluse à un compact
 \end{itemize}
 En faisant cela, on aura démontré le théorème. En effet, on aura que $\varphi(B(E\dual))$ est fermée puisque $\varphi$ est un homéomorphisme. On l'aura inclus à un compact, donc $\varphi(B(E\dual))$ sera compact. Et puisque $\varphi$ est un homéomorphisme,  $\varphi(B(E\dual))$ compact $\ssi$  $B(E\dual)$ compacte.
 
@@ -39,19 +39,19 @@ Cette application est clairement injective, et par conséquent bijective sur son 
 
 Alors $\varphi:(E\dual,\pweak{E})\maps(\varphi(E\dual),\Tau_{\pi,ind})$ est une application bicontinue.
 
-Si $\varphi:(E,\pweak{E})\maps(\mathbb{K}^E, \Tau_\pi)$ est continue, alors elle le sera aussi sur son image. Par la proposition (\ref{proptopoinit}), $\varphi$ est continue si et seulement si toutes les $\pi_x\circ\varphi$ le sont, pour $x\in E$. Soient donc $x\in E$ et $x\dual\in E\dual$. On a que $\pi_x(\varphi(x\dual))=x\dual(x)=ev_x(x\dual)$, par conséquent $\pi_x\circ\varphi=ev_x$ est continue.
+Si $\varphi:(E\dual,\pweak{E})\maps(\mathbb{K}^E, \Tau_\pi)$ est continue, alors elle le sera aussi sur son image. Par la proposition (\ref{proptopoinit}), $\varphi$ est continue si et seulement si toutes les $\pi_x\circ\varphi$ le sont, pour $x\in E$. Soient donc $x\in E$ et $x\dual\in E\dual$. On a que $\pi_x(\varphi(x\dual))=x\dual(x)=ev_x(x\dual)$, par conséquent $\pi_x\circ\varphi=ev_x$ est continue.
 
 Montrons maintenant que $\inv{\varphi}:(\varphi(E\dual),\Tau_{\pi,ind})\maps(E\dual,\pweak{E})$ est continue. Par la proposition (\ref{proptopoinit}), on montrera que pour tout $x\bidual\in i(E), x\bidual\circ\inv{\varphi}$ est continue. Soient alors $x\bidual\in i(E)$ et $\omega\in\varphi(E\dual)$. On réécrit tout de suite $\omega=\varphi(x\dual)$ pour $x\dual\in E\dual$, et $x\bidual=ev_x$ pour $x\in E$. On obtiens alors $x\bidual(\inv{\varphi}(\omega))=ev_x(x\dual)=\pi_x(\omega)$, d'où $x\bidual\circ\inv{\varphi}=\pi_x$ est continue.
 
 \subsubsection*{Deuxième étape}
-Pour trouver le compact dont on a besoin, on va utiliser le théorème de Tychonoff (\ref{tychonoff}). Dans $\mathbb{K}$, tout ensemble de la forme $\{a\in\mathbb{K}|\abs{a}\leqslant\lambda\}$ est compact, pour $\lambda\in\mathbb{R}$. Dés lors, l'ensemble $K=\{(\omega_x)_{x\in E}|\abs{\omega_x}\leqslant\norme{x}\}$ est un compact de $(\mathbb{K}^E,\Tau_\pi)$ et donc aussi de $(\varphi(E\dual),\Tau_{\pi,ind})$. On a bien que $\varphi(B(E\dual)) \subset K$ puisque la condition pour être dans $K$ est une condition de continuité des applications linéaires de $B(E\dual)$.
+Pour trouver le compact dont on a besoin, on va utiliser le théorème de Tychonoff (\ref{tychonoff}). Dans $\mathbb{K}$, tout ensemble de la forme $\{a\in\mathbb{K}|\abs{a}\leqslant\lambda\}$ est compact, pour $\lambda\in\mathbb{R}$. dès lors, l'ensemble $K=\{(\omega_x)_{x\in E}|\abs{\omega_x}\leqslant\norme{x}\}$ est un compact de $(\mathbb{K}^E,\Tau_\pi)$. On a bien que $\varphi(B(E\dual)) \subset K$ puisqu'une condition suffisante pour être dans $K$ est d'être le graphe d'une fonctionnelle continue de norme inférieure à 1.
 \end{proof}
 
 Nous avons maintenant en main presque tout ce qu'il nous faut pour donner une caractérisation topologique des espaces réflexifs. Il ne nous manque que lemme:
 
-\begin{Prop}\label{iwbicont}
+\begin{Lemme}\label{iwbicont}
 Si $E$ est réflexif, alors $i:(E,\weak{E})\maps(E\bidual,\pweak{E\dual})$ est bicontinue.
-\end{Prop}
+\end{Lemme}
 \begin{proof}
 Puisque $i$ est continue pour la norme, elle est continue pour les topologies faibles. Et comme $\pweak{E\dual}$ est plus faible que $\weak{E\bidual}$, on a la continuité souhaitée. Passons à la continuité de l'inverse. Pour ce faire, on va démontrer que pour tout $x\dual\in E\dual$, $x\dual\circ\inv{i}$ est continue. Soient alors $x\dual\in E\dual$ et $x\bidual\in E\bidual$. Comme $E$ est réflexif, il existe $x\in E$ tel que $ev_x=x\bidual$. On a
 \[
@@ -76,14 +76,8 @@ $\Rightarrow)$ $E$ est réflexif, donc $i$ est un homéomorphisme, par le lemme (\
 $\Leftarrow)$ $B(E)$ est compacte pour $\weak{E}$, donc comme $i$ est continue, $i(B(E))$ est compacte pour $\pweak{E\dual}$. De plus, $\conj{i(B(E))}=B(E\bidual)$ par le lemme de Goldstine (\ref{goldstine}). Mais $i(B(E))$ étant compacte, est aussi fermée. On obtient alors $i(B(E))=B(E\bidual)$, autrement dit $i$ est surjectif.
 \end{proof}
 
-Grâce à ce théorème, nous pouvons donner une démonstration considérablement plus courte de la propriété suivante:
-
-\begin{Prop}Si un espace est réflexif, alors tous ses sous-espaces fermés le sont, ainsi que son dual.\end{Prop}
-\begin{proof}
-
-Par le théorème d'Alaoglu (\ref{alaoglu}), $B(E\dual)$ est compacte pour $\pweak{E}$. Or $E$ est réflexif, donc $\pweak{E}=\weak{E\dual}$, et $B(E\dual)$ est compacte pour $\weak{E\dual}$. On conclut en utilisant le théorème de Kakutani que $E\dual$ est réflexif.\newline
+Grâce à ce théorème, nous pouvons donner une démonstration considérablement plus courte de la proposition (\ref{equivreflexif}). En effet, supposons que l'espace soit réflexif. Par le théorème d'Alaoglu (\ref{alaoglu}), $B(E\dual)$ est compacte pour $\pweak{E}$. Or $E$ est réflexif, donc $\pweak{E}=\weak{E\dual}$, et $B(E\dual)$ est compacte pour $\weak{E\dual}$. On conclut en utilisant le théorème de Kakutani que $E\dual$ est réflexif.\newline
 
 Soit $F$ un sous-espace vectoriel fermé de $E$. Comme $B(F)=F\cap B(E)$ est l'intersection de deux fermés convexes de $E$, c'est aussi un fermé convexe de $E$. Comme $E$ est réflexif, $B(E)$ est compacte pour $\weak{E}$ par le théorème de Kakutani (\ref{kakutani}). Par le théorème de Mazur (\ref{mazur}), $B(F)$ est fermée pour $\weak{E}$. Alors comme $B(F)\subseteq B(E)$, elle est compacte pour $\weak{E}$. Mais $\weak{F}$ étant la topologie induite par $\weak{E}$ sur $F$, on obtient que $B(F)$ est compacte pour $\weak{F}$, donc par le théorème de Kakutani, $F$ est réflexif.
-\end{proof}
 
-Nous aurons l'occasion d'exploiter ce théorème à de nombreuses reprises par la suite.
+Les autres assertions de la proposition se démontrent de la même façon. Nous aurons l'occasion d'exploiter ce théorème à de nombreuses reprises par la suite.
