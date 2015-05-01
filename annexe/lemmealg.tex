@@ -1,0 +1,45 @@
+
+\begin{Lemme}[Lemme algébrique]\label{lemmealgebrique}
+Soient $E$ un espace vectoriel normé, $n\in\mathbb{N}_0$ et $x\dual, x\dual_1,...,x\dual_n\in E\dual$. Si $x\dual_1,...,x\dual_n$ sont linéairement indépendants, alors les assertions suivantes sont équivalentes:
+\begin{enumerate}[(1)]
+\item $x\dual\in\Span(x\dual_1,...,x\dual_n)$
+\item $\bigcap\limits_{k=1}^n \ker(x\dual_k)\subseteq\ker(x\dual)$
+\end{enumerate}
+\end{Lemme}
+\begin{proof}
+~
+
+(1) $\Rightarrow$ (2)\\
+%
+Puisque $x\dual\in\Span(x\dual_1,...,x\dual_n)$, il existe $a_1,...,a_n\in\mathbb{K}$ tels que $x\dual=\sum\limits_{k=1}^n a_k x\dual_k$. Soit $x\in\bigcap\limits_{i=k}^n \ker(x\dual_k)$. Alors
+\[
+x\dual(x)
+=
+\sum\limits_{k=1}^n a_k x\dual_k(x)
+=
+0
+\]
+
+(2) $\Rightarrow$ (1)\\
+%
+Soit l'application linéaire
+\[
+\begin{array}{lllll}
+\varphi&:&E&\maps&\mathbb{K}^{n+1}\\
+&:&x&\mapsto&(x\dual(x),x\dual_1(x),...,x\dual_n(x))
+\end{array}
+\]
+Son image est un sous-espace vectoriel fermé de $\mathbb{K}^{n+1}$. Alors par le théorème de Hahn-Banach (\ref{HBC}), puisque $(1, 0, ..., 0)\notin \Image(\varphi)$, on peut séparer $\{(1, 0, ..., 0)\}$ et $\Image(\varphi)$, autrement dit il existe $A\in (\mathbb{K}^{n+1})\dual$ et $\alpha>0$ tels que pour tout $x\in E$, on a
+\[
+\abs{A(\varphi(x))}<\alpha<\abs{A((1,0,...,0))}
+\]
+Cela signifie que $\Image(A\circ\varphi)$ est borné. Or c'est un espace vectoriel, donc il est réduit à l'élément nul. De plus, $A$ s'identifie à $(a,a_1,...,a_n)\in\mathbb{K}^{n+1}$, alors d'une part $A((1,0,...,0))=a\neq 0$ car $\alpha<\abs{A((1,0,...,0))}$, d'autre part pour tout $x\in E$ on a que
+\[
+A(\varphi(x))
+=
+a x\dual(x) + \sum_{k=1}^n a_k x\dual_k(x)
+=
+0
+\]
+Ce qui signifie que $x\dual$ est une combinaison linéaire de $x\dual_1,...,x\dual_n$.
+\end{proof}
