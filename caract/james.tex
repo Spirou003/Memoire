@@ -7,7 +7,7 @@ Les assertions suivantes sont équivalentes:
 x\dual_n(x_m) =
 \begin{cases}
 \theta & ~si~~~ n\leqslant m\\
-0 & ~si~~~ n > k
+0 & ~si~~~ n > m
 \end{cases}
 \]
 \item Quelque soit $\theta\in~]0,1[$, il existe une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ telle que pour tout $k<K\in\mathbb{N}$, on a $\dist(\conv(x_1,...,x_k), \conv(x_{k+1},...,x_K))\geqslant\theta$
@@ -33,7 +33,7 @@ Maintenant, supposons que l'on ait $x_0,...,x_n$, $x\dual_0,...,x\dual_n$ qui sa
 &
 \displaystyle
 =
-\frac{x\tridual(x\bidual)}{x\tridual(x\bidual)}\theta\abs{a}
+\frac{\theta}{x\tridual(x\bidual)}x\tridual(x\bidual)\abs{a}
 =
 M\abs{x\tridual(a x\bidual)}
 =
@@ -74,7 +74,7 @@ x\dual_k\left(\sum\limits_{l=k+1}^K a_l x_l-\sum\limits_{l=0}^k a_l x_l\right)
 
 (3) $\Rightarrow$ (1)\\
 %
-On procède par contraposition. Supposons que $E$ est réflexif, et soit $\theta\in~]0,1[$. Soit une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$. Posons $C_k=\convAdh(x_k,x_{k+1},...)\neq\emptyset$, pour $k\in\mathbb{N}$. Il est évident que quelque soit $k\in\mathbb{N}$, $C_k\supseteq C_{k+1}$. Les $C_k$ sont des convexes fermés pour la norme, donc le théorème de Mazur (\ref{mazur}) nous dit qu'ils sont également faiblement fermés. Par le théorème de Kakutani (\ref{kakutani}), puisque $E$ est réflexif, la boule unité est faiblement compacte, donc les $C_k$ étant tous bornés, ils sont aussi faiblement compacts. Puisque les $C_k$ sont des compacts emboîtés, on a que $\bigcap\limits_{k\in\mathbb{N}}C_k\neq\emptyset$.
+On procède par contraposition. Supposons que $E$ est réflexif. Soient $\theta\in~]0,1[$ et une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$. Posons $C_k=\convAdh(x_k,x_{k+1},...)\neq\emptyset$, pour $k\in\mathbb{N}$. Il est évident que quelque soit $k\in\mathbb{N}$, $C_k\supseteq C_{k+1}$. Les $C_k$ sont des convexes fermés pour la norme, donc le théorème de Mazur (\ref{mazur}) nous dit qu'ils sont également faiblement fermés. Par le théorème de Kakutani (\ref{kakutani}), puisque $E$ est réflexif, la boule unité est faiblement compacte, donc les $C_k$ étant tous bornés, ils sont aussi faiblement compacts. Puisque les $C_k$ sont des compacts emboîtés, on a que $\bigcap\limits_{k\in\mathbb{N}}C_k\neq\emptyset$.
 
 Soit $u$ un élément de cet ensemble. On a que $u\in C_0$, donc il existe $n\in\mathbb{N}$ et des scalaires $u_0,...,u_n\in\mathbb{R}^+$ tels que $\sum\limits_{k=0}^n u_k = 1$ et $\norme{u-\sum\limits_{k=0}^n u_k x_k}\leqslant\frac{\theta}{3}$. De plus, $u\in C_{n+1}$, donc il existe $N\in\mathbb{N}$ et des scalaires $u_{n+1},...,u_N\in\mathbb{R}^+$ tels que $\sum\limits_{k=n+1}^N u_k = 1$ et $\norme{u-\sum\limits_{k=n+1}^N u_k x_k}\leqslant\frac{\theta}{3}$. Par conséquent
 \[
@@ -101,7 +101,7 @@ Les assertions suivantes sont équivalentes:
 x\dual_n(x_m) =
 \begin{cases}
 \theta & ~si~~~ n\leqslant m\\
-0 & ~si~~~ n > k
+0 & ~si~~~ n > m
 \end{cases}
 \]
 \item Il existe $\theta\in~]0,1[$ et une suite $(x_n)_{n\in\mathbb{N}}$ à valeurs dans $S(E)$ tels que pour tout $k<K\in\mathbb{N}$, \[\dist(\conv(x_1,...,x_k), \conv(x_{k+1},...,x_K))\geqslant\theta\]
@@ -123,7 +123,7 @@ Soit $A$ un sous-ensemble de $E$. Alors, pour la topologie faible, $\adh{A}$ est
 Pour une démonstration de ce théorème, voir \cite[p. 430-433]{EBERLEINSMULIAN}.
 
 \begin{Rem}
-Cela signifie que pour la topologie faible, compacité et compacité séquentielle sont équivalentes pour les fermés. En particulier, ceci et le théorème de Kakutani (\ref{kakutani}) nous indiquent que la boule unité est séquentiellement compacte, pour la topologie faible, si et seulement si l'espace est réflexif.
+Cela signifie que pour la topologie faible, compacité et compacité séquentielle sont équivalentes pour les fermés. En particulier, ceci et le théorème de Kakutani (\ref{kakutani}) nous indiquent que la boule unité est séquentiellement compacte pour la topologie faible, si et seulement si l'espace est réflexif.
 \end{Rem}
 
 
