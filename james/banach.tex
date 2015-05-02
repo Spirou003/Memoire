@@ -36,12 +36,23 @@ Les deux premières affirmations étant évidentes, on commence par la troisième.
 
 (3) Soit $k\in\mathbb{N}$. Si $x_k=0$, c'est évident. Considérons que $x_k\neq 0$. Puisque $x\in c_0$, on a que $x_n\rightarrow 0$. Soit $\varepsilon>0$, il existe $l\in\mathbb{N}$ tel que $l\neq k$ et $\abs{x_l}<\varepsilon$. Dans ce cas, $\abs{x_k-x_l}\geqslant\abs{x_k}-\abs{x_l}>\abs{x_k}-\varepsilon$. En prenant $n=1$, $p_1=k$, $p_2=l$ dans la définition de $\normeJames{p}{x}$, on obtient $\abs{x_k}-\varepsilon<\abs{x_k-x_l}\leqslant\normeJames{p}{x}$, et on en déduit que $\abs{x_k}\leqslant\normeJames{p}{x}$. Le (4) est maintenant évident.
 
-(5) Soient $x,y\in\James{p}$. On veut montrer que $\normeJames{p}{x+y}\leqslant\normeJames{p}{x}+\normeJames{p}{y}$. Soient donc $n\in\mathbb{N}_0$ et $p_1<...<p_{2n}\in\mathbb{N}$. Par l'inégalité de Hölder, on a
-\[
-\sqrt[p]{\sum_{k=1}^n \abs{ (x_{p_{2k-1}}+y_{p_{2k-1}})-(x_{p_{2k}}+y_{p_{2k}}) }^p}
-\leqslant
+(5) Soient $x,y\in\James{p}$. On veut montrer que $\normeJames{p}{x+y}\leqslant\normeJames{p}{x}+\normeJames{p}{y}$. Soient donc $n\in\mathbb{N}_0$ et $p_1<...<p_{2n}\in\mathbb{N}$. On a\newline
+
+% gros problèmes d'alignement
+$
+\displaystyle\sqrt[p]{\sum_{k=1}^n \abs{ (x_{p_{2k-1}}\!+y_{p_{2k-1}})-(x_{p_{2k}}\!+y_{p_{2k}}) }^p}
+$\delline
+
+\begin{align*}
+&=
+\norme{\left((x_{p_1}\!-x_{p_2}) + (y_{p_1}\!-y_{p_2}), ..., (x_{p_{2n-1}}\!-x_{p_{2n}}) + (y_{p_{2n-1}}\!-y_{p_{2n}})\right)}_p
+\\
+&\leqslant
+\norme{\left((x_{p_1}\!-x_{p_2}), ..., (x_{p_{2n-1}}\!-x_{p_{2n}})\right)}_p + \norme{\left((y_{p_1}\!-y_{p_2}), ..., (y_{p_{2n-1}}\!-y_{p_{2n}})\right)}_p
+\\
+&=
 \sqrt[p]{\sum_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p} + \sqrt[p]{\sum_{k=1}^n \abs{y_{p_{2k-1}}-y_{p_{2k}}}^p} 
-\]
+\end{align*}
 Par passage au supremum sur $n$ et les $p_k$, on obtient l'inégalité souhaitée.
 
 Maintenant, vérifier que $\James{p}$ est un espace vectoriel est immédiat. Montrons qu'il est complet.
