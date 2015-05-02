@@ -40,7 +40,7 @@ En premier lieu, il faut s'assurer que $\varphi$ est bien définie, c'est-à-dire 
 
 La linéarité de $\varphi$ est elle aussi évidente.
 
-L'application est continue. Soient $x\dual\in F\ortho$, $x\in E$ et $f\in F$. On a
+Soient $x\dual\in F\ortho$, $x\in E$ et $f\in F$. On a
 
 \[
 \abs{\varphi(x\dual)(x+F)}
@@ -52,7 +52,7 @@ L'application est continue. Soient $x\dual\in F\ortho$, $x\in E$ et $f\in F$. On
 \norme{x\dual}\norme{x+f}.
 \]
 
-Ce qui implique que $\abs{\varphi(x\dual)(x+F)}\leqslant \norme{x\dual}\norme{x+F}$. Par conséquent, $\norme{\varphi(x\dual)}\leqslant\norme{x\dual}$ et $\varphi$ est continue.
+Ce qui implique que $\abs{\varphi(x\dual)(x+F)}\leqslant \norme{x\dual}\norme{x+F}$. Par conséquent, $\norme{\varphi(x\dual)}\leqslant\norme{x\dual}$ et $\varphi$ est continue de norme inférieure à 1.
 
 On montre que $\varphi$ est surjective. Soit $\overline{x\dual}\in(E/F)\dual$. On prend
 
@@ -63,7 +63,7 @@ x\dual&:&E&\maps&\mathbb{K}\\
 \end{array}
 \]
 
-La linéarité de $x\dual$ est évidente, montrons qu'elle est continue et de norme inférieure à $\norme{\overline{x\dual}}$, ceci nous donnera à la fois la surjectivité et le caractère isométrique de $\varphi$. Soit $x\in E$. On a
+La vérification du fait que $\varphi(x\dual)=\overline{x\dual}$ est évidente, donc $\varphi$ est surjective pour peu que le candidat choisi soit une application linéaire continue qui s'annule sur F. La linéarité de $x\dual$ est évidente, et quelque soit $f\in F$ on a que $x\dual(f)=\overline{x\dual}(f+F)=\overline{x\dual}(0+F)=0$. Il ne reste qu'à démontrer qu'elle est continue. On montrera qu'elle est continue et de norme inférieure à $\norme{\overline{x\dual}}$, ceci nous donnera le caractère isométrique de $\varphi$ et par conséquent son injectivité. Soit $x\in E$. On a
 
 \[
 \abs{x\dual(x)}
@@ -74,8 +74,6 @@ La linéarité de $x\dual$ est évidente, montrons qu'elle est continue et de norme
 \leqslant
 \norme{\overline{x\dual}}\norme{x}
 \]
-
-De plus, quelque soit $f\in F$, on a que $x\dual(f)=\overline{x\dual}(f+F)=\overline{x\dual}(0+F)=0$ donc $x\dual\in F\ortho$. La vérification du fait que $\varphi(x\dual)=\overline{x\dual}$ est évidente, donc $\varphi$ est surjective.
 \end{proof}
 
 
