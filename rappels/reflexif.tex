@@ -4,7 +4,7 @@
 
 Soient $E$ et $F$ deux espaces vectoriels normés. On définit l'espace vectoriel
 \[
-\mathscr{L}(E, F) = \{f:E\maps F\text{ linéaire continue}\}
+\mathscr{L}(E, F) = \{T:E\maps F\text{ linéaire continue}\}
 \]
 muni de la norme
 \[
@@ -17,14 +17,14 @@ $\mathscr{L}(E, F)$ est complet $\ssi F$ est complet.
 
 On désignera le dual de $(E, \norme{.})$ par $E\dual=\mathscr{L}(E, \mathbb{K})$, qui est un espace de Banach. De la même façon, on désignera le bidual de $(E, \norme{.})$ par $E\bidual = \mathscr{L}(E^*, \mathbb{K})$.
 
-On peut immédiatement identifier une catégorie particulière d'éléments du bidual. Soit $x\in E$. On définit
+On peut immédiatement identifier une catégorie particulière d'éléments du bidual. Pour $x\in E$, on définit
 \[
 \begin{array}{lllll}
 ev_x&:&E\dual&\maps&\mathbb{K}\\
 &:&x\dual&\mapsto&x\dual(x)
 \end{array}
 \]
-l'évaluation en $x$ des fonctionnelles de $E$. On démontre aisément que $ev_x\in E\bidual$, et on peut dès lors définir l'application linéaire
+l'évaluation en $x$ des fonctionnelles de $E$. On démontre aisément que ces applications sont linéaires et continues, et on peut dès lors définir l'application linéaire
 \[
 \begin{array}{lllll}
 i&:&E&\maps&E\bidual\\
@@ -68,7 +68,7 @@ En effet, $i$ étant une bijection linéaire, $i^{-1}$ est aussi une bijection lin
 
 \begin{Thm}[Riesz-Fréchet]\label{rieszfrechet}
 Soit $H$ un espace de Hilbert. Alors toute forme linéaire continue sur $H$ s'écrit de manière unique comme un produit scalaire où l'une des deux variables est fixée. Plus formellement
-\[\forall x\dual\in H\dual, \exists \: ! \: x\in H\text{ tel que }\norme{x}=\norme{x\dual}\text{ et }\forall y\in H, x\dual(y)=\scal{y}{x}\]
+\[\forall x\dual\in H\dual, \exists \, ! \, x\in H\text{ tel que }\norme{x}=\norme{x\dual}\text{et }\forall y\in H, x\dual(y)=\scal{y}{x}\]
 \end{Thm}
 \begin{Corol}
 Tout espace de Hilbert est réflexif.

@@ -32,7 +32,7 @@ Soit $\varepsilon>0$. Si $c_1=...=c_n=0$, alors il suffit de prendre un point de
 
 Supposons que $x\dual_1,...,x\dual_n$ soient linéairement indépendants. Alors, on définit les hyperplans affins $H_k=\inv{x\dual_k}(c_k)$, pour $k\in\{1,...,n\}$, ainsi que $H=\bigcap\limits_{k=1}^n H_k$. Puisque les $H_k$ sont les translatés d'espaces vectoriels de codimension 1 dans un espace de dimension infinie, on a que leur intersection $H$ est non vide. Posons $a=\inf\limits_{x\in H}\norme{x}$. On a que $a>0$ car quelque soit $x\in H$, $x\dual_1(x)=c_1\neq 0$. Alors, $H$ ne rencontre pas la boule ouverte centrée en zéro et de rayon $a$. Donc, par le théorème de Hahn-Banach (\ref{HBH}), il existe $x\dual\in E\dual$ et $c\in\mathbb{K}$ tels que $H\subseteq\mathcal{H}=\inv{x\dual}(c)$ et $\mathcal{H}$ ne rencontre pas la boule ouverte centrée en zéro et de rayon $a$.
 
-Soit $x\in H$. Clairement, $H_k-x$ est un espace vectoriel, quelque soit $k\in\{1,...,n\}$, il en va de même pour $\mathcal{H}-x$, d'où $\bigcap\limits_{k=1}^n \ker(x_k\dual)\subseteq\ker(x\dual)$. Alors par le lemme (\ref{lemmealgebrique}), $x\dual$ est une combinaison linéaire de $x\dual_1,...,x\dual_n$. Soient $a_1,...,a_n$ tels que $x\dual=\sum\limits_{k=1}^n a_k x\dual_k$. Soit $x\in\mathcal{H}$, on a
+Puisque $H\subseteq\mathcal{H}$, on a également que $\bigcap\limits_{k=1}^n \ker(x_k\dual)\subseteq\ker(x\dual)$, il suffit en effet de considérer, $x\in H$ et on a que $H_k$ est un espace vectoriel, quelque soit $k\in\{1,...,n\}$. Alors par le lemme (\ref{lemmealgebrique}), $x\dual$ est une combinaison linéaire de $x\dual_1,...,x\dual_n$. Soient $a_1,...,a_n$ tels que $x\dual=\sum\limits_{k=1}^n a_k x\dual_k$. Pour $x\in\mathcal{H}$ quelconque, on a
 \[
 c
 =

@@ -2,8 +2,11 @@
 
 Ces deux nouvelles topologies n'ont aucun intérêt dans le cas d'un espace vectoriel de dimension finie, car elles coïncident avec la topologie de la norme. En revanche, nous verrons que dans le cas d'un espace de dimension infinie, il peut y avoir de nombreuses différences entre ces trois topologies.
 
-\begin{Rem}
-Sur $E\dual$, la topologie $\pweak{E}$ est plus faible que la topologie $\weak{E\dual}$. En effet, tous les voisinages utilisés pour définir la topologie $\pweak{E}$ sont de la forme
+\begin{Prop}
+Sur $E\dual$, la topologie $\pweak{E}$ est plus faible que la topologie $\weak{E\dual}$.
+\end{Prop}
+\begin{proof}
+Tous les voisinages utilisés pour définir la topologie $\pweak{E}$ sont de la forme
 \begin{align*}
 V_{\varepsilon, x_1,...,x_n}(x_0\dual)
 &= \{x\dual\in E\dual~|~\forall k\in\{1,...,n\}, \abs{(x\dual-x_0\dual)(x_k)}<\varepsilon\} \\
@@ -11,7 +14,7 @@ V_{\varepsilon, x_1,...,x_n}(x_0\dual)
 &= V_{\varepsilon, ev_{x_1},...,ev_{x_n}}(x_0\dual)
 \end{align*}
 qui sont tous des voisinages pour $\weak{E\dual}$.
-\end{Rem}
+\end{proof}
 
 \begin{Prop}\label{contiforteimpliquefaible}
 Soient $E$, $F$ deux espaces vectoriels normés et $T:E\maps F$ une application linéaire continue. Alors $T:(E,\weak{E}\maps(F,\weak{F})$ est continue.
@@ -30,8 +33,8 @@ est bien un ouvert faible de $E$.
 Les topologies $\weak{E}$ et $\pweak{E}$ sont séparées.
 \end{Prop}
 \begin{proof}
-On commence par $\weak{E}$. Soient $x\neq y\in E$. Par le théorème de Hahn-Banach (\ref{HBF}), on a $x\dual\in E\dual$ tel que $x\dual(x-y)=\norme{x-y}>0$. Alors les voisinages de $x$ et de $y$ sont ceux définis par $\varepsilon=\frac{\norme{x-y}}{3}$, $n=1$ et $x_1\dual = x\dual$.
-On finit par $\pweak{E}$. Soient $x\dual\neq y\dual\in E\dual$. Puisque $x\dual\neq y\dual$, il existe $x\in E$ tel que $(x\dual-y\dual)(x)>0$. On conclut en prenant $\varepsilon=\frac{(x\dual-y\dual)(x)}{3}>0$, $n=1$, $x_1=x$ pour définir les voisinages de $x\dual$ et de $y\dual$.\\
+On commence par $\weak{E}$. Soient $x\neq y\in E$. Par le théorème de Hahn-Banach (\ref{HBF}), on a $z\dual\in E\dual$ tel que $z\dual(x-y)=\norme{x-y}>0$. Alors les voisinages de $x$ et de $y$ sont ceux définis par $\varepsilon=\frac{\norme{x-y}}{3}$, $n=1$ et $x_1\dual = z\dual$.
+On finit par $\pweak{E}$. Soient $x\dual\neq y\dual\in E\dual$. Puisque $x\dual\neq y\dual$, il existe $z\in E$ tel que $(x\dual-y\dual)(z)>0$. On conclut en prenant $\varepsilon=\frac{(x\dual-y\dual)(z)}{3}$, $n=1$, $x_1=z$ pour définir les voisinages de $x\dual$ et de $y\dual$.\\
 \end{proof}
 
 \begin{Prop}\label{topownonborne}
@@ -47,7 +50,7 @@ Pour les topologies faible et préfaible en dimension infinie, les sphères sont d
 \begin{proof}
 On le démontre pour des boules et des sphères centrées en 0 et de rayon 1.
 
-Soient $x\in B(E)$ et $V_x$ un voisinage faible de $x$. Ce voisinage n'est pas borné pour la norme, donc il contient nécessairement un point $y\in E$ tel que $\norme{y}=1$, d'où $V_x\cap S(E)\neq\emptyset$. Ceci implique que $\adh{S(E)}\supseteq B(E)$.
+Soient $x\in B(E)$ et $V_x$ un voisinage faible de $x$. Ce voisinage n'est pas borné pour la norme, donc il contient nécessairement un point $y\in E$ tel que $\norme{y}=1$, d'où $V_x\cap S(E)\neq\emptyset$. Ceci implique que $B(E)\subseteq\adh{S(E)}$.
 
 Soient $x\in E$ et $V_x$ un voisinage faible de $x$. Le voisinage n'étant pas borné pour la norme, il n'est pas inclu dans $B(E)$, et donc $x$ n'est pas dans l'intérieur de $B(E)$.
 
@@ -65,9 +68,9 @@ Soit $C\subseteq E$ un convexe. Alors
 
 \begin{Rem}Le fait de considérer un convexe est indispensable pour garantir l'équivalence, puisque l'on vient de voir que la sphère unité est dense dans la boule unité. Par conséquent, cette sphère, bien que fermée pour la norme, n'est pas fermée pour la topologie faible.\end{Rem}
 
-\begin{Rem}La même équivalence, où l'on remplace les fermés par des ouverts, n'est vraie qu'en dimension finie. Ceci est une conséquence immédiate du fait qu'un voisinage faible ne peut être borné pour la norme qu'en dimension finie (voir la proposition (\ref{topownonborne})).\end{Rem}
+\begin{Rem}La même équivalence, où l'on remplace les fermés par des ouverts, n'est vraie qu'en dimension finie. Ceci est une conséquence immédiate du fait qu'un voisinage faible ne peut être borné pour la norme qu'en dimension finie.\end{Rem}
 
-On est en droit de se demander si le théorème de Mazur vaut aussi pour la topologie préfaible, quand celle-ci est définie. Le lemme suivant répond par la négative:
+On est en droit de se demander si le théorème de Mazur vaut aussi pour la topologie préfaible. Le lemme suivant répond par la négative:
 
 \begin{Lemme}[Goldstine]\label{goldstine}
 Pour $\pweak{E\dual}$, $i(B(E))$ est dense dans $B(E\bidual)$.
@@ -98,7 +101,7 @@ Soient $\beta_1,...,\beta_n\in\mathbb{K}$. On a que
 \norme{\sum_{k=1}^n \beta_k x_k\dual}
 \]
 
-Maintenant, supposons par l'absurde que $\alpha\notin\conj{\varphi(B(E))}$. Dans ce cas, par le théorème de Hahn-Banach (\ref{HBC}), on peut séparer $\{\alpha\}$ et $\conj{\varphi(B(E))}$. On obtient alors $y\dual\in(\mathbb{K}^n)\dual$ et $\gamma>0$ tels que pour tout $z\in \conj{\varphi(B(E))}$, $\abs{y\dual(z)}<\gamma<\abs{y\dual(\alpha)}$. En particulier, c'est aussi vrai pour les $\varphi(x)$, où $x\in B(E)$. Identifions $y\dual$ avec $(\beta_1,...,\beta_n)\in\mathbb{K}^n$, et prenons $x\in B(E)$. On a
+Maintenant, supposons par l'absurde que $\alpha\notin\conj{\varphi(B(E))}$. Dans ce cas, par le théorème de Hahn-Banach (\ref{HBC}), on peut séparer $\{\alpha\}$ et $\conj{\varphi(B(E))}$. On obtient alors $y\dual\in(\mathbb{K}^n)\dual$ et $\gamma>0$ tels que pour tout $z\in \conj{\varphi(B(E))}$, $\abs{y\dual(z)}<\gamma<\abs{y\dual(\alpha)}$. En particulier, c'est aussi vrai pour $\varphi(x)$, où $x\in B(E)$. Identifions $y\dual$ avec $(\beta_1,...,\beta_n)\in\mathbb{K}^n$, et prenons $x\in B(E)$. On a
 \[
 \begin{array}{rrrrr}
 \abs{y\dual(\varphi(x))} & < & \gamma & < & \abs{y\dual(\alpha)}\\
