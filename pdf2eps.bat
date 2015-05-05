@@ -1,0 +1,1 @@
+gswin32c -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -sDEVICE=epswrite -sOutputFile=%1.eps %1.pdf
