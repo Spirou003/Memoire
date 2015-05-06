@@ -1,37 +1,3 @@
-Dans le chapitre précédent, on a vu une propriété dont la démonstration nécessitait le raisonnement suivant:\newline
-
-\begin{itemize}
-\item On se fixe une base algébrique de l'espace vectoriel $E$.
-\item On prend un point de $E$ et une suite qui converge vers ce point.
-\item On décompose chaque vecteur choisi suivant la base fixée.
-\item Puisque la suite est convergente, les coordonnées sont elles aussi convergentes.\newline
-\end{itemize}
-Bien que ce type de raisonnement soit toujours vrai en dimension finie, ce n'est plus le cas en dimension infinie. Par exemple, plaçons-nous dans $l^\infty$. Les $(e_n)_{n\in\mathbb{N}}$ forment une famille libre de vecteurs de $l^\infty$, mais ne forment pas une base algébrique. La suite $x=\left(\frac{1}{n}\right)_{n\in\mathbb{N}_0}$ est linéairement indépendante des $(e_n)_{n\in\mathbb{N}}$ pour des combinaisons linéaires finies. Alors, on peut utiliser le théorème de la base incomplète afin d'obtenir une base algébrique de $l^\infty$ qui contient les $(e_n)_{n\in\mathbb{N}}$ ainsi que $x$. On considère maintenant la suite $(x^{(n)})_{n\in\mathbb{N}}$ telle que pour $n\in\mathbb{N}_0$, on a
-
-\[
-x^{(n)}
-=
-\sum_{m=1}^n \frac{e_m}{m}
-\]
-
-Que l'on peut représenter
-
-\[
-\begin{array}{ccccccccccccccccccc}
-x^{(1)} & = & ( & 1 & , & 0 & , & 0 & & ... & & ... & & 0 & , & 0 & & ... & )\\
-x^{(2)} & = & ( & 1 & , & 1/2 & , & 0 & & ... & & ... & & 0 & , & 0 & & ... & )\\
-x^{(3)} & = & ( & 1 & , & 1/2 & , & 1/3 & & ... & & ... & & 0 & , & 0 & & ... & )\\
-\vdots &  &  & \vdots &  & \vdots &  & \vdots &  & \ddots &  &  &  & \vdots &  & \vdots & & & \\
-\vdots &  &  & \vdots &  & \vdots &  & \vdots &  &  &  & \ddots &  & \vdots &  & \vdots & & & \\
-x^{(n)} & = & ( & 1 & , & 1/2 & , & 1/3 & & ... & & ... & , & 1/n & , & 0 & , & ... & )\\
-\vdots &  &  & \vdots &  & \vdots &  & \vdots &  &  &  &  &  & \vdots &  & \vdots & & & \\
-\end{array}
-\]
-
-On a bien que chaque $x^{(n)}$ appartient à $l^\infty$ et que $x^{(n)}\rightarrow x$. Cependant on n'a pas de convergence en coordonnées de la base algébrique choisie. En effet, $x$ est sa propre décomposition dans la base choisie, et quel que soit $n$, la décomposition de $x^{(n)}$ ne fait pas intervenir $x$.\newline
-
-On va donc définir un nouveau type de base pour lequel la convergence générale donne la convergence des coordonnées. Ensuite, nous étudierons ses liens avec le dual et le bidual.
-
 \section{Suite basique, base de Schauder, constante de base}
 
 \begin{Def}
