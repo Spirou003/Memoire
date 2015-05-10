@@ -32,13 +32,13 @@ La définition d'une base contractante peut s'écrire de manière plus concise:
 \subsubsection*{Base de Schauder contractante, non complète}
 On prend la base canonique dans $c_0$. Elle est contractante, et n'est pas complète. Pour démontrer la première assertion, on procède par l'absurde.
 
-Supposons que la base ne soit pas contractante. Il existe alors $x\dual\in l^1$ et $\varepsilon>0$ tels que pour tout $n\in\mathbb{N}$, il existe $N\geqslant n$ tel que
+Supposons que la base ne soit pas contractante. Il existe alors $x\dual\in l^1$ et $\varepsilon>0$ tels que pour tout $n\in\mathbb{N}$, on trouve $N\geqslant n$ vérifiant
 \[
 \sup\left\{
 \abs{x\dual(x)}
 \left|
 \norme{x}=1\text{ et }
-x=\sum_{j\geqslant N}x_j e_j,\text{ pour }(a_j)_{j\geqslant n}\in\mathbb{K}^\mathbb{N}
+x=\sum_{j\geqslant N}x_j e_j,\text{ pour }(a_j)_{j\geqslant N}\in\mathbb{K}^\mathbb{N}
 \right.
 \right\}
 >\varepsilon
@@ -134,17 +134,15 @@ Dans un espace de Banach, si une base de Schauder est contractante, alors la sui
 \begin{proof}
 Soient $(e_n)_{n\in\mathbb{N}}$ une base de Schauder de $E$, et $(f_n)_{n\in\mathbb{N}}$ les fonctionnelles coordonnées qui lui sont associées. Posons $K$ la constante de base de $(e_n)_{n\in\mathbb{N}}$.
 
-Supposons que $(e_n)_{n\in\mathbb{N}}$ soit contractante. Soient $x\dual\in E\dual$ et $x=\sum\limits_{n\in\mathbb{N}}x_n e_n\in E$. On a
+Supposons que $(e_n)_{n\in\mathbb{N}}$ soit contractante. Soit $x\dual\in E\dual$. Quelque soit $x\in E$, on a
 \[
 x\dual(x)
 =
-x\dual\left(\sum_{n\in\mathbb{N}}x_n e_n\right)
-=
-\sum_{n\in\mathbb{N}}x_n x\dual(e_n)
+x\dual\left(\sum_{n\in\mathbb{N}}f_n(x)e_n\right)
 =
 \sum_{n\in\mathbb{N}}f_n(x) x\dual(e_n)
 \]
-Une décomposition raisonnable pour $x\dual$ est alors $\sum\limits_{n\in\mathbb{N}}x\dual(e_n)f_n$. Montrons que cette série est convergente (et donc converge bien vers $x\dual$).
+Une décomposition qui semble toute désignée pour $x\dual$ est alors $\sum\limits_{n\in\mathbb{N}}x\dual(e_n)f_n$. Montrons que cette série est convergente (et donc converge bien vers $x\dual$).
 
 Soit $\varepsilon>0$. La base $(e_n)_{n\in\mathbb{N}}$ étant contractante, il existe $n_0\in\mathbb{N}$ tel que pour tout $n\geqslant n_0$, on a
 \[
@@ -154,20 +152,18 @@ Soit $\varepsilon>0$. La base $(e_n)_{n\in\mathbb{N}}$ étant contractante, il ex
 \norme{x}=1\text{ et }P_n(x)=0
 \right\}<\varepsilon
 \]
-Soient $n>m\geqslant n_0$, et $\norme{x}=1$. Si $\sum\limits_{k=m+1}^n x\dual(e_k)f_k(x)=0$, alors $\abs{x\dual(x)}<\varepsilon$. Si à l'inverse $\sum\limits_{k=m+1}^n x\dual(e_k)f_k(x)\neq 0$, on a que
+Soient $n>m\geqslant n_0$, et $\norme{x}=1$. Si $\sum\limits_{k=m+1}^n x\dual(e_k)f_k(x)=0$, alors $\abs{\sum\limits_{k=m+1}^n x\dual(e_k)f_k(x)}<\varepsilon$. Si à l'inverse $\sum\limits_{k=m+1}^n x\dual(e_k)f_k(x)\neq 0$, on a que
 \[
 \begin{array}{l}
 \displaystyle
 \abs{\sum_{k=m+1}^n x\dual(e_k)f_k(x)}
 =
-\abs{x\dual\left(\sum_{k=m+1}^n x_k e_k\right)}
+\abs{x\dual\left(\sum_{k=m+1}^n f_k(x)e_k\right)}
 =
 \abs{x\dual\left(P_n(x)-P_m(x)\right)}
 \\ \displaystyle
 =
 \abs{x\dual\left(\frac{P_n(x)-P_m(x)}{\norme{P_n(x)-P_m(x)}}\right)}\norme{P_n(x)-P_m(x)}
-\leqslant
-2K\abs{x\dual\left(\frac{P_n(x)-P_m(x)}{\norme{P_n(x)-P_m(x)}}\right)}
 \leqslant
 2K\varepsilon
 \end{array}
@@ -196,14 +192,19 @@ Par passage au supremum sur $x$, on déduit que la base $(e_n)_{n\in\mathbb{N}}$ 
 \begin{Rem}
 Dans la démonstration, on a pu voir que si la suite de fonctionnelles coordonnées $(f_n)_{n\in\mathbb{N}}$ est une base de Schauder, alors toute fonctionnelle $x\dual$ s'écrit
 \[
-x\dual=\sum_{n\in\mathbb{N}}x\dual(e_n)f_n
+x\dual
+=
+\sum_{n\in\mathbb{N}}x\dual(e_n)f_n
+=
+\sum_{n\in\mathbb{N}}ev_{e_n}(x\dual)f_n
 \]
+On en déduit aisément que la suite des fonctionnelles coordonnées associées à $(f_n)_{n\in\mathbb{N}}$ est la suite $(ev_{e_n})_{n\in\mathbb{N}}$. Si de plus $(f_n)_{n\in\mathbb{N}}$ est contractante, alors $E$ est réflexif.
 \end{Rem}
 
 \begin{Rem}
 On garde les notations de la propriété, et on suppose que $(e_n)_{n\in\mathbb{N}}$ est contractante. Soient $n\in\mathbb{N}$, $x\in E$ et $x\dual\in E\dual$. On a
 \[
-\adj{P_n}(x\dual)(x)
+\adj{P}_n(x\dual)(x)
 =
 x\dual(P_n(x))
 =
@@ -213,8 +214,7 @@ x\dual\left(\sum_{k=0}^n x_k e_k\right)
 =
 \sum_{k=0}^n f_k(x) x\dual(e_k)
 \]
-Si on note $P_n\dual$ la $n^\text{ième}$ projection associée à $(f_n)_{n\in\mathbb{N}}$, alors on a que $\adj{P_n}=P_n\dual$. On en déduit, puisque $\norme{\adj{P_n}}=\norme{P_n}$, que les bases $(e_n)_{n\in\mathbb{N}}$ et $(f_n)_{n\in\mathbb{N}}$ ont la même constante de base.
+Si on note $P_n\dual$ la $n^\text{ième}$ projection associée à $(f_n)_{n\in\mathbb{N}}$, alors on a que $\adj{P}_n=P_n\dual$. On en déduit, puisque $\norme{\adj{P}_n}=\norme{P_n}$, que les bases $(e_n)_{n\in\mathbb{N}}$ et $(f_n)_{n\in\mathbb{N}}$ ont la même constante de base.
 \end{Rem}
 
-\begin{Rem}\end{Rem}
-Toujours sous les mêmes hypothèses, on vérifie aisément que les fonctionnelles coordonnées associées à $(f_n)_{n\in\mathbb{N}}$ sont égales à $(ev_{e_n})_{n\in\mathbb{N}}$. De plus, si la base $(f_n)_{n\in\mathbb{N}}$ est contractante, alors l'espace est réflexif.
+

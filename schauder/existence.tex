@@ -1,19 +1,18 @@
 On sait qu'un espace non séparable ne contient aucune base de Schauder. D'ailleurs, être séparable n'est pas suffisant pour forcer l'espace à contenir une base de Schauder. En effet, pour $p>1$, $p\neq 2$, l'espace $L^p([0,1])$ contient un sous-espace sans base de Schauder (voir \cite[p. 309-317]{PENFLO}). On va voir que pour les suites basiques, cela se passe différemment.
 
 \begin{Lemme}\label{basiquexiste}
-Soit $E$ un espace de Banach de dimension infinie. Soit $(e_0,...,e_n)$ une suite finie de constante de base $K$. Quel que soit $\varepsilon>0$, on peut trouver $e_{n+1}\in S(E)$ tel que $(e_0,...,e_{n+1})$ a une constante de base inférieure à $K(1+\varepsilon)$.
+Soit $E$ un espace de Banach de dimension infinie contenant $(e_0,...,e_n)$ une suite finie de constante de base $K$. Quel que soit $\varepsilon>0$, on peut trouver $e_{n+1}\in S(E)$ tel que $(e_0,...,e_{n+1})$ a une constante de base inférieure à $K(1+\varepsilon)$.
 \end{Lemme}
 \begin{proof}
 Soit $\varepsilon>0$, on pose $\delta=\frac{\varepsilon}{1+\varepsilon}$. Dans $\Span(e_0,...,e_n)$ la sphère unité est compacte, on a donc $(p_1,...,p_N)$ un $\delta$-réseau de cette sphère. Par le théorème de Hahn-Banach (\ref{HBF}), il existe $\varphi_k\in E\dual$ de norme 1 tel que $\varphi_k(p_k)=1$, quelque soit $k\in\{1,...,N\}$. Comme $E$ est de dimension infinie, il existe $e_{n+1}\in E$ tel que $\norme{e_{n+1}}=1$ et $\varphi_k(e_{n+1})=0$, quelque soit $k\in\{1,...,N\}$.
 
-Soient $a_0,...,a_{n+1}\in\mathbb{K}$ tels que $\norme{\sum\limits_{k=0}^n a_k e_k}=1$. Il existe $m\in\{1,...,N\}$ tel que
+Soient $a_0,...,a_{n+1}\in\mathbb{K}$ tels que $\norme{\sum\limits_{k=0}^n a_k e_k}=1$. Il existe $m\in\{1,...,N\}$ vérifiant
 \[
 \norme{p_m-\sum_{k=0}^n a_k e_k}
 \leqslant \delta
 \]
 Alors
-\[
-\begin{array}{ll}
+\begin{align*}
 1 &\displaystyle
 = \varphi_m\left(p_m+a_{n+1}e_{n+1}\right)
 \leqslant
@@ -25,8 +24,7 @@ Alors
 \norme{p_m-\sum_{k=0}^n a_k e_k}+\norme{\sum_{k=0}^{n+1}a_k e_k}
 \leqslant
 \delta+\norme{\sum_{k=0}^{n+1}a_k e_k}
-\end{array}
-\]
+\end{align*}
 D'où
 \[
 \norme{\sum_{k=0}^{n+1}a_k e_k}
@@ -65,11 +63,11 @@ Soient $e_1\in S(E)$ et $\varepsilon>0$. Ce vecteur représente une suite finie à
 =
 \exp\left(\sum_{k=0}^n\frac{1}{2^k}\frac{\ln(1+\varepsilon)}{2}\right)
 \\&=
-\exp\left(\left(2-\frac{1}{2^k}\right)\frac{\ln(1+\varepsilon)}{2}\right)
+\exp\left(\left(2-\frac{1}{2^n}\right)\frac{\ln(1+\varepsilon)}{2}\right)
 =
-\exp\left(\ln(1+\varepsilon)-\frac{1}{2^k}\frac{\ln(1+\varepsilon)}{2}\right)
+\exp\left(\ln(1+\varepsilon)-\frac{1}{2^n}\frac{\ln(1+\varepsilon)}{2}\right)
 =
-(1+\varepsilon)\exp\left(-\frac{1}{2^k}\frac{\ln(1+\varepsilon)}{2}\right)
+(1+\varepsilon)\exp\left(-\frac{1}{2^n}\frac{\ln(1+\varepsilon)}{2}\right)
 \end{array}
 \]
 
