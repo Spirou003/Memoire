@@ -1,0 +1,108 @@
+\documentclass{beamer}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+
+\include{commands}
+
+\usetheme[navigation]{UMONS}
+
+\title{Les espaces réflexifs}
+\subtitle{}
+\author{Poulain Julien}
+\institute[(Math)]{%
+  Institut de Mathématique\\
+  Université de Mons
+  \\[2ex]
+  \includegraphics[height=4ex]{umons/UMONS}\hspace{2em}%
+  \raisebox{-1ex}{\includegraphics[height=6ex]{umons/UMONS_FS}}
+}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+\section{Première section}
+\begin{frame}{Définition}
+Soient $E$ un espace vectoriel normé, et $x\in E$. On définit l'injection canonique par
+
+\[
+\begin{array}{lllll}
+i&:&E&\maps&E\bidual\\
+&:&x&\mapsto&\left(
+    \begin{array}{lllll}
+    ev_x&:&E\dual&\maps&\mathbb{K}\\
+    &:&x\dual&\mapsto&x\dual(x)
+    \end{array}
+\right)
+\end{array}
+\]
+\pause
+
+On a $\norme{x}=\norme{ev_x}$.
+\pause
+\begin{block}{Définition}
+Un espace est réflexif si son injection canonique est surjective
+\end{block}
+\end{frame}
+
+\begin{frame}
+Exemples:
+\pause
+\begin{itemize}
+\item les espaces de dimension finie
+\pause
+\item pour $p>1$, l'espace $l^p$
+\pause
+\item les espaces de Hilbert
+\pause
+\end{itemize}
+Contre-exemples:
+\pause
+\begin{itemize}
+\item $c_0$, $l^1$, $l^\infty$
+\pause
+\item tout espace non complet
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Premier transparent}
+
+  \begin{itemize}
+  \item Niveau 1 d'\texttt{itemize}
+    \begin{itemize}
+    \item Niveau 2 d'\texttt{itemize}
+    \item Niveau 2 d'\texttt{itemize}
+    \end{itemize}
+  \item Niveau 1 d'\texttt{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Deuxième section}
+\begin{frame}
+  \frametitle{Second transparent}
+
+  \begin{enumerate}
+  \item Niveau 1 d'\texttt{enumerate}
+    \begin{enumerate}
+    \item Niveau 2 d'\texttt{enumerate}
+    \item Niveau 2 d'\texttt{enumerate}
+    \end{enumerate}
+  \item Niveau 1 d'\texttt{enumerate}
+  \end{enumerate}
+\end{frame}
+
+
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

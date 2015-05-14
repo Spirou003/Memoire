@@ -1,6 +1,16 @@
 \documentclass[12pt,a4paper]{report}
 
-\include{preambule}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\include{packages}
+\include{commands}
+
+\newtheorem{Thm}{Théorème} [chapter]
+\newtheorem{Def}[Thm]{Définition}
+\newtheorem{Rem}[Thm]{Remarque}
+\newtheorem{Prop}[Thm]{Proposition}
+\newtheorem{Lemme}[Thm]{Lemme}
+\newtheorem{Corol}[Thm]{Corollaire}
+\newtheorem{Rappel}[Thm]{Rappel}
 
 \titleformat\chapter[hang]{\normalfont\huge\bfseries}{\thechapter}{1em}{}
 
