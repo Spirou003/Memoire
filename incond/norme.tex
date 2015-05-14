@@ -13,14 +13,23 @@ Alors
 
 \begin{enumerate}[(1)]
 \item Pour tout $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, $\norme{x}\leqslant\triplenorme{x}\leqslant 4K\norme{x}$
-\item $(e_n)_{n\in\mathbb{N}}$ a une constante de base inconditionnelle qui vaut 1 pour $(E,\triplenorme{.})$
+\item $(e_n)_{n\in\mathbb{N}}$ a une constante de base inconditionnelle qui vaut 1 pour $(\SpanAdh((e_n)_{n\in\mathbb{N}}),\triplenorme{.})$
 \item Pour toute paire d'ensembles finis disjoints non vides de naturels $A$ et $B$, pour toute suite de scalaires $(z_n)_{n\in\mathbb{N}}$, si on note
 
 \[
 x=\sum_{n\in A} z_n e_n ~~~~~~ y=\sum_{n\in B} z_n e_n
 \]
 
-alors quelque soit $\lambda\in\mathbb{K}$, $\triplenorme{x+\lambda y}=\triplenorme{x+\abs{\lambda}y}$
+alors la fonction
+
+\[
+\begin{array}{lll}
+\mathbb{K}&\maps&\mathbb{R}^{+}\\
+\lambda&\mapsto&\triplenorme{x+\lambda y}
+\end{array}
+\]
+
+est convexe, invariante en $\Arg(\lambda)$ et croissante en $\abs{\lambda}$
 \end{enumerate}
 \end{Lemme}
 
@@ -29,14 +38,14 @@ alors quelque soit $\lambda\in\mathbb{K}$, $\triplenorme{x+\lambda y}=\triplenor
 
 (1)\\
 %
-Soit $x\in\SpanAdh((f_n)_{n\in\mathbb{N}})$. En prenant $F=\{1,...,n\}$, pour tout $k\in F$, $\lambda_k=1$, et en faisant tendre $n$ vers l'infini, on obtient la première inégalité. Réciproquement, soient $x\in E$, $F\subseteq\mathbb{N}$ un ensemble fini non vide et $\abs{\lambda_n}\leqslant 1$ pour tout $n\in F$. On a
+Soit $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$. En prenant $F=\{1,...,n\}$, pour tout $k\in F$, $\lambda_k=1$, et en faisant tendre $n$ vers l'infini, on obtient la première inégalité. Réciproquement, soient $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, $F\subseteq\mathbb{N}$ un ensemble fini non vide et $\abs{\lambda_n}\leqslant 1$ pour tout $n\in F$. On a
 
 \[
 \norme{\sum_{n\in F} \lambda_n x_n e_n}
 \leqslant
 \norme{\sum_{n\in F} \Re(\lambda_n) x_n e_n}
 +
-\norme{\sum_{n\in F} i\Im(\lambda_n) x_n e_n}
+\norme{\sum_{n\in F} \Im(\lambda_n) x_n e_n}
 \]
 
 Les deux sommes seront traîtées identiquement. Alors, on suppose pour simplifier les notations que $\lambda_n\in[-1,1]$, quelque soit $n\in F$. On considère $E_\mathbb{R}$ l'équivalent réel de $E$. Par le théorème de Hahn-Banach (\ref{HBF}) il existe $x\dual_\mathbb{R}\in S(E_\mathbb{R}\dual)$ tel que
@@ -54,17 +63,17 @@ Alors
 \leqslant
 \sum_{n\in F}\abs{\lambda_n}\abs{x\dual_\mathbb{R}(x_n e_n)}
 \leqslant
-\left(\max_{n\in F}\abs{\lambda_n}\right) \sum_{n\in F}\abs{x\dual_\mathbb{R}(x_n e_n)}
+\sum_{n\in F}\abs{x\dual_\mathbb{R}(x_n e_n)}
 \]
 
-En posant $\varepsilon_n=signe(x\dual_\mathbb{R}(x_n e_n))$, et puisque $\max\limits_{n\in F}\abs{\lambda_n}\leqslant 1$, on a
+En posant $\varepsilon_n=signe(x\dual_\mathbb{R}(x_n e_n))$, on a
 
 \[
-\left(\max_{n\in F}\abs{\lambda_n}\right) \sum_{n\in F}\abs{x\dual_\mathbb{R}(x_n e_n)}
-\leqslant
+\sum_{n\in F}\abs{x\dual_\mathbb{R}(x_n e_n)}
+=
 \sum_{n\in F}x\dual_\mathbb{R}(\varepsilon_n x_n e_n)
-\leqslant
-\norme{x\dual_\mathbb{R}\left(\sum_{n\in F}\varepsilon_n x_n e_n\right)}
+=
+\abs{x\dual_\mathbb{R}\left(\sum_{n\in F}\varepsilon_n x_n e_n\right)}
 \leqslant
 \norme{\sum_{n\in F}\varepsilon_n x_n e_n}
 \]
@@ -110,7 +119,19 @@ Soient $A\subseteq B$ deux ensembles finis non vides de naturels, et une suite d
 \]
 
 (3)\\
-Soit $\lambda\in\mathbb{K}$. On a
+Soient $\lambda, \mu\in\mathbb{K}$ et $t\in[0,1]$.
+
+On montre que la fonction est convexe. On a
+
+\[
+\triplenorme{x + (t\lambda + (1-t)\mu)y}
+=
+\triplenorme{tx + (1-t)x + (t\lambda + (1-t)\mu)y}
+\leqslant
+t\triplenorme{x+\lambda y} + (1-t)\triplenorme{x+\mu y}
+\]
+
+On vérifie qu'elle ne dépend pas de $\Arg(\lambda)$. En effet,
 \begin{align*}
 &
 \triplenorme{x+\lambda y}
@@ -132,5 +153,7 @@ Soit $\lambda\in\mathbb{K}$. On a
 =
 \triplenorme{x+\abs{\lambda}y}
 \end{align*}
+
+Enfin, elle est croissante en $\abs{\lambda}$. Supposons par l'absurde que ce ne soit pas le cas, prenons $0\leqslant r<R$, tels que $\triplenorme{x+r\lambda y}>\triplenorme{x+R\lambda y}$. Alors, comme cette fonction est indépendante de $\Arg(\lambda)$, on a également que $\triplenorme{x-r\lambda y}>\triplenorme{x-R\lambda y}$. Ceci contredit le fait qu'elle est convexe.
 \end{proof}
 

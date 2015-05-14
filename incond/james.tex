@@ -22,10 +22,10 @@ Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non complète de
 Par le (2) du lemme (\ref{constantebaseincondnorme}), on a également que
 
 \begin{equation}
-\forall\emptyset\neq A\subseteq\mathbb{N} \text{ fini}, \triplenorme{\sum_{n\in A} a_n e_n}\leqslant 1\tag{*}
+\text{pour tout ensemble fini non vide }A\subseteq\mathbb{N}, \triplenorme{\sum_{n\in A} a_n e_n}\leqslant 1\tag{*}
 \end{equation}
 
-Puisque la série n'est pas convergente, il existe $\theta>0$ tel que pour tout $n\in\mathbb{N}$, on trouve $N\geqslant M\geqslant n$ tels que
+Puisque la série n'est pas convergente, il existe $\theta>0$ tel que pour tout $n\in\mathbb{N}$, on trouve $N\geqslant M\geqslant n$ vérifiant
 
 \[
 \triplenorme{\sum_{k=M}^N a_k e_k}\geqslant\theta
@@ -37,10 +37,10 @@ Prenons $n=0$, on obtient $n_0\geqslant m_0\geqslant 0$ tels que
 \triplenorme{\sum_{k=m_0}^{n_0} a_k e_k}\geqslant\theta
 \]
 
-On prend $n=n_0+1$, on obtient $n_1\geqslant m_1\geqslant n_0+1$ qui vérifient une même propriété. En reproduisant ce procédé, on construit deux suites de naturels $(n_k)_{k\in\mathbb{N}}$ et $(m_k)_{k\in\mathbb{N}}$ telles que
+On prend $n=n_0+1$, on obtient $n_1\geqslant m_1\geqslant n_0+1$ qui vérifient la même propriété. En reproduisant ce procédé, on construit deux suites de naturels $(n_k)_{k\in\mathbb{N}}$ et $(m_k)_{k\in\mathbb{N}}$ telles que
 
 \[
-m_0\leqslant n_0<m_1\leqslant n_1<...m_k\leqslant n_k<m_{k+1}...
+m_0\leqslant n_0<m_1\leqslant n_1<...~m_k\leqslant n_k<m_{k+1}~...
 ~~~~ \text{et} ~~~~
 1\geqslant\triplenorme{\sum_{l=m_k}^{n_k}a_l e_l}\geqslant\theta ~~\text{pour tout }k\in\mathbb{N}
 \]
@@ -85,10 +85,10 @@ Posons $F=\SpanAdh((f_n)_{n\in\mathbb{N}})$. Soit $f\in F$, supposons que la sér
 \varepsilon\theta
 \]
 
-Alors, on a également pour tout $m\leqslant k\leqslant n$ que
+Alors, on a également pour tout naturel $l$ compris entre $m$ et $n$ que
 
 \[
-\abs{b_k}
+\abs{b_l}
 \leqslant
 \max_{k=m}^n\abs{b_k}
 \leqslant
@@ -116,7 +116,7 @@ Soit un espace de Banach contenant une suite basique inconditionnelle. Les asser
 
 (1) $\Rightarrow$ (2)\\
 %
-Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non contractante de $E$. On désigne $\SpanAdh((e_n)_{n\in\mathbb{N}})$ par $E_0$ et on l'équipe de la norme équivalente $\triplenorme{.}$ décrite par le lemme (\ref{constantebaseincondnorme}). Puisque la suite $(e_n)_{n\in\mathbb{N}}$ n'est pas contractante, il existe $x\dual\in S(E\dual)$ et $\theta>0$ tels que pour tout $n\in\mathbb{N}$, on trouve $N\geqslant n$ vérifiant
+Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non contractante de $E$. On désigne $\SpanAdh((e_n)_{n\in\mathbb{N}})$ par $E_0$ et on l'équipe de la norme équivalente $\triplenorme{.}$ décrite par le lemme (\ref{constantebaseincondnorme}). Puisque la suite $(e_n)_{n\in\mathbb{N}}$ n'est pas contractante, il existe $x\dual\in S(E_0\dual)$ et $\theta>0$ tels que pour tout $n\in\mathbb{N}$, on trouve $N\geqslant n$ vérifiant
 
 \[
 \sup
@@ -130,7 +130,7 @@ Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non contractant
 \theta
 \]
 
-En prenant $n=0$, on obtient $N\geqslant 0$ et on peut trouver $x\in S(E)$ tel que
+En prenant $n=0$, on obtient $N\geqslant 0$ et on peut trouver $x\in S(E_0)$ tel que
 
 \[
 \abs{x\dual(x)}>\theta
@@ -201,7 +201,7 @@ et d'autre part par le (3) du lemme (\ref{constantebaseincondnorme})
 \geqslant
 \abs{x\dual\left(\sum_{n\in A}\abs{a_n} f_n\right)}
 =
-x\dual\left(\sum_{n\in A}\abs{a_n} f_n\right)
+\sum_{n\in A}\abs{a_n}x\dual(f_n)
 \geqslant
 \frac{\theta}{3}\sum_{n\in A}\abs{a_n}
 \]

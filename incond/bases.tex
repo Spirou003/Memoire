@@ -12,7 +12,7 @@ Soit une suite basique $(e_n)_{n\in\mathbb{N}}$ de $E$. Alors, les assertions su
 \begin{enumerate}[(1)]
 \item $(e_n)_{n\in\mathbb{N}}$ est une suite basique inconditionnelle
 %
-\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n=a$, et quelque soit $\varepsilon>0$, il existe $F_0\subset\mathbb{N}$ fini tel que pour tout ensemble fini $F_0\subseteq F\subset\mathbb{N}$, $\norme{a-\sum\limits_{n\in F}a_n e_n}<\varepsilon$
+\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n=a$, et quelque soit $\varepsilon>0$, il existe $F_0\subset\mathbb{N}$ fini tel que pour tout ensemble fini $F_0\subseteq F\subset\mathbb{N}$, on a $\norme{a-\sum\limits_{n\in F}a_n e_n}<\varepsilon$
 %
 \item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, on a $\forall\varepsilon>0,\exists n_0>0$ tel que $\forall F\subset\mathbb{N}$ fini, $\min(F)>n_0\Rightarrow\norme{\sum\limits_{n\in F}a_n e_n}<\varepsilon$
 %
@@ -24,7 +24,7 @@ Soit une suite basique $(e_n)_{n\in\mathbb{N}}$ de $E$. Alors, les assertions su
 %
 \item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, la série $\sum\limits_{n\in\mathbb{N}}b_n e_n$ converge pour toute suite de scalaires $(b_n)_{n\in\mathbb{N}}$ majorée par $(a_n)_{n\in\mathbb{N}}$
 %
-\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, on a $\lim\limits_{n\rightarrow+\infty}\sup\limits_{x\dual\in B(E\dual)}\sum\limits_{k\geqslant n}\abs{x\dual(x_k)}=0$
+\item Quelque soit une série convergente $\sum\limits_{n\in\mathbb{N}}a_n e_n$, on a $\lim\limits_{n\rightarrow+\infty}\sup\limits_{x\dual\in B(E\dual)}\sum\limits_{k\geqslant n}\abs{x\dual(a_k e_k)}=0$
 \end{enumerate}
 \end{Prop}
 
@@ -44,6 +44,8 @@ Soit une suite $(e_n)_{n\in\mathbb{N}}$ de vecteurs de $E$. On dit que cette sui
 \]
 Si $K>0$ est la plus petite valeur vérifiant cette propriété, elle est appelée la constante de base inconditionnelle de $(e_n)_{n\in\mathbb{N}}$.
 \end{Def}
+
+Comme pour les bases de Schauder, on se convainc aisément qu'une suite a toujours une constante de base inconditionnelle plus grande que 1, en prenant $A=B$.
 
 \begin{Rem}
 La définition d'une constante de base inconditionnelle implique d'une part que la suite est une suite basique (proposition (\ref{schauderbasique})), et d'autre part est équivalente à dire que quelque soient deux ensembles $A\subseteq B\subseteq\mathbb{N}$ finis non vides, les projections
@@ -81,21 +83,17 @@ Soient $\sigma$ une permutation de $\mathbb{N}$ et $x\in\SpanAdh((e_n)_{n\in\mat
 Puisque $(e_n)_{n\in\mathbb{N}}$ est une suite basique, la projection $P_{B,A}$ est continue, quelque soient $A$ et $B$ deux ensembles finis non-vides tels que $A\subseteq B\subseteq\mathbb{N}$. On remarque que, si on trouve $K>0$ tel que pour toute suite de scalaires $(a_n)_{n\in\mathbb{N}}$, on ait
 
 \begin{equation}
-\norme{\sum_{n\in A}a_n e_n}
-<
-K \norme{\sum_{n\in \mathbb{N}}a_n e_n}
+\norme{P_{\mathbb{N},A}}\leqslant K
 \tag{*}
 \end{equation}
 
 alors on a également que 
 
 \[
-\norme{\sum_{n\in A}a_n e_n}
-<
-K \norme{\sum_{n\in B}a_n e_n}
+\norme{P_{B,A}}\leqslant K
 \]
 
-Par le théorème de Banach-Steinhaus, demander (*) pour toute paire d'ensembles finis $A\subseteq B\subseteq\mathbb{N}$ non vides est équivalent à demander que pour tout $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, 
+Par le théorème de Banach-Steinhaus, demander (*) pour tout ensemble fini $A\subseteq\mathbb{N}$ non vide est équivalent à demander que pour tout $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, 
 
 \[
 \sup\{\norme{P_{\mathbb{N},A}(x)}\text{ avec }\emptyset\neq A\subseteq\mathbb{N}\text{ fini}\}<+\infty
@@ -117,14 +115,14 @@ Soit $A\subseteq\mathbb{N}$ fini non vide. Si $\max(A)\leqslant n_0$, alors
 \sum_{n=0}^{n_0}\norme{x_n e_n}
 \]
 
-Si $\max(A)>n_0$, en notant $A^{>n_0}=A~\cap~]n_0,+\infty[$, on a
+Si $\max(A)>n_0$, on a
 
 \[
 \norme{P_{\mathbb{N},A}(x)}
 =
 \norme{\sum_{n\in A}x_n e_n}
 \leqslant
-\norme{\sum_{n=0}^{n_0}x_n e_n} + \norme{\sum_{n\in A^{>n_0}}x_n e_n}
+\norme{\sum_{\substack{n=0\\n\in A}}^{n_0}x_n e_n} + \norme{\sum_{\substack{n>n_0\\n\in A}}x_n e_n}
 \leqslant
 \sum_{n=0}^{n_0}\norme{x_n e_n} + \varepsilon
 \]
@@ -132,7 +130,7 @@ Si $\max(A)>n_0$, en notant $A^{>n_0}=A~\cap~]n_0,+\infty[$, on a
 Dans tous les cas, le dernier membre ne dépend pas de $A$, ce que l'on cherchait à démontrer.
 
 (3) $\Rightarrow$ (1)\\
-On démontre (4) dans la proposition (\ref{schauderincondequiv}). Soient $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$ et une suite strictement croissante de naturels $(n_k)_{k\in\mathbb{N}}$. Soit $\varepsilon>0$. Puisque $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, il existe une suite de scalaires $(x_n)_{n\in\mathbb{N}}$ telle que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ converge vers $x$, et en prenant $\frac{\varepsilon}{K}$ on obtient $m_0$ tel que pour tout $n\geqslant m\geqslant m_0$,
+On démontre (4) dans la proposition (\ref{schauderincondequiv}). Soient $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, une suite strictement croissante de naturels $(n_k)_{k\in\mathbb{N}}$ et $\varepsilon>0$. Puisque $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$, il existe une suite de scalaires $(x_n)_{n\in\mathbb{N}}$ telle que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ converge vers $x$, et en prenant $\frac{\varepsilon}{K}$ on obtient $m_0$ tel que pour tout $n\geqslant m\geqslant m_0$,
 
 \[
 \norme{\sum_{k=m}^n x_k e_k}
