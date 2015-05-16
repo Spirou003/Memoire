@@ -104,7 +104,7 @@ Puisque la base n'est pas contractante, il existe $N\geqslant n_0$ et $x\in S(l^
 =
 \abs{\sum_{n\geqslant N}x\dual_n x_n}
 \leqslant
-\sqrt[q]{\sum_{n\geqslant N}^{\phantom{N}}\abs{x\dual_n}^q}
+\norme{x}_p\sqrt[q]{\sum_{n\geqslant N}^{\phantom{N}}\abs{x\dual_n}^q}
 \leqslant
 \varepsilon
 \]
@@ -119,7 +119,7 @@ Soit $(a_n)_{n\in\mathbb{N}}$ une suite de scalaires telle que $\sup\limits_{N\i
 =
 \sqrt[p]{\sum_{n\in\mathbb{N}}^{\phantom{N}}\abs{a_n}^p}
 =
-\norme{\sum_{n=0}^N a_n e_n}_p
+\norme{\sum_{n\in\mathbb{N}} a_n e_n}_p
 <
 +\infty
 \]
