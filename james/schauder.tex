@@ -1,13 +1,13 @@
 \section{Deux bases de Schauder particulières}
 
-\begin{Prop}\label{jamesenschauder}\end{Prop}
-La base canonique $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder de $\James{p}$.
-
+\begin{Prop}\label{jamesenschauder}
+La base canonique $(e_n)_{n\in\mathbb{N}}$ est une base de Schauder monotone de $\James{p}$.
+\end{Prop}
 \begin{proof}
-On montre dans un premier temps que cette suite admet une constante de base. Cela nous permettra d'affirmer que si un vecteur admet une décomposition selon cette base, alors elle est unique. On veut trouver $K>0$ tel que, pour tout $n\leqslant m\in\mathbb{N}$ et $a_0,...,a_m\in\mathbb{K}$,
+On montre dans un premier temps que la constante de base de cette suite vaut 1. Cela nous permettra d'affirmer que si un vecteur admet une décomposition selon cette base, alors elle est unique. On veut que pour tout $n\leqslant m\in\mathbb{N}$ et $a_0,...,a_m\in\mathbb{K}$,
 
 \[
-\normeJames{p}{\sum_{k=0}^n a_k e_k}\leqslant K\normeJames{p}{\sum_{k=0}^m a_k e_k}
+\normeJames{p}{\sum_{k=0}^n a_k e_k}\leqslant\normeJames{p}{\sum_{k=0}^m a_k e_k}
 \]
 
 En remarquant que
@@ -16,7 +16,7 @@ En remarquant que
 \sum_{k=0}^n a_k e_k = (a_0,...,a_n,0,...,0,...)
 \]
 
-on en déduit immédiatement l'inégalité souhaitée, pour $K=1$, puisque le fait d'ajouter des termes à la somme offre un plus grand choix de coordonnées non nulles au supremum calculé par $\normeJames{p}{.}$.
+on en déduit immédiatement l'inégalité souhaitée, puisque le fait d'ajouter des termes à la somme offre un plus grand choix de coordonnées non nulles au supremum calculé par $\normeJames{p}{.}$.
 
 Maintenant, montrons que c'est bien une base de Schauder. Soit $x\in\James{p}$. On veut montrer que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ converge vers $x$. L'idée générale de la preuve sera la suivante. On supposera par l'absurde que la série ne converge pas vers $x$. Grace à cela, quelque soient $m\in\mathbb{N}$ et $\varepsilon>0$, on pourra trouver $N$ et des $p_k$ tels que
 
@@ -24,17 +24,18 @@ Maintenant, montrons que c'est bien une base de Schauder. Soit $x\in\James{p}$. 
 \sqrt[p]{\sum_{k=1}^N\abs{y_{p_{2k-1}}-y_{p_{2k}}}^p}>\varepsilon
 \]
 
-où $y=(y_n)_{n\in\mathbb{N}}=x-\sum\limits_{k=0}^m x_k e_k$. Cependant, les $m$ premières coordonnées de $y$ sont nulles, alors que celles de $x$ ne le sont pas nécessairement. On utilisera alors le fait que $x$ est une suite qui converge vers zéro afin de pouvoir retirer les $p_k$ dont les coordonnées de $x$ et $y$ ne sont pas les mêmes, en conservant une minoration similaire à celle écrite ci-dessus.
+où $y=(y_n)_{n\in\mathbb{N}}=x-\sum\limits_{k=0}^m x_k e_k$. Cependant, les $m$ premières coordonnées de $y$ sont nulles, alors que celles de $x$ ne le sont pas nécessairement. On utilisera le fait que $x$ est une suite qui converge vers zéro afin de pouvoir retirer les $p_k$ dont les coordonnées de $x$ et $y$ ne sont pas les mêmes, en conservant une minoration similaire à celle écrite ci-dessus.
 
 Alors, il suffira d'appliquer autant de fois que nécessaire le même raisonnement pour en conclure que $\normeJames{p}{x}=+\infty$.\newline
 
 Supposons que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ ne converge pas vers $x$, soit alors $\varepsilon>0$ tel que
 
-\[
-(1)\text{ }\text{ }\text{ }\forall n\in\mathbb{N}, \exists\: m\geqslant n\text{ tel que }\normeJames{p}{x-\sum_{k=0}^m x_k e_k}>\varepsilon
-\]
+\begin{equation}
+\text{ }\text{ }\text{ }\forall n\in\mathbb{N}, \exists\: m\geqslant n\text{ vérifiant }\normeJames{p}{x-\sum_{k=0}^m x_k e_k}>\varepsilon
+\label{jamescannotschauder}\tag{*}
+\end{equation}
 
-La suite $(x_n)_{n\in\mathbb{N}}$ convergeant vers 0, on a $n_0\in\mathbb{N}$ tel que pour tout $n\geqslant n_0, \abs{x_n}<\frac{\varepsilon}{2}$. Dans (1), prenons $n=n_0$, on obtient $m\geqslant n_0\in\mathbb{N}$. Posons $y=(y_n)_{n\in\mathbb{N}}=x-\sum\limits_{k=0}^m x_k e_k$. Puisque $\normeJames{p}{y}$ est un supremum, il existe $N\in\mathbb{N}$ et $p_1<...<p_{2N}\in\mathbb{N}$ tels que $y_{p1}$ et $y_{p2}$ ne sont pas tous les deux nuls, et
+La suite $(x_n)_{n\in\mathbb{N}}$ convergeant vers 0, il existe $n_0\in\mathbb{N}$ tel que pour tout $n\geqslant n_0$, on a $\abs{x_n}<\frac{\varepsilon}{2}$. Dans (\ref{jamescannotschauder}), prenons $n=n_0$, on obtient $m\geqslant n_0\in\mathbb{N}$. Posons $y=(y_n)_{n\in\mathbb{N}}=x-\sum\limits_{k=0}^m x_k e_k$. Par définition de $\normeJames{p}{.}$, il existe $N\in\mathbb{N}$ et $p_1<...<p_{2N}\in\mathbb{N}$ tels que $y_{p1}$ et $y_{p2}$ ne sont pas tous les deux nuls, et
 
 \[
 \sqrt[p]{\sum_{k=1}^N\abs{y_{p_{2k-1}}-y_{p_{2k}}}^p}>\varepsilon
@@ -48,11 +49,9 @@ Si $p_1>m$, alors $x$ et $y$ sont égaux en toutes les coordonnées considérées, e
 \sqrt[p]{\sum_{k=1}^N\abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}>\varepsilon
 \]
 
-Si $p_1\leqslant m$, on retire $p_1$ et $p_2$ des entiers choisis, on que
+Si $p_1\leqslant m$, on retire $p_1$ et $p_2$ des entiers choisis, on a que $x$ et $y$ sont égaux sur les coordonnées restantes, et
 
 \[
-\sqrt[p]{\sum_{k=2}^N\abs{y_{p_{2k-1}}-y_{p_{2k}}}^p}
-=
 \sqrt[p]{\sum_{k=2}^N\abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}
 >
 \frac{\varepsilon}{2}
@@ -66,7 +65,7 @@ Dans (1), on prend maintenant $n=p_{2N}+1$, et on reproduit le même procédé que 
 \sqrt[p]{\sum_{k=1}^M\abs{x_{q_{2k-1}}-x_{q_{2k}}}^p}>\frac{\varepsilon}{2}
 \]
 
-On en déduit alors, en choisissant $p_1<...<p_{2N}<q_1<...<q_{2M}$ que $\normeJames{p}{x}\geqslant 2\frac{\varepsilon}{2}$. En reproduisant ce processus autant de fois que nécessaire, on en déduit que pour tout $l\in\mathbb{N}$, $\normeJames{p}{x}\geqslant l\frac{\varepsilon}{2}$, ce qui contredit que $\normeJames{p}{x}<+\infty$. La seule supposition que l'on a faite est que la série $\sum\limits_{n\in\mathbb{N}}x_n e_n$ ne converge pas vers $x$, elle était donc fausse, la série converge bien vers $x$.
+On en déduit alors, en choisissant $p_1<...<p_{2N}<q_1<...<q_{2M}$ que $\normeJames{p}{x}\geqslant 2\frac{\varepsilon}{2}$. En reproduisant ce processus autant de fois que nécessaire, on en déduit que pour tout $l\in\mathbb{N}$, $\normeJames{p}{x}\geqslant l\frac{\varepsilon}{2}$, ce qui contredit que $\normeJames{p}{x}<+\infty$.
 \end{proof}
 
 La base canonique étant une base de Schauder, les fonctionnelles coordonnées
@@ -80,8 +79,9 @@ f_k&:&\James{p}&\maps&\mathbb{K}\\
 
 sont continues. De plus, elles sont de norme 1, puisque pour tout $k\in\mathbb{N}$ et $a\in\James{p}$ on a que $\abs{f_k(a)}=\abs{a_k}\leqslant\normeJames{p}{a}$, et que $\abs{f_k(a_k e_k)}=\abs{a_k}=\normeJames{p}{a_k e_k}$.
 
-\begin{Prop}\end{Prop}
-La suite des sommes partielles de la base canonique, c'est-à-dire $(s_n)_{n\in\mathbb{N}} = \left(\sum\limits_{k=0}^n e_k\right)_{n\in\mathbb{N}}$, est également une base de Schauder.
+\begin{Prop}
+La suite sommante de la base canonique, c'est-à-dire $(s_n)_{n\in\mathbb{N}} = \left(\sum\limits_{k=0}^n e_k\right)_{n\in\mathbb{N}}$, est également une base de Schauder monotone.
+\end{Prop}
 \begin{proof}
 On démontre aisément que c'est une suite basique monotone. Montrons que c'est une base de Schauder. Pour cela, il est suffisant de démontrer que la série $\sum\limits_{n\in\mathbb{N}}(x_n-x_{n+1})s_n$ converge vers $x=\sum\limits_{n\in\mathbb{N}}x_n e_n$. Soit $N\in\mathbb{N}_0$, on a
 
@@ -115,9 +115,11 @@ Pour ce faire, supposons par l'absurde que ce n'est pas vrai. On a $x\dual\in\Ja
 
 \[
 E_n=\left\{\left.x=\sum_{j\geqslant n}a_j e_j\right|(a_n)_{n\in\mathbb{N}}\in\mathbb{K}^\mathbb{N}\text{ et }\normeJames{p}{x}=1\right\}
+~~~~~~
+\text{pour }n\in\mathbb{N}
 \]
 
-On a alors une suite strictement croissante de naturels $(n_k)_{k\in\mathbb{N}}$ et $\varepsilon>0$ tels que pour tout $k\in\mathbb{N}$, {$\sup\limits_{x\in E_{n_k}}\abs{x\dual(x)}>\varepsilon$}. Soit $x_0\in E_{n_0}$ tel que $\abs{x\dual(x_0)}>\varepsilon$. Comme $x_0\in E_{n_0}$, on a que $\sum\limits_{j=n_0}^n a_j e_j\underset{n\rightarrow+\infty}{\longrightarrow} x_0$ pour la norme et pour la topologie faible. On en déduit alors qu'il existe $n\in\mathbb{N}$ tel que
+On a alors une suite strictement croissante de naturels $(n_k)_{k\in\mathbb{N}}$ et $\varepsilon>0$ tels que pour tout $k\in\mathbb{N}$, {$\sup\limits_{x\in E_{n_k}}\abs{x\dual(x)}>\varepsilon$}. Soit $x_0\in E_{n_0}$ tel que $\abs{x\dual(x_0)}>\varepsilon$. Comme $x_0\in E_{n_0}$, on a une suite de scalaires $(a_n)_{n\in\mathbb{N}}$ telle que $\sum\limits_{j=n_0}^n a_j e_j\underset{n\rightarrow+\infty}{\longrightarrow} x_0$ pour la norme (et donc pour la topologie faible). On en déduit alors qu'il existe $n\in\mathbb{N}$ tel que
 
 \[
 \frac{1}{2}\leqslant\normeJames{p}{\sum_{j=n_0}^n a_j e_j}\leqslant\frac{3}{2}
@@ -125,16 +127,30 @@ On a alors une suite strictement croissante de naturels $(n_k)_{k\in\mathbb{N}}$
 \frac{\varepsilon}{2}\leqslant\abs{x\dual\left(\sum_{j=n_0}^n a_j e_j\right)}\leqslant\frac{3\varepsilon}{2}
 \]
 
-et en particulier, on peut trouver des coefficients $a'_{n_0},...,a'_n\in\mathbb{K}$ tels que
+et en particulier, on peut trouver des scalaires $a'_{n_0},...,a'_n$ tels que
 
 \[
-\frac{\varepsilon}{3}\leqslant\abs{x\dual\left(\sum_{j=n_0}^n a'_j e_j\right)}
+u_0=\sum_{j=n_0}^n a'_j e_j
+~~~~~~
+\frac{\varepsilon}{3}\leqslant x\dual(u_0)\leqslant 3\varepsilon
+~~~~~~
+\normeJames{p}{u_0}=1
 \]
 
-On reproduit le processus pour tous les $E_n$, on obtient ainsi une suite $(u_n)_{n\in\mathbb{N}}$ de combinaisons linéaires finies des $e_n$ telle que, pour tout $k\in\mathbb{N}$
+Soit $k\in\mathbb{N}$ tel que $n_k>n$. On reproduit le processus décrit ci-dessus, on obtient $m\in\mathbb{N}$ et des scalaires $a'_{n_k},...,a'_m$ tels que
+
+\[
+u_1=\sum_{j=n_k}^m a'_j e_j
+~~~~~~
+\frac{\varepsilon}{3}\leqslant x\dual(u_1)\leqslant 3\varepsilon
+~~~~~~
+\normeJames{p}{u_1}=1
+\]
+
+En continuant de cette façon, on obtient ainsi une suite $(u_n)_{n\in\mathbb{N}}$ de combinaisons linéaires finies des $e_n$ telle que, pour tout $k\in\mathbb{N}$
 \begin{itemize}
 \item $\normeJames{p}{u_k}=1$
-\item $u_k\in E_{n_k}$
+\item $u_k\in E_{n_k}$ (supposé spdg, à une sous-suite près)
 \item $x\dual(u_k)\geqslant\varepsilon/3$
 \item Si on additionne tous les $u_l$, on obtient une suite que l'on peut représenter par \\ $([u_0], [u_1], ... [u_l], ...)$. Cette suite n'est pas dans $\James{p}$.
 \end{itemize}

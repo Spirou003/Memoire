@@ -19,25 +19,26 @@ Mais on peut trouver une meilleure caractérisation que celle-ci. Pour cela, nous
 Toute suite $a\in\mathbb{K}^{\mathbb{N}}$ telle que $\normeJames{p}{a}<+\infty$ est convergente.
 \end{Lemme}
 \begin{proof}
-Soit $a\in\mathbb{K}^\mathbb{N}$ telle que $\normeJames{p}{a}<+\infty$. Il suffit de montrer qu'elle est de Cauchy. Supposons que ce ne soit pas le cas, on a $\varepsilon>0$ tel que $\forall N\in\mathbb{N}, \exists n>m\geqslant N$ tels que $\abs{a_n-a_m}>\varepsilon$.
+Soit $a\in\mathbb{K}^\mathbb{N}$ telle que $\normeJames{p}{a}<+\infty$. Il suffit de montrer qu'elle est de Cauchy. Supposons que ce ne soit pas le cas, on a $\varepsilon>0$ tel que $\forall N\in\mathbb{N}, \exists\hspace*{0.1em}n>m\geqslant N$ vérifiant $\abs{a_n-a_m}>\varepsilon$.
 
 Prenons $N=0$. On obtient $n_0>m_0\geqslant N$ tels que $\abs{a_{n_0}-a_{m_0}}>\varepsilon$.
 
 Prenons $N=n_0+1$. On obtient $n_1>m_1\geqslant N$ tels que $\abs{a_{n_1}-a_{m_1}}>\varepsilon$.
 
-On continue de cette façon, on obtient alors deux suites $(n_k)_k\in\mathbb{N}$ et $(m_k)_k\in\mathbb{N}$ telles que
+On continue de cette façon, on obtient alors deux suites de naturels $(n_k)_{k\in\mathbb{N}}$ et $(m_k)_{k\in\mathbb{N}}$ telles que
 \[
 m_0<n_0<m_1<n_1<...<m_k<n_k<...\text{   et   }\forall k\in\mathbb{N}, \abs{x_{n_k}-x_{m_k}}>\varepsilon
 \]
 En choisissant alternativement ces deux suites pour les $p_k$, on obtient une contradiction avec $\normeJames{p}{a}<+\infty$.
 \end{proof}
 
-\begin{Prop}\end{Prop}
+\begin{Prop}
 \[
 \left\{a\in\mathbb{K}^\mathbb{N}|\normeJamesB{p}{a}<+\infty\right\}
 =
 \left\{a\in\mathbb{K}^\mathbb{N}|\normeJames{p}{a}<+\infty\right\}
 \]
+\end{Prop}
 \begin{proof}
 Soit $(a_n)_{n\in\mathbb{N}}$ une suite de scalaires. On a
 
@@ -56,11 +57,11 @@ p_1<...<p_{2n}<q\in\mathbb{N}
 
 On va montrer que le deuxième membre de l'égalité ci-dessus (notons-le $\triplenorme{a}$) est fini si et seulement si $\normeJames{p}{a}<+\infty$.
 
-Si $\triplenorme{a}<+\infty$, en retirant $\abs{a_q}^p$ dans le supremum (ce qui en diminue sa valeur) on retrouve la définition de $\normeJames{p}{a}$. On suppose maintenant que $\normeJames{p}{a}<+\infty$. Alors, par le lemme précédent, cette suite est convergente, mais surtout bornée. Alors
+Si $\triplenorme{a}<+\infty$, en retirant $\abs{a_q}^p$ dans le supremum (ce qui en diminue sa valeur) on retrouve la définition de $\normeJames{p}{a}$. On suppose maintenant que $\normeJames{p}{a}<+\infty$. Alors, par le lemme précédent, cette suite est convergente, mais surtout bornée. Dans ce cas
 
 \[
 \begin{array}{ll}
-\norme{a}
+\triplenorme{a}
 &=
 \displaystyle
 \sup
@@ -92,8 +93,9 @@ p_1<...<p_{2n}\in\mathbb{N}
 
 L'espace $\James{p}\bidual$ est donc uniquement composé de suites convergentes et bornées pour $\normeJames{p}{.}$. On en déduit alors immédiatement que $\James{p}\bidual=\langle\James{p},(1,1,...)\rangle$. La suite $(1,1,...)$ est un peu plus particulière que ce qu'en dit la précédente égalité.
 
-\begin{Prop}\end{Prop}
+\begin{Prop}
 La suite $(ev_{s_n})_{n\in\mathbb{N}}$ converge vers $\varepsilon_0=(1,1,...)$ pour la topologie préfaible.
+\end{Prop}
 \begin{proof}
 Soient $\varepsilon>0$ et $x\dual\in\James{p}\dual$. La base canonique étant contractante, on sait que
 \[
@@ -132,8 +134,9 @@ D'où $s=(1,1,...)=\varepsilon_0$.
 
 Vu les propositions précédentes, on serait tenté pour $x\bidual\in\James{p}\bidual$, de dire que $\normeJamesB{p}{x\bidual}=\normeJames{p}{x\bidual}$. Cependant, ce n'est pas le cas car $\normeJames{p}{\varepsilon_0}=0$ avec $\varepsilon_0\neq 0$. On peut néanmoins s'en approcher, comme le montre cette proposition.
 
-\begin{Prop}\end{Prop}
+\begin{Prop}
 Quelque soient $a\in\mathbb{K}$ et $x\in\James{p}$, $\max(\abs{a},\normeJames{p}{x}) \leqslant \normeJamesB{p}{x+a\varepsilon_0} \leqslant \abs{a}+\normeJames{p}{x}$. De plus, $\normeJamesB{p}{\varepsilon_0}=1$.
+\end{Prop}
 \begin{proof}
 Soient $a\in\mathbb{K}$ et $x\in\James{p}$. On a que $\normeJamesB{p}{\varepsilon_0}=\sup\limits_{N\in\mathbb{N}}\normeJames{p}{\sum\limits_{n=0}^N e_n}=1$, et donc également que $\normeJamesB{p}{x+a\varepsilon_0}\leqslant\normeJames{p}{x}+\abs{a}$.
 
@@ -162,8 +165,9 @@ donc $\normeJames{p}{x}\leqslant\normeJamesB{p}{x+a\varepsilon_0}$.
 
 On a désormais en main tout ce qu'il nous faut pour démontrer que $\James{p}$ et $\James{p}\bidual$ sont isomorphes.
 
-\begin{Thm}\label{jamesisomorphebidual}\end{Thm}
+\begin{Thm}\label{jamesisomorphebidual}
 L'espace de James est isomorphe à son bidual.
+\end{Thm}
 \begin{proof}
 On définit
 \[
