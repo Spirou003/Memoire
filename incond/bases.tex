@@ -37,6 +37,21 @@ La base canonique des espaces $c_0$ et $l^p$, pour $p\in[1,+\infty[$ est une bas
 \end{Corol}
 \begin{proof}En utilisant la propriété (5), c'est immédiat.\end{proof}
 
+Une question qui vient naturellement à l'esprit est alors de savoir s'il existe toujours une base de Schauder inconditionnelle dans un espace séparable. Ou du moins, est-ce que tout espace admettant une base de Schauder admet également une base de Schauder inconditionnelle? La réponse à cette question est non, car les deux espaces
+
+\[
+\begin{array}{rclcl}
+L^1([0,1])&=&\{\text{fonction intégrable sur [0,1] au sens de Lebesgue}\} & \\
+& & \displaystyle ~~~~ \text{muni de la norme} \norme{f} = \int_{0}^{1} \!\! \abs{f(x)} \, \mathrm{d}x \\
+C([0,1])&=&\{\text{fonction continue sur [0,1]}\} & \\
+& & \displaystyle ~~~~ \text{muni de la norme} \norme{f} = \sup_{t\in[0,1]}\abs{f(t)}
+\end{array}
+\]
+
+possèdent chacun une base de Schauder, mais n'en ont aucune qui soit inconditionnelle (voir \cite[p. 855-873]{DAUGAVET}). La situation est d'ailleurs très nettement moins glorieuse que pour les suites basiques. En effet, il existe des espaces séparables qui n'ont aucune suite basique inconditionnelle. C'est un problème qui est resté ouvert pendant longtemps, et qui a été résolu par William Timothy Gowers et Bernard Maurey (voir \cite[p. 851-874]{GOWERSMAUREY}).
+
+De manière similaire aux suites basiques, on peut donner une nouvelle caractérisation des suites basiques inconditionnelles en termes de projections.
+
 \begin{Def}\label{constanteincond}
 Soit une suite $(e_n)_{n\in\mathbb{N}}$ de vecteurs de $E$. On dit que cette suite admet une constante de base inconditionnelle s'il existe $K>0$ tel que pour toute paire d'ensembles finis non vides $A\subseteq B\subseteq\mathbb{N}$ et pour toute suite de scalaires $(a_n)_{n\in\mathbb{N}}$, on a
 \[
