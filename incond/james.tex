@@ -24,7 +24,8 @@ Soit $(e_n)_{n\in\mathbb{N}}$ une suite basique inconditionnelle non complète de
 Par le (2) du lemme (\ref{constantebaseincondnorme}), on a également que
 
 \begin{equation}
-\text{pour tout ensemble fini non vide }A\subseteq\mathbb{N}, \triplenorme{\sum_{n\in A} a_n e_n}\leqslant 1\tag{*}
+\text{pour tout ensemble fini non vide }A\subseteq\mathbb{N}, \triplenorme{\sum_{n\in A} a_n e_n}\leqslant 1
+\label{incondcompletecoapplylemme}\tag{*}
 \end{equation}
 
 Puisque la série n'est pas convergente, il existe $\theta>0$ tel que pour tout $n\in\mathbb{N}$, on trouve $N\geqslant M\geqslant n$ vérifiant
@@ -47,7 +48,7 @@ m_0\leqslant n_0<m_1\leqslant n_1<...~m_k\leqslant n_k<m_{k+1}~...
 1\geqslant\triplenorme{\sum_{l=m_k}^{n_k}a_l e_l}\geqslant\theta ~~\text{pour tout }k\in\mathbb{N}
 \]
 
-Posons $f_k=\sum\limits_{l=m_k}^{n_k}a_l e_l$, pour $k\in\mathbb{N}$. Soient $A\subseteq\mathbb{N}$ fini non vide et $(b_n)_{n\in\mathbb{N}}$ une suite de scalaires. Alors d'une part par (*) et le (3) du lemme (\ref{constantebaseincondnorme}) on a que
+Posons $f_k=\sum\limits_{l=m_k}^{n_k}a_l e_l$, pour $k\in\mathbb{N}$. Soient $A\subseteq\mathbb{N}$ fini non vide et $(b_n)_{n\in\mathbb{N}}$ une suite de scalaires. Alors d'une part par (\ref{incondcompletecoapplylemme}) et le (3) du lemme (\ref{constantebaseincondnorme}) on a que
 
 \[
 \triplenorme{\sum_{n\in A}b_n f_n}
