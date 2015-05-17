@@ -1,6 +1,6 @@
 \section{Une norme, une isométrie}
 
-On va maintenant munir $\James{p}$ d'une nouvelle norme, équivalente à celle que l'on lui a mise précédemment. La norme sera la suivante:
+On va maintenant munir $\James{p}$ d'une nouvelle norme, équivalente à celle que l'on lui a mise précédemment. Pour une suite de scalaires $(x_n)_{n\in\mathbb{N}}$, on définit
 
 \[
 \normeJamesI{p}{x}
@@ -17,37 +17,35 @@ n\in\mathbb{N}_0, p_1<...<p_{n}\in\mathbb{N}
 \begin{Prop}\label{newnormeequiv}
 On a les propriétés suivantes:
 \begin{enumerate}[(1)]
-\item La norme $\normeJamesI{p}{.}$ est une norme sur $\James{p}$ et est équivalente à $\normeJames{p}{.}$.
+\item L'application $\normeJamesI{p}{.}$ est une norme sur $\James{p}$ et est équivalente à $\normeJames{p}{.}$.
 \item Pour toute suite de scalaires $(x_n)_{n\in\mathbb{N}}$, on a $\normeJames{p}{x}\leqslant\normeJamesI{p}{x}\leqslant 3\normeJames{p}{x}$.
 \end{enumerate}
 \end{Prop}
 \begin{proof}
-(2) Soit $x\in\mathbb{K}^\mathbb{N}$.
-
-Soient $n\in\mathbb{N}_0$ et $p_1<...<p_n$ des naturels. On a
+(2) Soient $x\in\mathbb{K}^\mathbb{N}$, $n\in\mathbb{N}_0$ et $p_1<...<p_n$ des naturels. On a
 
 \begin{align*}
-\sqrt[p]{\sum_{k=1}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p + \abs{x_{p_1}-x_{p_n}}^p}
+\sum_{k=1}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p + \abs{x_{p_1}-x_{p_n}}^p
 &\leqslant
-\sqrt[p]{\sum_{\substack{k=1\\k~pair}}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p}
-+ \sqrt[p]{\sum_{\substack{k=1\\k~impair}}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p}
-+ \normeJames{p}{x}
+\sum_{\substack{k=1\\k~pair}}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p
++ \sum_{\substack{k=1\\k~impair}}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p
++ \normeJames{p}{x}^p
 \\
 &\leqslant
-3 \normeJames{p}{x}
+3 \normeJames{p}{x}^p
 \end{align*}
 
-Maintenant, soient $p_{n+1}<...<p_{2_n}$ des naturels strictement supérieurs à $p_n$. On a
+Maintenant, soient $p_{n+1}<...<p_{2n}$ des naturels strictement supérieurs à $p_n$. On a
 
 \[
-\sqrt[p]{\sum_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}
+\sum_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p
 \leqslant
-\sqrt[p]{\sum_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p + \sum_{k=1}^{n-1} \abs{x_{p_{2k}}-x_{p_{2k+1}}}^p + \abs{x_{p_1}-x_{p_n}}^p}
-=
-\normeJamesI{p}{x}
+\sum_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p + \sum_{k=1}^{n-1} \abs{x_{p_{2k}}-x_{p_{2k+1}}}^p + \abs{x_{p_1}-x_{p_n}}^p
+\leqslant
+\normeJamesI{p}{x}^p
 \]
 
-Par passage au supremum sur $n$ et les $p_k$, on en déduit que $\normeJames{p}{x}\leqslant\normeJamesI{p}{x}\leqslant 3\normeJames{p}{x}$.
+Par passage au supremum sur $n$ et les $p_k$, on en déduit que $\normeJames{p}{x}\leqslant\normeJamesI{p}{x}\leqslant\sqrt[p]{3}\normeJames{p}{x}$.
 
 (1) On démontrera de manière similaire à celle utilisée pour $\normeJames{p}{.}$ tous les axiomes d'une norme, excepté celui d'être à valeurs finies que l'on déduit immédiatement de (2). L'équivalence des normes est un cas particulier de (2).
 \end{proof}
@@ -93,7 +91,7 @@ avec
 \sup_{n\in\mathbb{N}}\normeJamesI{p}{\sum_{k=0}^n a_k e_k}
 \]
 
-Par le (2) de la proposition (\ref{newnormeequiv}), on en déduit que $\James{p}\bidual=\{a\in\mathbb{K}^\mathbb{N}|\normeJamesI{p}{a}<+\infty\}$.
+Par le (2) de la proposition (\ref{newnormeequiv}) et par la proposition (\ref{jamesbidentification}), on en déduit que $\James{p}\bidual=\{a\in\mathbb{K}^\mathbb{N}|\normeJamesI{p}{a}<+\infty\}$.
 
 \begin{Thm}
 Les espaces $(\James{p},\normeJamesI{p}{.})$ et $(\James{p}\bidual,\normeJamesIB{p}{.})$ sont isométriques.
@@ -112,7 +110,7 @@ C'est une application linéaire bijective, par le même raisonnement que celui du 
 
 Soit $a\in\James{p}$. Soit $A\in\James{p}\bidual$ tel que $T(A)=a$. On a $A_k = a_{k+1}-a_0$, quelque soit $k\in\mathbb{N}$. Soient $n\in\mathbb{N}_0$ et des naturels $p_1<...<p_n$.
 
-Soit $N\in\mathbb{N}$. On va montrer que $\normeJamesI{p}{\sum\limits_{k=0}^N A_k e_k}\leqslant\normeJamesI{p}{T(A)}$, et par passage au supremum sur $N$ on aura la première inégalité souhaitée. Le cas où $n=1$ est évident, on considère alors $n\geqslant 2$. Si $p_n\leqslant N$, on a
+Soit $N\in\mathbb{N}$. On va montrer que $\normeJamesIB{p}{\sum\limits_{k=0}^N A_k e_k}\leqslant\normeJamesI{p}{T(A)}$, et par passage au supremum sur $N$ on aura la première inégalité souhaitée. Le cas où $n=1$ est évident, on considère alors $n\geqslant 2$. Si $p_n\leqslant N$, on a
 
 \[
 \sqrt[p]{\sum_{k=1}^{n-1} \abs{A_{p_{k}}-A_{p_{k+1}}}^p + \abs{A_{p_1}-A_{p_n}}^p}
@@ -145,7 +143,7 @@ Réciproquement, on a à nouveau que le cas $n=1$ est évident, on suppose $n\geqsl
 \sqrt[p]{\sum_{k=1}^{n-1} \abs{A_{p_{k}-1}-A_{p_{k+1}-1}}^p + \abs{A_{p_1-1}-A_{p_n-1}}^p}
 \\
 &\leqslant
-\normeJames{p}{\sum_{k=0}^{p_n-1}A_k ev_{e_k}}
+\normeJamesIB{p}{\sum_{k=0}^{p_n-1}A_k ev_{e_k}}
 \end{align*}
 
 Dans l'autre cas, si $p_1=0$, on a
@@ -158,7 +156,7 @@ Dans l'autre cas, si $p_1=0$, on a
 =
 \sqrt[p]{\sum_{k=2}^{n-1} \abs{A_{p_{k}-1}-A_{p_{k+1}-1}}^p + \abs{A_{p_n-1}-0}^p + \abs{A_{p_2-1}-0}^p}
 \leqslant
-\normeJames{p}{\sum_{k=0}^{p_n-1}A_k ev_{e_k}}
+\normeJamesIB{p}{\sum_{k=0}^{p_n-1}A_k ev_{e_k}}
 \end{align*}
 
 Par passage au supremum sur $n$ et les $p_k$, on obtient que $\normeJamesI{p}{T(A)}\leqslant\normeJamesIB{p}{A}$.

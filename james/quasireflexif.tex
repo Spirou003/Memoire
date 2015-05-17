@@ -32,7 +32,7 @@ m_0<n_0<m_1<n_1<...<m_k<n_k<...\text{   et   }\forall k\in\mathbb{N}, \abs{x_{n_
 En choisissant alternativement ces deux suites pour les $p_k$, on obtient une contradiction avec $\normeJames{p}{a}<+\infty$.
 \end{proof}
 
-\begin{Prop}
+\begin{Prop}\label{jamesbidentification}
 \[
 \left\{a\in\mathbb{K}^\mathbb{N}|\normeJamesB{p}{a}<+\infty\right\}
 =
@@ -97,12 +97,11 @@ L'espace $\James{p}\bidual$ est donc uniquement composé de suites convergentes e
 La suite $(ev_{s_n})_{n\in\mathbb{N}}$ converge vers $\varepsilon_0=(1,1,...)$ pour la topologie préfaible.
 \end{Prop}
 \begin{proof}
-Soient $\varepsilon>0$ et $x\dual\in\James{p}\dual$. La base canonique étant contractante, on sait que
+Soient $\varepsilon>0$ et $x\dual\in\James{p}\dual$. La base canonique étant contractante, on sait qu'il existe $n_0\in\mathbb{N}$ tel que pour tout naturel $n\geqslant n_0$,
 \[
-\exists n_0\text{ tel que }\forall n\geqslant n_0,
 \sup\left\{\abs{x\dual(x)}\text{ tel que }x=\sum_{j\geqslant n}a_j e_j\text{ et }\normeJames{p}{x}=1\right\}<\varepsilon
 \]
-De plus, pour tout $n\geqslant m\geqslant n_0$, on a que $s_n-s_m$ est de norme $\sqrt[p]{2}$, et est une combinaison linéaire finie des $(e_l)_{l\in\mathbb{N}}$ d'indices supérieurs à $n_0$. Dans ce cas, l'inégalité ci-dessus est valable, on obtient que $\abs{x\dual(s_n-s_m)}<\sqrt[p]{2}\varepsilon$. Ceci prouve que la suite $(x\dual(s_n))_{n\in\mathbb{N}}$ est de Cauchy, et donc que la série $\sum\limits_{n\in\mathbb{N}}x\dual(e_n)$ existe. L'application linéaire
+De plus, pour tout $n>m\geqslant n_0$, on a que $s_n-s_m$ est de norme inférieure à $\sqrt[p]{2}$, et est une combinaison linéaire finie des $(e_l)_{l\in\mathbb{N}}$ d'indices supérieurs à $n_0$. Dans ce cas, l'inégalité ci-dessus est valable, on obtient que $\abs{x\dual(s_n-s_m)}<\sqrt[p]{2}\varepsilon$. Ceci prouve que la suite $(x\dual(s_n))_{n\in\mathbb{N}}$ est de Cauchy, et donc que la série $\sum\limits_{n\in\mathbb{N}}x\dual(e_n)$ existe. L'application linéaire
 \[
 \begin{array}{lllll}
 s&:&E\dual&\maps&\mathbb{K}\\
@@ -111,15 +110,15 @@ s&:&E\dual&\maps&\mathbb{K}\\
 \]
 est continue, car
 \[
-\abs{\sum_{n\in\mathbb{N}}x\dual(e_n)}
+\abs{\sum_{n\in\mathbb{N}}y\dual(e_n)}
 =
-\abs{\lim_{N\in\mathbb{N}}\sum_{n=1}^N x\dual(e_n)}
+\abs{\lim_{N\in\mathbb{N}}\sum_{n=1}^N y\dual(e_n)}
 =
-\lim_{n\in\mathbb{N}}\abs{x\dual(s_n)}
+\lim_{n\in\mathbb{N}}\abs{y\dual(s_n)}
 \leqslant
-\lim_{n\in\mathbb{N}}\norme{x\dual}\normeJames{p}{s_n}
+\lim_{n\in\mathbb{N}}\norme{y\dual}\normeJames{p}{s_n}
 =
-\norme{x\dual}
+\norme{y\dual}
 \]
 Donc la suite $(ev_{s_n})_{n\in\mathbb{N}}$ converge faiblement vers $s$. Soit $k\in\mathbb{N}$, on a que
 \[
@@ -132,7 +131,7 @@ s(f_k)
 D'où $s=(1,1,...)=\varepsilon_0$.
 \end{proof}
 
-Vu les propositions précédentes, on serait tenté pour $x\bidual\in\James{p}\bidual$, de dire que $\normeJamesB{p}{x\bidual}=\normeJames{p}{x\bidual}$. Cependant, ce n'est pas le cas car $\normeJames{p}{\varepsilon_0}=0$ avec $\varepsilon_0\neq 0$. On peut néanmoins s'en approcher, comme le montre cette proposition.
+Vu les propositions précédentes, on serait tenté de dire que pour $x\bidual\in\James{p}\bidual$, on a $\normeJamesB{p}{x\bidual}=\normeJames{p}{x\bidual}$. Cependant, ce n'est pas le cas car $\normeJames{p}{\varepsilon_0}=0$ avec $\varepsilon_0\neq 0$. On peut néanmoins s'en approcher, comme le montre cette proposition.
 
 \begin{Prop}
 Quelque soient $a\in\mathbb{K}$ et $x\in\James{p}$, $\max(\abs{a},\normeJames{p}{x}) \leqslant \normeJamesB{p}{x+a\varepsilon_0} \leqslant \abs{a}+\normeJames{p}{x}$. De plus, $\normeJamesB{p}{\varepsilon_0}=1$.
@@ -140,7 +139,7 @@ Quelque soient $a\in\mathbb{K}$ et $x\in\James{p}$, $\max(\abs{a},\normeJames{p}
 \begin{proof}
 Soient $a\in\mathbb{K}$ et $x\in\James{p}$. On a que $\normeJamesB{p}{\varepsilon_0}=\sup\limits_{N\in\mathbb{N}}\normeJames{p}{\sum\limits_{n=0}^N e_n}=1$, et donc également que $\normeJamesB{p}{x+a\varepsilon_0}\leqslant\normeJames{p}{x}+\abs{a}$.
 
-Si $a=0$, il est évident que $\abs{a}\leqslant\normeJamesB{p}{x+a\varepsilon_0}$. Si $a\neq 0$, soit $\varepsilon\in~]0,a[$. La suite $x=(x_n)_{n\in\mathbb{N}}$ converge vers 0, donc il existe $n_0\in\mathbb{N}$ tel que $\abs{x_{n_0}}<\varepsilon$. Alors
+Si $a=0$, il est évident que $\abs{a}\leqslant\normeJamesB{p}{x+a\varepsilon_0}$. Si $a\neq 0$, fixons $\varepsilon\in~]0,a[$. La suite $x=(x_n)_{n\in\mathbb{N}}$ converge vers 0, donc il existe $n_0\in\mathbb{N}$ tel que $\abs{x_{n_0}}<\varepsilon$. Alors
 \[
 \normeJamesB{p}{x+a\varepsilon_0}
 =
@@ -188,7 +187,9 @@ T(v)
 =
 u
 \]
-Donc $T$ est surjective. Soit $a\varepsilon_0+x\in\James{p}\bidual$. Posons $x_{-1}=a$. On a
+Donc $T$ est surjective.
+
+Soit $a\varepsilon_0+x\in\James{p}\bidual$. Posons $x_{-1}=a$. On a
 \[
 \begin{array}{l}
 \normeJames{p}{T(a\varepsilon_0+x)}
