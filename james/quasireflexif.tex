@@ -131,23 +131,31 @@ s(f_k)
 D'où $s=(1,1,...)=\varepsilon_0$.
 \end{proof}
 
-Vu les propositions précédentes, on serait tenté de dire que pour $x\bidual\in\James{p}\bidual$, on a $\normeJamesB{p}{x\bidual}=\normeJames{p}{x\bidual}$. Cependant, ce n'est pas le cas car $\normeJames{p}{\varepsilon_0}=0$ avec $\varepsilon_0\neq 0$. On peut néanmoins s'en approcher, comme le montre cette proposition.
+Vu les propositions précédentes, on serait tenté de dire que pour tout $x\bidual\in\James{p}\bidual$, on a $\normeJamesB{p}{x\bidual}=\normeJames{p}{x\bidual}$. Cependant, ce n'est pas le cas car $\normeJames{p}{\varepsilon_0}=0$ avec $\varepsilon_0\neq 0$. On peut néanmoins s'en approcher, comme le montre cette proposition.
 
 \begin{Prop}
-Quelque soient $a\in\mathbb{K}$ et $x\in\James{p}$, $\max(\abs{a},\normeJames{p}{x}) \leqslant \normeJamesB{p}{x+a\varepsilon_0} \leqslant \abs{a}+\normeJames{p}{x}$. De plus, $\normeJamesB{p}{\varepsilon_0}=1$.
+Quelque soient $a\in\mathbb{K}$ et $x\in\James{p}$, on a que
+\[
+\max(\abs{a},\normeJames{p}{x})
+\leqslant
+\normeJamesB{p}{x+a\varepsilon_0}
+\leqslant
+\abs{a}+\normeJames{p}{x}
+\]
+De plus, $\normeJamesB{p}{\varepsilon_0}=1$.
 \end{Prop}
 \begin{proof}
 Soient $a\in\mathbb{K}$ et $x\in\James{p}$. On a que $\normeJamesB{p}{\varepsilon_0}=\sup\limits_{N\in\mathbb{N}}\normeJames{p}{\sum\limits_{n=0}^N e_n}=1$, et donc également que $\normeJamesB{p}{x+a\varepsilon_0}\leqslant\normeJames{p}{x}+\abs{a}$.
 
-Si $a=0$, il est évident que $\abs{a}\leqslant\normeJamesB{p}{x+a\varepsilon_0}$. Si $a\neq 0$, fixons $\varepsilon\in~]0,a[$. La suite $x=(x_n)_{n\in\mathbb{N}}$ converge vers 0, donc il existe $n_0\in\mathbb{N}$ tel que $\abs{x_{n_0}}<\varepsilon$. Alors
+Si $a=0$, il est évident que $\abs{a}\leqslant\normeJamesB{p}{x+a\varepsilon_0}$. Si $a\neq 0$, soit $\varepsilon>0$. La suite $x=(x_n)_{n\in\mathbb{N}}$ converge vers 0, donc il existe $n_0\in\mathbb{N}$ tel que $\abs{x_{n_0}}<\varepsilon$. Alors
 \[
 \normeJamesB{p}{x+a\varepsilon_0}
 =
 \sup_{N\in\mathbb{N}}\normeJames{p}{\sum_{n=0}^N(a+x_n)e_n}
 \geqslant
-\sqrt[p]{\abs{(a+x_{n_0})-0}^p}
+\abs{(a+x_{n_0})-0}
 \geqslant
-\sqrt[p]{(\abs{a}-\varepsilon)^p}
+\abs{a}-\varepsilon
 \]
 donc $\abs{a}\leqslant\normeJamesB{p}{x+a\varepsilon_0}$.
 

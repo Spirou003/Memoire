@@ -54,41 +54,9 @@ Donc, par passage au supremum sur $n$, on obtient que
 \leqslant
 K\norme{x\bidual}
 \]
-On vient de démontrer que $T$ est bien définie, et qu'elle est continue. On va montrer que $T$ est une isométrie (et donc est injective).
+On vient de démontrer que $T$ est bien définie, et qu'elle est continue.
 
-Soit $x\bidual\in E\bidual$, et soit $(x_n\dual)_{n\in\mathbb{N}}$ une suite à valeur dans $S(E\dual)$ telle que pour tout $n\in\mathbb{N}_0$, $\abs{x\bidual(x_n\dual)-\norme{x\bidual}}\leqslant\frac{1}{n}$. Puisque $(f_n)_{n\in\mathbb{N}}$ est une base de Schauder, quelque soit $n\in\mathbb{N}$ on a $P_k\dual(x_n\dual)\underset{k\rightarrow+\infty}{\longrightarrow}x_n\dual$. Puisque $\norme{x_n\dual}=1$, on a également que $\frac{P_k\dual(x_n\dual)}{\norme{P_k\dual(x_n\dual)}}\underset{k\rightarrow+\infty}{\longrightarrow}x_n\dual$. Soit alors une suite croissante $(k_n)_{n\in\mathbb{N}}$ telle que pour tout $n\in\mathbb{N}$, on a
-\[
-\norme{\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}-x_n\dual}\leqslant\frac{1}{n}
-\]
-Soit $n\in\mathbb{N}$. On a
-\[
-\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)-\norme{x\bidual}}
-\leqslant
-\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}-x_n\dual\right)}
-+ \abs{x\bidual(x_n\dual)-\norme{x\bidual}}
-\leqslant \frac{\norme{x\bidual}}{n} + \frac{1}{n}
-\]
-D'où $\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}\rightarrow\norme{x\bidual}$. De plus, on a, pour tout $n\in\mathbb{N}$, que
-\[
-\begin{array}{ll}
-\displaystyle
-\norme{\sum_{l=0}^{k_n} x\bidual(f_l) \: ev_{e_l}}
-&\geqslant\displaystyle
-\abs{\left(\sum_{l=0}^{k_n} x\bidual(f_l) \: ev_{e_l}\right)\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}
-=
-\abs{\sum_{l=0}^{k_n} x\bidual(f_l)\frac{x_n\dual(e_l)f_l(e_l)}{\norme{P_{k_n}\dual(x_n\dual)}}}
-\\&\displaystyle
-=
-\abs{\sum_{l=0}^{k_n} x\bidual(f_l)\frac{x_n\dual(e_l)}{\norme{P_{k_n}\dual(x_n\dual)}}}
-=
-\abs{x\bidual\left(\frac{\sum\limits_{l=0}^{k_n}x_n\dual(e_l)f_l}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}
-=
-\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}
-\end{array}
-\]
-Par passage au supremum sur $n$, on obtient l'inégalité souhaitée.
-
-On montre que l'application est injective. Soit $x\bidual\in E\bidual$ tel que pour tout $n\in\mathbb{N}$, $x\bidual(f_n)=0$. Puisque la base $(e_n)_{n\in\mathbb{N}}$ est contractante, la suite des fonctionnelles coordonnées $(f_n)_{n\in\mathbb{N}}$ est une base de Schauder. Alors, pour tout $x\dual\in E\dual$ on a
+On montre que l'application est injective. Soit $x\bidual\in E\bidual$ tel que pour tout $n\in\mathbb{N}$, on a $x\bidual(f_n)=0$. Puisque la base $(e_n)_{n\in\mathbb{N}}$ est contractante, la suite des fonctionnelles coordonnées $(f_n)_{n\in\mathbb{N}}$ est une base de Schauder. Alors, pour tout $x\dual\in E\dual$ on a
 
 \[
 x\bidual(x\dual)
@@ -102,7 +70,7 @@ x\bidual\left(\sum_{n\in\mathbb{N}}x\dual(e_n)f_n\right)
 
 Ce qui implique que $x\bidual=0$.
 
-Reste à démontrer qu'elle est surjective. Soient $a\in F$, $x\dual\in E\dual$ et $\varepsilon>0$. La base $(e_n)_{n\in\mathbb{N}}$ étant contractante, on a $n_0\in\mathbb{N}$ tel que si $n\geqslant n_0$, alors
+Montrons qu'elle est surjective. Soient $a\in F$, $x\dual\in E\dual$ et $\varepsilon>0$. La base $(e_n)_{n\in\mathbb{N}}$ étant contractante, on a $n_0\in\mathbb{N}$ tel que si $n\geqslant n_0$, alors
 \[
 \sup\left\{
 \abs{x\dual(x)}
@@ -153,7 +121,41 @@ Cette application est continue, car si $x\in B(E\dual)$, on a
 \norme{a}
 \]
 
-À ce stade, il est évident que $T(x\bidual)=a$, l'application $T$ est donc surjective, et le théorème prouvé.
+À ce stade, il est évident que $T(x\bidual)=a$, l'application $T$ est donc surjective.
+
+Enfin, finissons par montrer que l'inverse est continue de norme inférieure à 1. Ceci confirmera que $T$ est bien un isomorphisme, et dans le cas où $K=1$ que c'est même une isométrie.
+
+Soit $x\bidual\in E\bidual$, et soit $(x_n\dual)_{n\in\mathbb{N}}$ une suite à valeur dans $S(E\dual)$ telle que pour tout $n\in\mathbb{N}_0$, $\abs{x\bidual(x_n\dual)-\norme{x\bidual}}\leqslant\frac{1}{n}$. Puisque $(f_n)_{n\in\mathbb{N}}$ est une base de Schauder, quelque soit $n\in\mathbb{N}$ on a $P_k\dual(x_n\dual)\underset{k\rightarrow+\infty}{\longrightarrow}x_n\dual$. Puisque $\norme{x_n\dual}=1$, on a également que $\frac{P_k\dual(x_n\dual)}{\norme{P_k\dual(x_n\dual)}}\underset{k\rightarrow+\infty}{\longrightarrow}x_n\dual$. Soit alors une suite croissante $(k_n)_{n\in\mathbb{N}}$ telle que pour tout $n\in\mathbb{N}$, on a
+\[
+\norme{\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}-x_n\dual}\leqslant\frac{1}{n}
+\]
+Soit $n\in\mathbb{N}$. On a
+\[
+\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)-\norme{x\bidual}}
+\leqslant
+\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}-x_n\dual\right)}
++ \abs{x\bidual(x_n\dual)-\norme{x\bidual}}
+\leqslant \frac{\norme{x\bidual}}{n} + \frac{1}{n}
+\]
+D'où $\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}\rightarrow\norme{x\bidual}$. De plus, on a, pour tout $n\in\mathbb{N}$, que
+\[
+\begin{array}{ll}
+\displaystyle
+\norme{\sum_{l=0}^{k_n} x\bidual(f_l) \: ev_{e_l}}
+&\geqslant\displaystyle
+\abs{\left(\sum_{l=0}^{k_n} x\bidual(f_l) \: ev_{e_l}\right)\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}
+=
+\abs{\sum_{l=0}^{k_n} x\bidual(f_l)\frac{x_n\dual(e_l)f_l(e_l)}{\norme{P_{k_n}\dual(x_n\dual)}}}
+\\&\displaystyle
+=
+\abs{\sum_{l=0}^{k_n} x\bidual(f_l)\frac{x_n\dual(e_l)}{\norme{P_{k_n}\dual(x_n\dual)}}}
+=
+\abs{x\bidual\left(\frac{\sum\limits_{l=0}^{k_n}x_n\dual(e_l)f_l}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}
+=
+\abs{x\bidual\left(\frac{P_{k_n}\dual(x_n\dual)}{\norme{P_{k_n}\dual(x_n\dual)}}\right)}
+\end{array}
+\]
+Par passage au supremum sur $n$, on obtient l'inégalité souhaitée.
 \end{proof}
 
 On a ainsi une caractérisation complète du bidual en fonction de la base de Schauder monotone que l'on s'est fixée. On peut également remarquer que cette caractérisation ne nécessite aucune connaissance du dual. Ceci est très important pour étudier certains espaces de Banach comme par exemple l'espace de James. Mais on va voir que les liens entre les bases de Schauder et le bidual ne s'arrêtent pas là.

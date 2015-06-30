@@ -12,12 +12,13 @@
 \subtitle{}
 \author{Poulain Julien}
 \institute[(Math)]{%
-  Institut de Mathématique\\
+  Département de Mathématique\\
   Université de Mons
   \\[2ex]
   \includegraphics[height=4ex]{umons/UMONS}\hspace{2em}%
   \raisebox{-1ex}{\includegraphics[height=6ex]{umons/UMONS_FS}}
 }
+\date{23 juin 2015}
 
 \begin{document}
 
@@ -29,77 +30,366 @@
   \tableofcontents
 \end{frame}
 
-\section{Première section}
-\begin{frame}{Définition}
-Soient $E$ un espace vectoriel normé, et $x\in E$. On définit l'injection canonique par
+\section{Généralités}
 
-\[
-\begin{array}{lllll}
-i&:&E&\maps&E\bidual\\
-&:&x&\mapsto&\left(
+\begin{frame}
+  \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Définition de $E\bidual$}
+    Soit $E$ un espace vectoriel normé. On désigne le \textbf{dual} de $E$ par
+
+    \[
+    E\dual=\{f:E\maps\mathbb{K}\text{ linéaire continue}\}.
+    \]
+
+    \pause
+    On peut également considérer le \textbf{bidual} de $E$:
+
+    \[
+    E\bidual=\{f:E\dual\maps\mathbb{K}\text{ linéaire continue}\}.
+    \]
+    
+    \pause
+    Ces espaces sont-ils nuls? \pause Non
+    
+    \begin{block}{Théorème (Hahn-Banach)}
+    Toute fonctionnelle d'un sous-espace de $E$ s'étend en une fonctionnelle de $E$.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Éléments particuliers de $E\bidual$}
+    On fixe $x\in E$. \pause L'\textbf{évaluation en $x$}
+
+    \[
     \begin{array}{lllll}
     ev_x&:&E\dual&\maps&\mathbb{K}\\
     &:&x\dual&\mapsto&x\dual(x)
     \end{array}
-\right)
-\end{array}
-\]
-\pause
+    \]
 
-On a $\norme{x}=\norme{ev_x}$.
-\pause
-\begin{block}{Définition}
-Un espace est réflexif si son injection canonique est surjective
-\end{block}
+    est un élément de $E\bidual$. \pause On obtient l'isométrie
+    \[
+    \begin{array}{lllll}
+    i&:&E&\maps&E\bidual\\
+    &:&x&\mapsto&ev_x
+    \end{array}
+    \]
+    appelée \textbf{injection canonique}.
+
+    \pause
+    Le bidual est-il formé uniquement de ces évaluations?
+
+    \pause
+    Réponse: oui si et seulement si $E$ est réflexif.
+
+    %\pause
+    \begin{block}{Définition}
+    Un espace est \textbf{réflexif} si son injection canonique est surjective.
+    \end{block}
 \end{frame}
 
-\begin{frame}
-Exemples:
-\pause
-\begin{itemize}
-\item les espaces de dimension finie
-\pause
-\item pour $p>1$, l'espace $l^p$
-\pause
-\item les espaces de Hilbert
-\pause
-\end{itemize}
-Contre-exemples:
-\pause
-\begin{itemize}
-\item $c_0$, $l^1$, $l^\infty$
-\pause
-\item tout espace non complet
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Premier transparent}
-
-  \begin{itemize}
-  \item Niveau 1 d'\texttt{itemize}
+\begin{frame}{Exemples}
+    Réflexifs:
     \begin{itemize}
-    \item Niveau 2 d'\texttt{itemize}
-    \item Niveau 2 d'\texttt{itemize}
+        \pause
+        \item les espaces de dimension finie,
+        \pause
+        \item les espaces de Hilbert,
+        \pause
+        \item pour un réel $p>1$, l'espace $l^p=\left\{(x_n)_{n\in\mathbb{N}}\in\mathbb{K}^\mathbb{N}|\sum\limits_{n\in\mathbb{N}}\abs{x_n}^p<+\infty\right\}$.
     \end{itemize}
-  \item Niveau 1 d'\texttt{itemize}
-  \end{itemize}
+    
+    \pause
+    Non réflexifs:
+    \begin{itemize}
+        \pause
+        \item $c_0$, $l^1$, $l^\infty$,
+        \pause
+        \item tout espace non complet.
+    \end{itemize}
 \end{frame}
 
-\section{Deuxième section}
-\begin{frame}
-  \frametitle{Second transparent}
-
-  \begin{enumerate}
-  \item Niveau 1 d'\texttt{enumerate}
-    \begin{enumerate}
-    \item Niveau 2 d'\texttt{enumerate}
-    \item Niveau 2 d'\texttt{enumerate}
+\begin{frame}{Propriétés élémentaires}
+    Si $E$ est réflexif, alors c'est le cas aussi de:
+    \begin{enumerate}[(1)]
+        \pause
+        \item tout espace isomorphe à $E$,
+        \pause
+        \item tout sous-espace fermé de $E$,
+        \pause
+        \item le dual de $E$.
     \end{enumerate}
-  \item Niveau 1 d'\texttt{enumerate}
-  \end{enumerate}
+    \pause
+    Cela fonctionne dans l'autre sens aussi!
+    
+    \phantom{e}
+    
+    \pause
+    Exemple: $c_0\dual=l^1$, $(l^1)\dual=l^\infty$. Par (3), aucun n'est réflexif.
 \end{frame}
 
+\section{Quelques caractérisations}
+
+\begin{frame}
+  \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Caractérisation des fonctionnelles}
+    \begin{block}{Théorème de James (1964)}
+        Un espace est réflexif si et seulement si toute fonctionnelle atteint sa norme sur la boule unité.
+    \end{block}
+    
+    \pause
+    Montrer que l'espace est réflexif est très difficile.
+\end{frame}
+
+\begin{frame}{Compacité des boules}
+    \begin{block}{Théorème de Kakutani}
+        La boule unité est faiblement compacte si et seulement si l'espace est réflexif.
+    \end{block}
+    \pause
+    \begin{block}{Théorème (Eberlein-\v{S}mulian)}
+    Pour la topologie faible, compacité et compacité séquentielle sont équivalentes.
+    \end{block}
+    \pause
+    On en déduit alors
+    \begin{block}{Corollaire}
+    La boule unité est séquentiellement compacte pour la topologie faible si et seulement si l'espace est réflexif.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Un théorème géométrique}
+    LASSE:
+    \begin{itemize}
+        \item $E$ n'est pas réflexif
+        \pause
+        \item $\forall$ $\theta\in~]0,1[$, $\exists$ $(x_n)_{n\in\mathbb{N}}$ dans $S(E)$ telle que $\forall$ $k<K\in\mathbb{N}$, on a $\dist(\conv(x_1,...,x_k), \conv(x_{k+1},...,x_K))\geqslant\theta$
+        \pause
+        \item $\exists$ $\theta\in~]0,1[$, $\exists$ $(x_n)_{n\in\mathbb{N}}$ dans $S(E)$ telle que $\forall$ $k<K\in\mathbb{N}$, on a $\dist(\conv(x_1,...,x_k), \conv(x_{k+1},...,x_K))\geqslant\theta$
+        \pause
+        \item $\forall$ $\theta\in~]0,1[$, $\exists$ $(x_n)_{n\in\mathbb{N}}$ dans $S(E)$, $\exists$ $(x\dual_n)_{n\in\mathbb{N}}$ dans $S(E\dual)$ telles que, $\forall n,m\in\mathbb{N}$
+        \[
+        x\dual_n(x_m) =
+        \begin{cases}
+        \theta & ~si~~~ n\leqslant m\\
+        0 & ~si~~~ n > m
+        \end{cases}
+        \]
+        %\pause
+        \item $\exists$ $\theta\in~]0,1[$, $\exists$ $(x_n)_{n\in\mathbb{N}}$ dans $S(E)$, $\exists$ $(x\dual_n)_{n\in\mathbb{N}}$ dans $S(E\dual)$ tels que, $\forall n,m\in\mathbb{N}$
+        \[
+        x\dual_n(x_m) =
+        \begin{cases}
+        \theta & ~si~~~ n\leqslant m\\
+        0 & ~si~~~ n > m
+        \end{cases}
+        \]
+    \end{itemize}
+\end{frame}
+
+\section{Bases de Schauder}
+
+\begin{frame}
+  \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Définitions}
+    Soit $(e_n)_{n\in\mathbb{N}}$ une suite de $E$.
+    \begin{enumerate}[(1)]
+        \item On dit que $(e_n)_{n\in\mathbb{N}}$ est une \textbf{base de Schauder} si tout vecteur $x\in E$ s'écrit de manière unique $\sum\limits_{n\in\mathbb{N}}x_n e_n$.
+        \pause
+        \item On dit que $(e_n)_{n\in\mathbb{N}}$ est une \textbf{suite basique} si c'est une base de Schauder d'un sous-espace fermé de $E$.
+        \pause
+        \item On dit que $(e_n)_{n\in\mathbb{N}}$ \textbf{admet une constante de base} s'il existe $K>0$ qui majore la norme de $\left(\sum\limits_{n=0}^q a_n e_n\maps\sum\limits_{n=0}^p a_n e_n\right)$, pour tout $p\leqslant q$.
+    \end{enumerate}
+    \pause
+    En fait, (2) et (3) sont équivalents.
+    
+    \pause
+    On dira d'une suite basique qu'elle est \textbf{monotone} si (3) est vrai pour $K=1$.
+\end{frame}
+
+\begin{frame}{Propriétés}
+    Si la suite $(e_n)_{n\in\mathbb{N}}$ est basique, les projections
+    \[
+    P_k:\sum_{n\in\mathbb{N}}a_n e_n\maps\sum_{n=0}^k a_n e_n
+    \]
+    sont continues de norme uniformément bornée. \pause Par conséquent, les formes linéaires (fonctionnelles coordonnées)
+    \[
+    f_k:\sum\limits_{n\in\mathbb{N}}x_n e_n\mapsto x_k
+    \]
+    sont continues \pause et quand $x$ se décompose on a
+    \[
+    x=\sum_{n\in\mathbb{N}}f_n(x)e_n
+    \]
+\end{frame}
+
+\begin{frame}{Exemples}
+    \begin{itemize}
+        \item Dans $c_0$, $l^p$ avec $1\leqslant p<+\infty$, la base canonique est une base de Schauder.
+        \pause
+        \item Dans $l^\infty$, la base canonique est une suite basique, mais pas une base de Schauder.
+        \pause
+        \item Tout espace possédant une base de Schauder est séparable.
+        \pause
+        \item Il existe également des espaces séparables sans base de Schauder (Enflo, 1973).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Définitions}
+    Soit une base de Schauder $(e_n)_{n\in\mathbb{N}}$.
+    
+    \begin{itemize}
+        \pause
+        \item On dit que $(e_n)_{n\in\mathbb{N}}$ est \textbf{contractante} si pour tout $x\dual\in E\dual$, $\lim\limits_{n\in\mathbb{N}}\sup\limits_{\substack{x\in S(E)\\P_n(x)=0}}\abs{x\dual(x)}=0$.
+        
+        \pause
+        \item On dit que $(e_n)_{n\in\mathbb{N}}$ est \textbf{complète} si toute suite de scalaires $(a_n)_{n\in\mathbb{N}}$ telle que $\sup\limits_{N\in\mathbb{N}}\norme{\sum\limits_{n=0}^N a_n e_n}<+\infty$ rend la série $\sum\limits_{n\in\mathbb{N}}a_n e_n$ convergente.
+    \end{itemize}
+    
+    \pause
+    \begin{block}{Propriété}
+    Une base de Schauder est contractante si et seulement si la suite de fonctionnelles coordonnées est une base de Schauder.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Ces bases caractérisent le bidual}
+    \begin{block}{Théorème}
+    Soit $(e_n)_{n\in\mathbb{N}}$ une base de Schauder contractante, on définit
+    \[
+    F=
+    \left\{
+    (a_n)_{n\in\mathbb{N}}\in\mathbb{K}~\left|~\sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}<+\infty\right.
+    \right\}
+    \]
+    muni de la norme
+    \[
+    \norme{(a_n)_{n\in\mathbb{N}}}
+    =
+    \sup_{N\in\mathbb{N}}\norme{\sum_{n=0}^N a_n e_n}
+    \]
+    \pause
+    Alors la correspondance $x\bidual\longleftrightarrow(x\bidual(f_n))_{n\in\mathbb{N}}$ décrit un isomorphisme.
+    
+    \pause Quand la base choisie est monotone, la correspondance décrit une isométrie.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Ces bases caractérisent le bidual}
+    \begin{block}{Théorème de James}
+        Pour un espace possédant une base de Schauder, LASSE:
+        \begin{itemize}
+            \pause
+            \item l'espace est réflexif
+            \pause
+            \item toutes ses bases de Schauder sont contractantes et complètes
+            \pause
+            \item il existe une base de Schauder contractante et complète
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Exemples}
+    Base canonique: $(e_n)_{n\in\mathbb{N}}$
+    
+    Base sommante: $(s_n)_{n\in\mathbb{N}} = \left(\sum\limits_{k=0}^n e_n\right)_{n\in\mathbb{N}}$
+    
+    {\color{white}{e}}
+    
+    \pause
+    \begin{tabular}{l|l|l}
+        Base de Schauder & Contractante & Non contractante \\
+        \hline
+        Complète & \onslide<3->{$(e_n)_{n\in\mathbb{N}}, l^p, 1<p<+\infty$} & \onslide<4->{$(e_n)_{n\in\mathbb{N}}, l^1$}\\
+        \hline
+        Non complète & \onslide<5->{$(e_n)_{n\in\mathbb{N}}, c_0$} & \onslide<6->{$(s_n)_{n\in\mathbb{N}}, c_0$}\\
+    \end{tabular}
+\end{frame}
+
+\section{Espace de James}
+
+\begin{frame}{Définition (James, 1950)}
+    Soit $1<p<+\infty$. \pause L'espace de James est l'espace vectoriel
+    \[
+    \James{p}=\left\{x\in c_0|\normeJames{p}{x}<+\infty\right\}
+    \]
+    muni de la norme
+    \[
+    \begin{array}{lllll}
+    \normeJames{p}{.}&:&\mathbb{K}^\mathbb{N}&\maps&\mathbb{R}^+\cup\{+\infty\}\\
+    &:&(x_n)_{n\in\mathbb{N}}&\mapsto&
+        \displaystyle\sup
+        \left\{
+            \substack
+            {
+                \sqrt[p]{\sum\limits_{k=1}^n \abs{x_{p_{2k-1}}-x_{p_{2k}}}^p}\text{ tel que}\\
+                n\in\mathbb{N}_0, p_1<...<p_{2n}\in\mathbb{N} ~~~~~~~~
+            }
+        \right\}
+    \end{array}
+    \]
+\end{frame}
+
+\begin{frame}{Propriétés de base}
+    L'espace de James est un espace de Banach.
+    
+    \pause
+    Sa norme majore $\norme{.}_{\infty}$ mais n'est pas équivalente.
+    
+    \pause
+    La base canonique est une base de Schauder monotone contractante non complète.
+    
+    {\color{white}{e}}
+    
+    \pause
+    Donc $\James{p}$ n'est pas réflexif.
+\end{frame}
+
+\begin{frame}{Le bidual de $\James{p}$}
+    Puisque la base canonique est monotone et contractante, $\James{p}\bidual$ est isométrique à l'espace
+    \[
+    \left\{
+    a\in\mathbb{K}^\mathbb{N} | \normeJames{p}{a}<+\infty
+    \right\}
+    \]
+    muni de la norme
+    \[
+    \sup_{N\in\mathbb{N}}\normeJames{p}{\sum_{n=0}^N a_n e_n}
+    \]
+    \pause
+    Par conséquent, $\James{p}\bidual=\James{p}\oplus(1,1,...)$.
+    \pause
+    On obtient ensuite un isomorphisme de $\James{p}$ vers son bidual décrit par
+    
+    \[
+    (a_0,a_1,a_2,...)\longleftrightarrow(a_1,a_2,a_3,...)+(a_0,a_0,...)
+    \]
+\end{frame}
+
+\begin{frame}{Le bidual de $\James{p}$}
+    Si on munit l'espace de James de la norme équivalente
+    \[
+    \begin{array}{lllll}
+    \normeJamesI{p}{.}&:&\mathbb{K}^\mathbb{N}&\maps&\mathbb{R}^+\cup\{+\infty\}\\
+    &:&(x_n)_{n\in\mathbb{N}}&\mapsto&
+        \displaystyle\sup
+        \left\{
+            \substack
+            {
+                \sqrt[p]{\sum\limits_{k=1}^{n-1} \abs{x_{p_{k}}-x_{p_{k+1}}}^p + \abs{x_{p_1}-x_{p_n}}^p}\text{ tel que}\\
+                n\in\mathbb{N}_0, p_1<...<p_{n}\in\mathbb{N} ~~~~~~~~~~~~~~~~
+            }
+        \right\}
+    \end{array}
+    \]
+    \pause
+    alors toutes les propriétés citées sont préservée, mais surtout l'isomorphisme devient une {\textbf{isométrie}}!
+\end{frame}
+
+\begin{frame}
+    \Huge{\center{Merci de votre attention!}}
+\end{frame}
 
 \end{document}
 %%% Local Variables: 
