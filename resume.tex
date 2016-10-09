@@ -1,0 +1,36 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\include{packages}
+\include{commands}
+
+\newtheorem{Thm}{Théorème} [chapter]
+\newtheorem{Def}[Thm]{Définition}
+\newtheorem{Rem}[Thm]{Remarque}
+\newtheorem{Prop}[Thm]{Proposition}
+\newtheorem{Lemme}[Thm]{Lemme}
+\newtheorem{Corol}[Thm]{Corollaire}
+\newtheorem{Rappel}[Thm]{Rappel}
+
+\titleformat\chapter[hang]{\normalfont\huge\bfseries}{\thechapter}{1em}{}
+
+\newcommand{\chapterref}{\section*{Références pour ce chapitre}}
+
+%\includeonly{jamesinc, annexeinc}
+
+\begin{document}
+\scrollmode
+
+    \begin{center}\huge{Poulain Julien}\end{center}
+    \begin{center}\huge{Espaces réflexifs}\end{center}
+    \vfill
+    Entre les espaces de Banach et les espaces de Hilbert, on trouve d'autres catégories d'espaces, comme par exemple les espaces réflexifs. En prenant un élément $x$ d'un espace $E$, on obtient rapidement un élément particulier du bidual $E\bidual$ qui est l'évaluation en $x$ des fonctionnelles de $E$. Via ce procédé on construit une isométrie appelée injection canonique, et on dit que $E$ est réflexif si cette injection canonique est surjective.
+    
+    On peut alors naturellement se demander ce que ces espaces réflexifs ont de si particulier. Mon objectif est de donner des éléments de réponse à cette question. On étudiera ces espaces sous différents points de vue, le premier étant celui de la stabilité de la réflexivité par passage au dual, par isomorphisme ou encore par sous-espace fermé. On abordera ensuite des propriétés de nature topologique (théorème de Kakutani) et géométrique (théorème de James) de ces espaces. Enfin, on s'arrêtera un peu sur les bases de Schauder avant de caractériser les éventuelles bases de Schauder et bases inconditionnelles d'un espace réflexif.
+    
+    On terminera en s'intéressant à une question restée longtemps ouverte: \textit{existe-t-il un espace isométrique à son bidual mais qui ne soit pas réflexif?} On verra que la réponse est oui au travers de l'étude d'un espace particulier, appelé espace de James. Cet espace, en plus d'être isométrique à son bidual sans être réflexif, est également de codimension 1 dans son bidual.
+    \vfill
+    Mots-clés: espace de Banach, espace réflexif, base de Schauder, base inconditionnelle, espace de James, topologie faible
+
+\batchmode
+\end{document}

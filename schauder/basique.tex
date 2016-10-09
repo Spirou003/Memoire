@@ -86,7 +86,7 @@ Une suite basique dont la constante de base vaut 1 est appelée suite basique mon
 \end{Def}
 
 \begin{Rem}
-Autrement dit, pour $p\leqslant q\in\mathbb{N}$, les projections
+Autrement dit, dans le cas d'une suite basique et pour $p\leqslant q\in\mathbb{N}$, les projections
 \[
 P_{q, p}:\Span(e_0,...,e_q)\maps\Span(e_0,...,e_p)
 \]
@@ -108,11 +108,13 @@ Le lemme (\ref{espseriescgebanach}) donne la première implication.
 
 $\Leftarrow)$\\
 %
+Dans cette démonstration, nous ferons appel aux notations des projections afin de simplifier l'écriture, mais n'oublions pas que cela ne représente, à priori, pas une application.
+
 Supposons que la suite admet $K>0$ comme constante de base. Soit $x\in\SpanAdh((e_n)_{n\in\mathbb{N}})$. On a une suite $(x^{(n)})_{n\in\mathbb{N}}$ de vecteurs de $\Span((e_n)_{n\in\mathbb{N}})$ qui converge vers $x$. Pour $n\in\mathbb{N}$, on réécrit
 \[
 x^{(n)}=\sum_{k=0}^{m_n}x^{(n)}_k e_k\text{, avec }m_n\in\mathbb{N}\text{, et pour }k\in\{0,...,m_n\}, x^{(n)}_k\in\mathbb{K}
 \]
-Cette suite étant convergente, quelque soit $k\in\mathbb{N}$, la suite $\left(P_k(x^{(n)})\right)_{n\in\mathbb{N}}$ est aussi convergente, et converge vers $P_k(x)$.\\
+Cette suite étant convergente, quelque soit $k\in\mathbb{N}$, la suite $\left(P_k(x^{(n)})\right)_{n\in\mathbb{N}}$ est aussi convergente, et converge vers unélément que l'on note $P_k(x)$.\\
 Si $k=0$, $P_0(x^{(n)})=x^{(n)}_0 e_0\rightarrow x_0 e_0$ pour un scalaire $x_0$.\\
 Si $k=1$, $P_1(x^{(n)})=x^{(n)}_0 e_0+x^{(n)}_1 e_1\rightarrow x_0 e_0+x_1 e_1$ pour un scalaire $x_1$.\\
 ...\\
